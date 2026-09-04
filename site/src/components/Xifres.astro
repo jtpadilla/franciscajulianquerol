@@ -7,8 +7,12 @@ const { lang } = Astro.props;
 const t = ui(lang);
 const total = METRIQUES.totals;
 
-/** El orden en que se leen; cada una con su plural. */
-const CAMPS = ['projectes', 'textos', 'paraules', 'fotografies', 'peces', 'traduccions'] as const;
+/**
+ * El orden en que se leen; cada una con su plural. Solo obra de la autora: las traducciones de
+ * ramblacelumbres (`totals.traduccions`) son trabajo de esta edicion y se quedan fuera; la ficha
+ * de ese proyecto ya dice «4 idiomas».
+ */
+const CAMPS = ['projectes', 'textos', 'paraules', 'fotografies', 'peces'] as const;
 
 const data = new Date(METRIQUES.generat).toLocaleDateString(LLOC.locale[lang], {
   day: 'numeric', month: 'long', year: 'numeric',

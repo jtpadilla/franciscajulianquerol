@@ -36,14 +36,15 @@ que hay que mantener alineadas con lo que dice al público `content/edicio.*.md`
   comentarios HTML, etiquetas HTML y marcas de Markdown. Total **70.265**.
 - **Fotografías**: imágenes originales a tamaño completo. Total **486**.
 - **Piezas cerámicas**: **434** piezas distintas de Santjoans.
-- **Traducciones**: **69** ficheros (23 guías × ca, en, zh).
+- **Traducciones**: **69** ficheros (23 guías × ca, en, zh). Se cuentan, pero **no se enseñan**:
+  ver abajo.
 
 ### Lo que NO se suma, y por qué
 
 1. **Las traducciones no cuentan como palabras.** Los cuatro idiomas de ramblacelumbres suman 27.936
    palabras, pero son la misma obra cuatro veces. Se cuenta solo el castellano (8.104), que es la
    lengua en que la autora escribió las guías. El valenciano, el inglés y el chino son trabajo de
-   esa edición, y aparecen aparte como «textos traducidos».
+   esa edición.
 2. **Las piezas de Santjoans no cuentan como fotografías.** El repositorio tiene 1.302 JPEG bajo
    `piezes/`, pero son 434 piezas guardadas en tres tamaños (60, 360 y 550 px). Sumarlas triplicaría
    el recuento y además mezclaría cosas distintas: se cuenta la pieza, no el fichero, y va en su
@@ -91,3 +92,20 @@ las cifras publicadas se quedan atrás en silencio. Está anotado como riesgo en
 - Los identificadores del cargador `glob` de Astro no son fiables con nombres como `autora.es.md`,
   así que cada página de prosa lleva un `key` explícito en el frontmatter y se busca por `key` +
   `lang`, no por id.
+
+---
+
+## 2026-09-04 · Las traducciones salen de la banda de cifras
+
+La banda enseñaba «69 textos traducidos» junto a los proyectos, los textos, las palabras, las
+fotografías y las piezas. Se quita, a petición del usuario, por dos razones:
+
+- **No son obra de la autora.** Las traducciones al valenciano, al inglés y al chino son trabajo de
+  la edición digital de ramblacelumbres. La banda se lee como «lo que ha producido Paquita», y esa
+  columna desentonaba con las otras cinco.
+- **No son obra adicional.** Las 23 guías originales ya están dentro de los 107 textos; los 69 son
+  esas mismas guías otras tres veces.
+
+La información no se pierde: la ficha de Rambla Celumbres sigue diciendo «4 idiomas», que es lo que
+le interesa al lector. La cifra se sigue contando y sigue en `content/metriques.json`
+(`totals.traduccions`), por si algún día se usa.

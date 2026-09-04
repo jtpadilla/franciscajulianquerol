@@ -34,9 +34,10 @@ vez esté publicada (depende de T-02).
 Las páginas no llevan `og:image`: al compartirlas no sale ninguna imagen. Falta decidir cuál (el
 retrato es lo obvio para la portada) y generarla con el recorte y el tamaño que piden las redes.
 
-### T-07 · Ilustraciones y comentarios, ¿se enseñan?
-`metriques.json` ya trae `illustracions` (7) y `comentaris` (38), que ahora mismo no aparecen en
-ninguna parte. Decidir si merecen un hueco en la banda de cifras o si se quedan solo en el JSON.
+### T-07 · Cifras que se cuentan pero no se enseñan
+`metriques.json` trae `illustracions` (7), `comentaris` (38) y `traduccions` (69), que no aparecen
+en ninguna parte del sitio. Las traducciones salieron de la banda a propósito (ver `NOTES.md`); de
+las otras dos falta decidir si merecen un hueco o si se quedan solo en el JSON.
 
 ---
 

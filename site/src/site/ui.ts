@@ -24,7 +24,6 @@ const es = {
     paraules: ['palabra', 'palabras'],
     fotografies: ['fotografía', 'fotografías'],
     peces: ['pieza cerámica', 'piezas cerámicas'],
-    traduccions: ['texto traducido', 'textos traducidos'],
   } as Record<string, [string, string]>,
 
   // --------------------------------------------------------------------- indice
@@ -88,7 +87,6 @@ const ca: typeof es = {
     paraules: ['paraula', 'paraules'],
     fotografies: ['fotografia', 'fotografies'],
     peces: ['peça ceràmica', 'peces ceràmiques'],
-    traduccions: ['text traduït', 'textos traduïts'],
   },
 
   indexTitol: "L'obra",
