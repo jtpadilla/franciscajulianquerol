@@ -43,6 +43,9 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 4. Sitio Astro 7 bilingüe en `site/`: portada (retrato, cifras, índice), «La autora» y «Sobre esta
    página», más la 404. `npm run build` limpio: **7 páginas**.
 
+5. Publicado en Pages con origen GitHub Actions (T-02). El `build` del workflow pasa; el `deploy`
+   falla mientras Pages no esté encendido, que es lo que ocurrió en el primer push.
+
 **Por dónde seguir** (detalle en `TODO.md`): el **quinto proyecto**, que el usuario tiene pendiente.
 
 ---

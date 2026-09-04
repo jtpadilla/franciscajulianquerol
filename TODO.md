@@ -12,10 +12,6 @@ su función de recuento a `tools/metriques.py`, regenerar `content/metriques.jso
 a `content/imatges/` y escribir `content/projectes/5-<slug>.yaml`. El procedimiento completo está en
 `CLAUDE.md`, «Cómo añadir un proyecto». No hay que tocar ninguna plantilla.
 
-### T-02 · Publicar el repositorio y encender Pages
-Crear `jtpadilla/franciscajulianquerol` público, empujar `main` y poner Pages con origen **GitHub
-Actions**. Comprobar después que la subruta `/franciscajulianquerol/` funciona y que la 404 se sirve.
-
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
 lea. Lo mismo con la licencia CC BY-NC-ND 4.0 del contenido, que en los proyectos hermanos también
@@ -41,3 +37,12 @@ retrato es lo obvio para la portada) y generarla con el recorte y el tamaño que
 ### T-07 · Ilustraciones y comentarios, ¿se enseñan?
 `metriques.json` ya trae `illustracions` (7) y `comentaris` (38), que ahora mismo no aparecen en
 ninguna parte. Decidir si merecen un hueco en la banda de cifras o si se quedan solo en el JSON.
+
+---
+
+## Resueltas
+
+### T-02 · Publicar el repositorio y encender Pages · 2026-09-04
+Repositorio público `jtpadilla/franciscajulianquerol` con `main` empujado, Pages con origen **GitHub
+Actions** (`build_type=workflow`) y HTTPS forzado. Las siete páginas responden 200 y `/no-existe/`
+da 404. **https://jtpadilla.github.io/franciscajulianquerol/**
