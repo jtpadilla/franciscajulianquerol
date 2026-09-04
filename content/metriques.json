@@ -1,0 +1,48 @@
+{
+  "generat": "2026-09-04",
+  "arrel": "~/IdeaProjects",
+  "projectes": {
+    "masosdemorella": {
+      "textos": 12,
+      "unitat": "capitols",
+      "paraules": 27170,
+      "fotografies": 30,
+      "illustracions": 6
+    },
+    "santjoans": {
+      "textos": 0,
+      "unitat": "peces",
+      "paraules": 0,
+      "peces": 434,
+      "posicions": 754,
+      "resolucions": 3,
+      "fitxers_imatge": 1302
+    },
+    "ramblacelumbres": {
+      "textos": 23,
+      "unitat": "guies",
+      "paraules": 8104,
+      "traduccions": 69,
+      "idiomes": 4,
+      "fotografies": 315,
+      "illustracions": 1
+    },
+    "lesmeuescoses": {
+      "textos": 72,
+      "unitat": "entrades",
+      "paraules": 34991,
+      "fotografies": 141,
+      "comentaris": 38
+    }
+  },
+  "totals": {
+    "projectes": 4,
+    "textos": 107,
+    "paraules": 70265,
+    "fotografies": 486,
+    "illustracions": 7,
+    "peces": 434,
+    "traduccions": 69,
+    "comentaris": 38
+  }
+}

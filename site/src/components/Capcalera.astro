@@ -1,0 +1,45 @@
+---
+import Marca from './Marca.astro';
+import {
+  LLOC, LANGS, CODI_IDIOMA, PAGINA_KEYS, PAGINES, urlInici, urlPagina,
+  type Lang, type Alternatives,
+} from '../site/config';
+import { ui } from '../site/ui';
+
+interface Props { lang: Lang; alternatives?: Alternatives; actiu?: 'inici' | 'autora' | 'edicio' }
+const { lang, alternatives, actiu } = Astro.props;
+const t = ui(lang);
+---
+
+<header class="capcalera">
+  <div class="contenidor capcalera-fila">
+    <a class="marca" href={urlInici(lang)} aria-label={LLOC.nom}>
+      <Marca />
+      <span>
+        <b>{LLOC.nom}</b>
+        <small>Cinctorres · Castelló</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label={t.menu}>
+      <a href={urlInici(lang)} aria-current={actiu === 'inici' ? 'page' : undefined}>{t.inici}</a>
+      {PAGINA_KEYS.map((key) => (
+        <a href={urlPagina(lang, key)} aria-current={actiu === key ? 'page' : undefined}>
+          {PAGINES[key].nom[lang]}
+        </a>
+      ))}
+    </nav>
+
+    <nav class="idiomes" aria-label={t.idiomaEtiqueta}>
+      {LANGS.map((l) => (
+        <a
+          href={alternatives?.[l] ?? urlInici(l)}
+          hreflang={CODI_IDIOMA[l]}
+          lang={CODI_IDIOMA[l]}
+          aria-current={l === lang ? 'true' : undefined}
+          title={ui(l).idioma}
+        >{ui(l).idiomaCurt}</a>
+      ))}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import {
+  LLOC, LANGS, CODI_IDIOMA, PAGINA_KEYS, PAGINES, urlInici, urlPagina,
+  type Lang, type Alternatives,
+} from '../site/config';
+import { ui } from '../site/ui';
+
+interface Props { lang: Lang; alternatives?: Alternatives }
+const { lang, alternatives } = Astro.props;
+const t = ui(lang);
+const projectes = (await getCollection('projectes')).sort((a, b) => a.data.ordre - b.data.ordre);
+const any = new Date().getFullYear();
+---
+
+<footer class="peu">
+  <div class="contenidor">
+    <div class="peu-cos">
+      <div>
+        <h2>{LLOC.nom}</h2>
+        <p>{t.peuNota}</p>
+        <p>{t.peuCorreccions}</p>
+      </div>
+
+      <div>
+        <h2>{t.projectes}</h2>
+        <ul>
+          {projectes.map((p) => (
+            <li><a href={p.data.url} rel="noopener">{p.data.titol}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2>{t.aquestaPagina}</h2>
+        <ul>
+          {PAGINA_KEYS.map((key) => (
+            <li><a href={urlPagina(lang, key)}>{PAGINES[key].nom[lang]}</a></li>
+          ))}
+          {LANGS.filter((l) => l !== lang).map((l) => (
+            <li>
+              <a href={alternatives?.[l] ?? urlInici(l)} hreflang={CODI_IDIOMA[l]} lang={CODI_IDIOMA[l]}>
+                {ui(l).idioma}
+              </a>
+            </li>
+          ))}
+          <li><a href={LLOC.repositori} rel="noopener">{t.codiFont}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="peu-final">
+      <span>© {LLOC.anys[0]}–{any} Francisca Julián Querol</span>
+      <span>{t.peuEdicio(LLOC.editor)}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Xifres from '../components/Xifres.astro';
+import Fitxa from '../components/Fitxa.astro';
+import { LLOC, alternativesInici, urlPagina, type Lang } from '../site/config';
+import { ui } from '../site/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui(lang);
+
+const projectes = (await getCollection('projectes')).sort((a, b) => a.data.ordre - b.data.ordre);
+const autora = (await getCollection('pagines')).find((p) => p.data.key === 'autora' && p.data.lang === lang)!;
+const retrat = autora.data.retrat;
+---
+
+<Base lang={lang} alternatives={alternativesInici()} actiu="inici">
+  <section class="hero">
+    <div class="contenidor hero-graella">
+      <div>
+        <p class="antetitol">{LLOC.anys[0]} – {LLOC.anys[1]} · Cinctorres · Castelló</p>
+        <h1>{LLOC.nom}</h1>
+        <p class="lema">{LLOC.lema[lang]}</p>
+        <p class="entradeta">{t.entradeta}</p>
+        <p class="accions">
+          <a class="boto" href="#obra">{t.veureObra} ↓</a>
+          <a class="boto boto-secundari" href={urlPagina(lang, 'autora')}>{t.saberMes}</a>
+        </p>
+      </div>
+
+      {retrat && (
+        <figure class="retrat">
+          <Image src={retrat} alt={`${LLOC.nom}`} widths={[480, 900]} sizes="20rem" loading="eager" />
+        </figure>
+      )}
+    </div>
+  </section>
+
+  <Xifres lang={lang} />
+
+  <section class="index" id="obra">
+    <div class="contenidor">
+      <div class="index-cap">
+        <h2>{t.indexTitol}</h2>
+        <p>{t.indexIntro}</p>
+      </div>
+
+      <div class="fitxes">
+        {projectes.map((p) => <Fitxa projecte={p} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+</Base>

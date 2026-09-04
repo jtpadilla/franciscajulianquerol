@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { LANG_PER_DEFECTE, urlInici } from '../site/config';
+import { ui } from '../site/ui';
+
+const lang = LANG_PER_DEFECTE;
+const t = ui(lang);
+---
+
+<Base lang={lang} titol={t.noTrobada}>
+  <section class="buida">
+    <div class="lectura">
+      <h1>{t.noTrobada}</h1>
+      <p>{t.noTrobadaText}</p>
+      <p><a class="boto" href={urlInici(lang)}>{t.tornar}</a></p>
+    </div>
+  </section>
+</Base>

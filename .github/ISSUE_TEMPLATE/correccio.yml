@@ -1,0 +1,39 @@
+name: Corrección
+description: Un dato equivocado, una errata, un enlace roto o algo que falta en esta portada.
+title: "[Corrección] "
+labels: ["correcció"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por avisar. Esta página es una iniciativa familiar y las correcciones se agradecen.
+
+        Si lo que hay que corregir está **dentro** de uno de los cuatro proyectos (el libro, el
+        estudio, la guía o el blog), es mejor abrirla en el repositorio de ese proyecto; los enlaces
+        están abajo, en «Ver también».
+  - type: dropdown
+    id: on
+    attributes:
+      label: ¿Dónde está?
+      options:
+        - La portada (la presentación, las cifras o el índice)
+        - La página «La autora»
+        - La página «Sobre esta página»
+        - La ficha de un proyecto
+        - No lo sé
+    validations:
+      required: true
+  - type: textarea
+    id: que
+    attributes:
+      label: ¿Qué dice ahora y qué debería decir?
+      placeholder: |
+        Dice: «...»
+        Debería decir: «...»
+    validations:
+      required: true
+  - type: textarea
+    id: com
+    attributes:
+      label: ¿Cómo lo sabes? (opcional)
+      description: Una fuente, un recuerdo, un documento. Ayuda a decidir qué se corrige y cómo.

@@ -1,0 +1,34 @@
+slug: lesmeuescoses
+ordre: 4
+titol: Les meues coses
+tipus: blog
+anys: 2010 – 2026
+rol:
+  es: Autora del blog
+  ca: Autora del blog
+subtitol:
+  es: Dieciséis años de blog, en valenciano y en castellano
+  ca: Setze anys de blog, en valencià i en castellà
+descripcio:
+  es: >-
+    El blog que abrió en mayo de 2010, al poco de decidir a los sesenta que tenía que aprender a
+    manejar el ordenador, y que ha escrito con paradas por medio hasta 2026. Setenta y dos entradas
+    sobre Cinctorres y sobre Castelló, sobre los libros que lee, las salidas con las amigas de la
+    Universitat per a Majors, la naturaleza y su memoria, alternando el valenciano y el castellano
+    de una entrada a otra. Una parte no las firma ella, sino Listo, su perro. La plantilla de
+    Blogger pintaba las entradas con JavaScript y guardar las páginas guardaba el marco vacío: todo
+    se ha recuperado del canal de datos y se conserva en texto plano y JPEG.
+  ca: >-
+    El blog que va obrir el maig de 2010, poc després de decidir als seixanta que havia d'aprendre a
+    fer servir l'ordinador, i que ha escrit amb parades pel mig fins al 2026. Setanta-dos entrades
+    sobre Cinctorres i sobre Castelló, sobre els llibres que llig, les eixides amb la colla d'amigues
+    de la Universitat per a Majors, la natura i la seua memòria, alternant el valencià i el castellà
+    d'una entrada a l'altra. Una part no les firma ella, sinó Listo, el seu gos. La plantilla de
+    Blogger pintava les entrades amb JavaScript i guardar les pàgines guardava el marc buit: tot
+    s'ha recuperat del canal de dades i es conserva en text pla i JPEG.
+url: https://jtpadilla.github.io/lesmeuescoses/
+repositori: https://github.com/jtpadilla/lesmeuescoses
+portada: ../imatges/portada-lesmeuescoses.jpg
+portadaAlt:
+  es: El cobrellit y la ropa antigua de la casa, extendidos sobre la cama
+  ca: El cobrellit i la roba antiga de la casa, estesos damunt del llit

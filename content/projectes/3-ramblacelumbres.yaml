@@ -1,0 +1,32 @@
+slug: ramblacelumbres
+ordre: 3
+titol: Rambla Celumbres
+tipus: guia
+anys: 2014 – 2016
+rol:
+  es: Autora de los textos
+  ca: Autora dels textos
+subtitol:
+  es: Guía de la biodiversidad de la rambla, en la comarca dels Ports
+  ca: Guia de la biodiversitat de la rambla, a la comarca dels Ports
+descripcio:
+  es: >-
+    Entre 2014 y 2016 recorrió una y otra vez, con su hermano Tadeo, la rambla de Celumbres, entre
+    Cinctorres, Castellfort y Portell de Morella, identificando y describiendo lo que encontraban:
+    el paraje y las cuatro estaciones, los árboles, las orquídeas y las flores silvestres, las
+    mariposas y las polillas, las aves rapaces y la cabra montés, los hongos y los líquenes. Ella
+    escribía y él fotografiaba. Lo publicaron en un blog que hoy es una guía de veintitrés
+    capítulos, con los textos corregidos y traducidos al valenciano, al inglés y al chino.
+  ca: >-
+    Entre 2014 i 2016 va recórrer una vegada i una altra, amb el seu germà Tadeo, la rambla de
+    Celumbres, entre Cinctorres, Castellfort i Portell de Morella, identificant i descrivint el que
+    hi trobaven: el paratge i les quatre estacions, els arbres, les orquídies i les flors
+    silvestres, les papallones i les arnes, les aus rapinyaires i la cabra salvatge, els fongs i els
+    líquens. Ella escrivia i ell fotografiava. Ho van publicar en un blog que hui és una guia de
+    vint-i-tres capítols, amb els textos corregits i traduïts al valencià, a l'anglés i al xinés.
+url: https://ramblacelumbres.org/
+repositori: https://github.com/jtpadilla/ramblacelumbres
+portada: ../imatges/portada-ramblacelumbres.jpg
+portadaAlt:
+  es: La rambla de Celumbres bajando entre los cortados de roca y el pinar
+  ca: La rambla de Celumbres baixant entre els cingles de roca i la pineda

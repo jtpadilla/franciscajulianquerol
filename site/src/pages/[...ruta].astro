@@ -1,0 +1,33 @@
+---
+/**
+ * Todas las paginas del sitio, en los dos idiomas, salen de esta ruta.
+ *
+ * El castellano va en la raiz (/la-autora/) y el valenciano bajo /ca/ (/ca/l-autora/).
+ * Las direcciones se construyen en src/site/config.ts; aqui solo se enumeran.
+ */
+import type { GetStaticPaths } from 'astro';
+import { BASE, LANGS, PAGINA_KEYS, urlInici, urlPagina, type Lang, type PaginaKey } from '../site/config';
+import Inici from '../vistes/Inici.astro';
+import Pagina from '../vistes/Pagina.astro';
+
+type Props = { tipus: 'inici'; lang: Lang } | { tipus: 'pagina'; lang: Lang; pagina: PaginaKey };
+
+export const getStaticPaths = (() => {
+  // Astro espera el parametro sin la base del sitio ni barras; la raiz es `undefined`.
+  const param = (url: string) => url.slice(BASE.length).replace(/^\/|\/$/g, '') || undefined;
+  const rutes: { params: { ruta: string | undefined }; props: Props }[] = [];
+
+  for (const lang of LANGS) {
+    rutes.push({ params: { ruta: param(urlInici(lang)) }, props: { tipus: 'inici', lang } });
+    for (const pagina of PAGINA_KEYS) {
+      rutes.push({ params: { ruta: param(urlPagina(lang, pagina)) }, props: { tipus: 'pagina', lang, pagina } });
+    }
+  }
+  return rutes;
+}) satisfies GetStaticPaths;
+
+const p = Astro.props as Props;
+---
+
+{p.tipus === 'inici' && <Inici lang={p.lang} />}
+{p.tipus === 'pagina' && <Pagina lang={p.lang} pagina={p.pagina} />}

@@ -1,0 +1,67 @@
+---
+import { Font } from 'astro:assets';
+import Capcalera from '../components/Capcalera.astro';
+import Peu from '../components/Peu.astro';
+import { LLOC, LANGS, LANG_PER_DEFECTE, CODI_IDIOMA, urlPublic, type Lang, type Alternatives } from '../site/config';
+import { ui } from '../site/ui';
+import '../styles/global.css';
+
+interface Props {
+  lang: Lang;
+  titol?: string;
+  descripcio?: string;
+  /** ruta de la imagen para redes, relativa al sitio */
+  imatge?: string;
+  alternatives?: Alternatives;
+  actiu?: 'inici' | 'autora' | 'edicio';
+}
+
+const { lang, titol, descripcio = LLOC.descripcio[lang], imatge, alternatives, actiu } = Astro.props;
+const t = ui(lang);
+const titolComplet = titol ? `${titol} · ${LLOC.titol[lang]}` : LLOC.titol[lang];
+const canonica = new URL(Astro.url.pathname, Astro.site);
+const imatgeAbs = imatge ? new URL(imatge, Astro.site).href : undefined;
+---
+
+<!doctype html>
+<html lang={CODI_IDIOMA[lang]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titolComplet}</title>
+    <meta name="description" content={descripcio} />
+    <link rel="canonical" href={canonica.href} />
+    {alternatives && LANGS.map((l) => (
+      <link rel="alternate" hreflang={CODI_IDIOMA[l]} href={new URL(alternatives[l], Astro.site).href} />
+    ))}
+    {alternatives && (
+      <link rel="alternate" hreflang="x-default" href={new URL(alternatives[LANG_PER_DEFECTE], Astro.site).href} />
+    )}
+    <link rel="icon" href={urlPublic('favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={urlPublic('sitemap-index.xml')} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#17140f" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={LLOC.titol[lang]} />
+    <meta property="og:title" content={titol ?? LLOC.titol[lang]} />
+    <meta property="og:description" content={descripcio} />
+    <meta property="og:url" content={canonica.href} />
+    <meta property="og:locale" content={LLOC.locale[lang].replace('-', '_')} />
+    {imatgeAbs && <meta property="og:image" content={imatgeAbs} />}
+    <meta name="twitter:card" content={imatgeAbs ? 'summary_large_image' : 'summary'} />
+
+    <Font cssVariable="--fuente-titulos" preload />
+    <Font cssVariable="--fuente-texto" preload />
+  </head>
+  <body>
+    <a class="saltar" href="#contingut">{t.saltar}</a>
+    <Capcalera lang={lang} alternatives={alternatives} actiu={actiu} />
+    <main id="contingut">
+      <slot />
+    </main>
+    <Peu lang={lang} alternatives={alternatives} />
+  </body>
+</html>

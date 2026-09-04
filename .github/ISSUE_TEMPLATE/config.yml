@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Masos de Morella
+    url: https://github.com/jtpadilla/masosdemorella/issues
+    about: Correcciones del libro y de su edición digital.
+  - name: Santjoans
+    url: https://github.com/jtpadilla/santjoans/issues
+    about: Correcciones del visor del pavimento cerámico.
+  - name: Rambla Celumbres
+    url: https://github.com/jtpadilla/ramblacelumbres/issues
+    about: Correcciones de la guía de biodiversidad y de sus traducciones.
+  - name: Les meues coses
+    url: https://github.com/jtpadilla/lesmeuescoses/issues
+    about: Correcciones del blog recuperado.

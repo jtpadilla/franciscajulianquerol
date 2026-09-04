@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { LLOC, alternativesPagina, type Lang, type PaginaKey } from '../site/config';
+
+interface Props { lang: Lang; pagina: PaginaKey }
+const { lang, pagina } = Astro.props;
+
+const entrada = (await getCollection('pagines')).find(
+  (p) => p.data.key === pagina && p.data.lang === lang,
+)!;
+const { Content } = await render(entrada);
+const retrat = entrada.data.retrat;
+---
+
+<Base
+  lang={lang}
+  titol={entrada.data.title}
+  descripcio={entrada.data.resum}
+  alternatives={alternativesPagina(pagina)}
+  actiu={pagina}
+>
+  <article class="pagina">
+    <div class="lectura">
+      <p class="antetitol">{LLOC.nom}</p>
+      <h1>{entrada.data.title}</h1>
+      <p class="resum">{entrada.data.resum}</p>
+
+      <div class="prosa">
+        {retrat && (
+          <figure class="retrat-pagina">
+            <Image src={retrat} alt={LLOC.nom} widths={[280, 560]} sizes="13rem" loading="lazy" />
+          </figure>
+        )}
+        <Content />
+      </div>
+    </div>
+  </article>
+</Base>

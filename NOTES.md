@@ -1,0 +1,93 @@
+# NOTES.md — decisiones y hallazgos
+
+Lo que se ha decidido y lo que se ha encontrado al montar esta portada. Las tareas pendientes están
+en `TODO.md`.
+
+---
+
+## 2026-09-04 · Arranque del proyecto
+
+### Tecnología
+
+Se eligió **Astro 7** por coherencia con los tres sitios de contenido de la familia
+(`astro@^7.2.10`, Node ≥ 22.12, `sharp`, `@astrojs/sitemap`), que permiten reutilizar el layout, los
+tokens de color claro/oscuro, el patrón de i18n y el workflow de despliegue sin reinventar nada.
+
+Descartados: React/Next (no hay interactividad que lo justifique), HTML a mano (perdería la
+infraestructura ya escrita) y 11ty/Hugo (rompería la convención de la familia sin ganar nada).
+Tampoco se usa Pagefind, que sí llevan masosdemorella y lesmeuescoses: con cinco fichas no hay nada
+que buscar.
+
+### Decisiones con el usuario
+
+- **URL**: subruta `/franciscajulianquerol/` de GitHub Pages, sin dominio propio.
+- **Idiomas**: castellano (raíz) y valenciano (`/ca/`), con selector.
+- **Métricas**: guion reproducible + JSON versionado, no números a mano ni submódulos.
+
+### El recuento
+
+`tools/metriques.py` lee los cuatro repositorios clonados en `~/IdeaProjects/`. Las definiciones,
+que hay que mantener alineadas con lo que dice al público `content/edicio.*.md`:
+
+- **Textos**: ficheros de contenido de la autora. `content/*.md` en masosdemorella (12 capítulos),
+  `src/content/articulos/es/*.md` en ramblacelumbres (23 guías) y `content/entrades/*.md` en
+  lesmeuescoses (72 entradas). Total **107**.
+- **Palabras**: del cuerpo del Markdown, quitando frontmatter, sintaxis de imagen con su pie,
+  comentarios HTML, etiquetas HTML y marcas de Markdown. Total **70.265**.
+- **Fotografías**: imágenes originales a tamaño completo. Total **486**.
+- **Piezas cerámicas**: **434** piezas distintas de Santjoans.
+- **Traducciones**: **69** ficheros (23 guías × ca, en, zh).
+
+### Lo que NO se suma, y por qué
+
+1. **Las traducciones no cuentan como palabras.** Los cuatro idiomas de ramblacelumbres suman 27.936
+   palabras, pero son la misma obra cuatro veces. Se cuenta solo el castellano (8.104), que es la
+   lengua en que la autora escribió las guías. El valenciano, el inglés y el chino son trabajo de
+   esa edición, y aparecen aparte como «textos traducidos».
+2. **Las piezas de Santjoans no cuentan como fotografías.** El repositorio tiene 1.302 JPEG bajo
+   `piezes/`, pero son 434 piezas guardadas en tres tamaños (60, 360 y 550 px). Sumarlas triplicaría
+   el recuento y además mezclaría cosas distintas: se cuenta la pieza, no el fichero, y va en su
+   propia cifra.
+3. **El retrato de la autora no cuenta como fotografía del blog.** `blogger-export/images/` tiene 142
+   ficheros; uno es la foto de perfil, que se excluye. Quedan **141**, que es lo que dice el README de
+   lesmeuescoses.
+4. **Las ilustraciones no son fotografías.** Los seis SVG de masosdemorella (el mapa dels Ports
+   redibujado y cinco ilustraciones de esa edición) y el mapa de ramblacelumbres van en
+   `illustracions`, y de momento no se enseñan en la portada.
+
+### Diferencias con las cifras de los README hermanos
+
+- masosdemorella dice «~27.657 palabras» contando el Markdown en bruto; aquí salen **27.170** al
+  quitar los anclajes `<a id="pN" class="pag">` y los pies de foto.
+- lesmeuescoses dice «~29.300 palabras» en su `CLAUDE.md`, que era el recuento del **HTML original de
+  Blogger** antes del repaso editorial; sobre los masters ya corregidos salen **34.991**.
+
+No son errores de nadie: son definiciones distintas. La de aquí está escrita en `tools/metriques.py`
+y explicada al público en «Sobre esta página».
+
+### El CI no puede recalcular
+
+El workflow de GitHub Actions no tiene los repositorios hermanos, así que **no se puede enganchar
+`metriques.py --comprova` al despliegue**, a diferencia de `comprova.py` en lesmeuescoses. El JSON
+versionado es la única fuente en el build; si alguien cambia el recuento y no lo ejecuta en local,
+las cifras publicadas se quedan atrás en silencio. Está anotado como riesgo en `TODO.md` (T-04).
+
+### Material reutilizado
+
+- Retrato: `lesmeuescoses/blogger-export/images/perfil/01-IMG_0923.JPG` (1600×1200), la misma foto de
+  perfil que usaba el blog. En `santjoans-web/public/proyecto/FranciscaJulian.jpg` está la misma
+  imagen, pero diminuta.
+- Portadas: el Mas de Julian (masosdemorella), un azulejo con una liebre (santjoans), la rambla desde
+  el cortado (ramblacelumbres) y el cobrellit con la ropa antigua (lesmeuescoses).
+- La biografía se ha escrito a partir de `lesmeuescoses/content/autora.md`, que a su vez sale de lo
+  que la autora contó en sus entradas; se enlazan las entradas concretas.
+
+### Detalles técnicos que conviene recordar
+
+- El castellano deja sin punto los números de cuatro cifras (`toLocaleString('es-ES')` da «8104»),
+  y al lado de «27.170» quedaba raro. `xifra()` fuerza `useGrouping: 'always'`.
+- En un `<dl>`, el `<dt>` tiene que ir antes que el `<dd>`; la banda de cifras enseña el número
+  encima de la etiqueta con `flex-direction: column-reverse`, no cambiando el orden del HTML.
+- Los identificadores del cargador `glob` de Astro no son fiables con nombres como `autora.es.md`,
+  así que cada página de prosa lleva un `key` explícito en el frontmatter y se busca por `key` +
+  `lang`, no por id.

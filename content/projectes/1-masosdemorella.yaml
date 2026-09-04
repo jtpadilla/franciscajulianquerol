@@ -1,0 +1,34 @@
+slug: masosdemorella
+ordre: 1
+titol: Masos de Morella
+tipus: llibre
+anys: 2006 – 2016
+rol:
+  es: Autora del libro
+  ca: Autora del llibre
+subtitol:
+  es: Vida y costumbres en la Dena dels Llivis
+  ca: Vida i costums en la Dena dels Llivis
+descripcio:
+  es: >-
+    Su trabajo de final del primer ciclo de la Universitat per a Majors, tutelado por el profesor
+    Lluís B. Meseguer, que la Universitat Jaume I publicó en 2006 como «Masies de Morella» y que
+    ella misma revisó en 2016. Cuenta cómo se vivía en la masía donde nació su padre: el marco
+    geográfico y la historia, la agricultura y la ganadería, la casa, las costumbres, el ciclo anual
+    de fiestas y la literatura oral. La edición impresa está agotada y no queda ningún ejemplar
+    localizable; esta recupera la revisión de 2016 desde el PDF y los originales que conservaba la
+    familia, y publica el libro también en EPUB y en PDF.
+  ca: >-
+    El seu treball de final del primer cicle de la Universitat per a Majors, tutelat pel professor
+    Lluís B. Meseguer, que la Universitat Jaume I va publicar el 2006 com a «Masies de Morella» i
+    que ella mateixa va revisar el 2016. Conta com es vivia a la masia on va nàixer son pare: el
+    marc geogràfic i la història, l'agricultura i la ramaderia, la llar, els costums, el cicle anual
+    de festes i la literatura oral. L'edició impresa està esgotada i no en queda cap exemplar
+    localitzable; esta recupera la revisió de 2016 des del PDF i dels originals que conservava la
+    família, i publica el llibre també en EPUB i en PDF.
+url: https://jtpadilla.github.io/masosdemorella/
+repositori: https://github.com/jtpadilla/masosdemorella
+portada: ../imatges/portada-masosdemorella.jpg
+portadaAlt:
+  es: El Mas de Julián, con el rebaño pastando entre paredes de piedra seca
+  ca: El Mas de Julian, amb el ramat pasturant entre parets de pedra seca

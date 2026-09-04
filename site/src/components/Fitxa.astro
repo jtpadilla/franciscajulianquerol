@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { METRIQUES, type Lang } from '../site/config';
+import { ui, xifresProjecte } from '../site/ui';
+
+interface Props { projecte: CollectionEntry<'projectes'>; lang: Lang }
+const { projecte, lang } = Astro.props;
+const p = projecte.data;
+const t = ui(lang);
+const xifres = xifresProjecte(METRIQUES.projectes[p.slug]!, lang);
+---
+
+<article class="fitxa">
+  <div class="fitxa-foto">
+    <Image src={p.portada} alt={p.portadaAlt[lang]} widths={[480, 900]} sizes="(min-width: 46rem) 17rem, 100vw" loading="lazy" />
+  </div>
+
+  <div class="fitxa-cos">
+    <p class="fitxa-dalt">
+      <span class="etiqueta">{t.tipus[p.tipus]}</span>
+      <span class="anys">{p.anys}</span>
+    </p>
+
+    <h3>{p.titol}</h3>
+    <p class="subtitol">{p.subtitol[lang]}</p>
+    <p class="rol">{t.rol}: <b>{p.rol[lang]}</b></p>
+    <p class="descripcio">{p.descripcio[lang]}</p>
+
+    {xifres.length > 0 && (
+      <ul class="fitxa-xifres">
+        {xifres.map((x) => <li>{x}</li>)}
+      </ul>
+    )}
+
+    <p class="fitxa-accions">
+      <a class="boto" href={p.url} rel="noopener">{t.anarAlLloc} →</a>
+      <a class="boto boto-secundari" href={p.repositori} rel="noopener">{t.codiFont}</a>
+    </p>
+  </div>
+</article>

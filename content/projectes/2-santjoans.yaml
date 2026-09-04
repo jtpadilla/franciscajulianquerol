@@ -1,0 +1,34 @@
+slug: santjoans
+ordre: 2
+titol: Santjoans
+tipus: estudi
+anys: 2010 – 2012
+rol:
+  es: Autora del estudio
+  ca: Autora de l'estudi
+subtitol:
+  es: El pavimento cerámico zoomórfico del Palau Santjoans
+  ca: El paviment ceràmic zoomòrfic del Palau Santjoans
+descripcio:
+  es: >-
+    Su trabajo de final del segundo ciclo de la Universitat per a Majors: el estudio del pavimento
+    de cerámica con figuras de animales de la planta noble de la casa Santjoans de Cinctorres,
+    fabricado en las reales fábricas de Valencia en la segunda mitad del siglo XVIII. De pequeña no
+    había podido verlo, y se lo describía su padre, el herrero del pueblo, cuando volvía de arreglar
+    allí alguna cosa. Lo defendió en mayo de 2010 y la Diputació de Castelló lo publicó en 2012. El
+    visor, presentado ese verano en el Antic Escorxador, permite recorrer el pavimento pieza a
+    pieza; en 2026 se reescribió entero, sin tocar el contenido, para que siga funcionando.
+  ca: >-
+    El seu treball de final del segon cicle de la Universitat per a Majors: l'estudi del paviment de
+    ceràmica amb figures d'animals de la planta noble de la casa Santjoans de Cinctorres, fabricat a
+    les reials fàbriques de València a la segona meitat del segle XVIII. De xicoteta no l'havia
+    pogut veure, i li'l descrivia son pare, el ferrer del poble, quan tornava d'arreglar-hi alguna
+    cosa. El va defensar el maig de 2010 i la Diputació de Castelló el va publicar el 2012. El
+    visor, presentat aquell estiu a l'Antic Escorxador, permet recórrer el paviment peça a peça; el
+    2026 es va reescriure sencer, sense tocar el contingut, perquè continue funcionant.
+url: https://santjoans.es/
+repositori: https://github.com/jtpadilla/santjoans
+portada: ../imatges/portada-santjoans.jpg
+portadaAlt:
+  es: Azulejo del pavimento con una liebre pintada saltando sobre unas matas
+  ca: Rajola del paviment amb una llebre pintada saltant sobre unes mates
