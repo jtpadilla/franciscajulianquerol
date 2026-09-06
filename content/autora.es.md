@@ -49,3 +49,6 @@ los trabajos de los cursos de la Universitat per a Majors, escritos sobre Cincto
 Castelló, y las entradas de Listo, su perro, tal como las pulió para hacer con ellas un libro. Se han
 leído uno a uno y se publican tal como ella los escribió, sin corregirlos, en el quinto proyecto de
 esta página.
+
+Y no ha parado: sigue escribiendo, a un ritmo más pausado que antes. Lo nuevo va llegando al blog y a
+los escritos inéditos, y las cifras de esta página se actualizan cuando llega.

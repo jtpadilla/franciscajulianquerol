@@ -10,7 +10,7 @@ const es = {
 
   // ------------------------------------------------------------------ portada
   entradeta:
-    'Nació en Cinctorres en 1945, trabajó treinta y cinco años en el mercado de Sant Antoni de Castelló y, ya jubilada, se matriculó en la Universitat per a Majors. Desde entonces ha escrito un libro sobre la vida en los masos, ha estudiado el pavimento cerámico de una casa del pueblo, ha recorrido una rambla identificando lo que crece y lo que vuela, ha llevado un blog durante dieciséis años y ha dejado en el ordenador muchos más escritos que ahora salen a la luz.',
+    'Nació en Cinctorres en 1945, trabajó treinta y cinco años en el mercado de Sant Antoni de Castelló y, ya jubilada, se matriculó en la Universitat per a Majors. Desde entonces ha escrito un libro sobre la vida en los masos, ha estudiado el pavimento cerámico de una casa del pueblo, ha recorrido una rambla identificando lo que crece y lo que vuela, ha llevado un blog durante dieciséis años y ha dejado en el ordenador muchos más escritos que ahora salen a la luz. Y sigue escribiendo, a un ritmo más pausado.',
   saberMes: 'Conocer a la autora',
   veureObra: 'Ver la obra',
 
@@ -77,7 +77,7 @@ const ca: typeof es = {
   inici: 'Portada',
 
   entradeta:
-    "Va nàixer a Cinctorres el 1945, va treballar trenta-cinc anys al mercat de Sant Antoni de Castelló i, ja jubilada, es va matricular a la Universitat per a Majors. Des d'aleshores ha escrit un llibre sobre la vida als masos, ha estudiat el paviment ceràmic d'una casa del poble, ha recorregut una rambla identificant el que hi creix i el que hi vola, ha portat un blog durant setze anys i ha deixat a l'ordinador molts més escrits que ara ixen a la llum.",
+    "Va nàixer a Cinctorres el 1945, va treballar trenta-cinc anys al mercat de Sant Antoni de Castelló i, ja jubilada, es va matricular a la Universitat per a Majors. Des d'aleshores ha escrit un llibre sobre la vida als masos, ha estudiat el paviment ceràmic d'una casa del poble, ha recorregut una rambla identificant el que hi creix i el que hi vola, ha portat un blog durant setze anys i ha deixat a l'ordinador molts més escrits que ara ixen a la llum. I continua escrivint, a un ritme més pausat.",
   saberMes: "Conéixer l'autora",
   veureObra: "Veure l'obra",
 

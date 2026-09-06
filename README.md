@@ -12,7 +12,8 @@ escrito y dónde leerlo.
 
 Esta página no añade obra nueva: presenta a la autora, cuenta lo que hay y lleva a cada proyecto. Es
 la puerta de entrada a las cinco ediciones digitales que ha preparado la familia, y está en
-**castellano y valenciano**.
+**castellano y valenciano**. La autora sigue escribiendo, a un ritmo más pausado: lo nuevo llega al
+blog y a los escritos inéditos, y las cifras se recalculan cuando llega.
 
 ## Los proyectos
 

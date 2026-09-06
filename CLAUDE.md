@@ -50,6 +50,9 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
    falla mientras Pages no esté encendido, que es lo que ocurrió en el primer push.
 6. El quinto proyecto, **franciscaineditos** («Escrits inèdits»), incorporado el 2026-09-06 (T-01):
    recuento, ficha, portada, prosa y textos del sitio en los dos idiomas. Sigue siendo 7 páginas.
+7. Los cinco sitios enlazan a esta portada (T-05, 2026-09-06). La portada, la descripción para
+   buscadores y la biografía dicen que la autora **sigue escribiendo, a un ritmo más pausado**: la
+   obra no está cerrada, y por eso las cifras se recalculan cuando un hermano crece.
 
 **Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
 cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada (T-05).

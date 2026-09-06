@@ -47,3 +47,6 @@ memòries, un llarg treball sobre l'agricultura i els costums del món rural, re
 treballs dels cursos de la Universitat per a Majors, escrits sobre Cinctorres i sobre Castelló, i les
 entrades de Listo, el seu gos, tal com les va polir per a fer-ne un llibre. S'han llegit un a un i es
 publiquen tal com ella els va escriure, sense corregir-los, en el cinqué projecte d'esta pàgina.
+
+I no ha parat: continua escrivint, a un ritme més pausat que abans. El que és nou va arribant al blog
+i als escrits inèdits, i les xifres d'esta pàgina s'actualitzen quan arriba.
