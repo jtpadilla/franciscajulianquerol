@@ -1,6 +1,6 @@
 {
-  "generat": "2026-09-04",
-  "arrel": "~/IdeaProjects",
+  "generat": "2026-09-06",
+  "arrel": "~/IdeaProjects/francisca",
   "projectes": {
     "masosdemorella": {
       "textos": 12,
@@ -30,19 +30,27 @@
     "lesmeuescoses": {
       "textos": 72,
       "unitat": "entrades",
-      "paraules": 34991,
+      "paraules": 35065,
       "fotografies": 141,
       "comentaris": 38
+    },
+    "franciscaineditos": {
+      "textos": 144,
+      "unitat": "escrits",
+      "obres": 12,
+      "paraules": 201163,
+      "fotografies": 378
     }
   },
   "totals": {
-    "projectes": 4,
-    "textos": 107,
-    "paraules": 70265,
-    "fotografies": 486,
+    "projectes": 5,
+    "textos": 251,
+    "paraules": 271502,
+    "fotografies": 864,
     "illustracions": 7,
     "peces": 434,
     "traduccions": 69,
-    "comentaris": 38
+    "comentaris": 38,
+    "obres": 12
   }
 }

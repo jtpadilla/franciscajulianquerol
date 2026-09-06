@@ -40,3 +40,12 @@ Ella lo presentó así:
 
 > Les meues coses quiere decir MIS COSAS. Escribo en castellano y en mi lengua materna el valenciano,
 > me gusta todo lo que despierta mi curiosidad. Este vicio los años no lo curan.
+
+## Lo que quedaba en el ordenador
+
+Al margen de todo eso, en su ordenador quedaban muchos más textos que nunca habían salido de él: las
+memorias, un largo trabajo sobre la agricultura y las costumbres del mundo rural, relatos y poemas,
+los trabajos de los cursos de la Universitat per a Majors, escritos sobre Cinctorres y sobre
+Castelló, y las entradas de Listo, su perro, tal como las pulió para hacer con ellas un libro. Se han
+leído uno a uno y se publican tal como ella los escribió, sin corregirlos, en el quinto proyecto de
+esta página.

@@ -1,7 +1,7 @@
 # Cómo colaborar
 
 Este repositorio es la **portada** de la obra de Francisca Julián Querol: presenta a la autora,
-cuenta lo que hay y enlaza a los cuatro proyectos. No contiene la obra en sí.
+cuenta lo que hay y enlaza a los cinco proyectos. No contiene la obra en sí.
 
 ## Correcciones
 
@@ -22,7 +22,7 @@ tomadas y cómo se añade un proyecto nuevo.
 Dos cosas que se olvidan con facilidad:
 
 1. **Las cifras se cuentan, no se escriben.** Si cambias algo del recuento, ejecuta
-   `python3 tools/metriques.py` **en local** (necesita los cuatro repositorios clonados al lado de
+   `python3 tools/metriques.py` **en local** (necesita los cinco repositorios clonados al lado de
    este) y commitea `content/metriques.json`. El CI no puede recalcularlas.
 2. **Todos los enlaces internos pasan por `BASE`.** El sitio vive en una subruta
    (`/franciscajulianquerol/`): un `href="/algo/"` a pelo lo rompe. Usa las funciones de

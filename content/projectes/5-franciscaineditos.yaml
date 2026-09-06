@@ -1,0 +1,34 @@
+slug: franciscaineditos
+ordre: 5
+titol: Escrits inèdits
+tipus: inedits
+anys: 2006 – 2026
+rol:
+  es: Autora de los escritos
+  ca: Autora dels escrits
+subtitol:
+  es: Los textos que nunca habían salido del ordenador, elegidos uno a uno
+  ca: Els textos que no havien eixit mai de l'ordinador, triats un a un
+descripcio:
+  es: >-
+    Lo que quedaba en su ordenador al margen de los otros cuatro proyectos: las memorias, el gran
+    trabajo sobre la agricultura y las costumbres del mundo rural, los relatos y los poemas, los
+    trabajos de los cursos de la Universitat per a Majors, el pueblo y la ciudad, la genealogía de
+    los Polo de Bernabé, las entradas de Listo tal como las pulió para su libro. Se han leído uno a
+    uno, por tandas, y se ha elegido de cada texto la versión más completa, dejando fuera las
+    copias, los borradores, lo que era de otras personas y lo que ya está en el blog. Se publican
+    tal como ella los escribió, sin corregirlos, agrupados por obra y con buscador.
+  ca: >-
+    El que quedava al seu ordinador al marge dels altres quatre projectes: les memòries, el gran
+    treball sobre l'agricultura i els costums del món rural, els relats i els poemes, els treballs
+    dels cursos de la Universitat per a Majors, el poble i la ciutat, la genealogia dels Polo de
+    Bernabé, les entrades de Listo tal com les va polir per al seu llibre. S'han llegit un a un, per
+    tandes, i s'ha triat de cada text la versió més completa, deixant fora les còpies, els
+    esborranys, el que era d'altres persones i el que ja està al blog. Es publiquen tal com ella els
+    va escriure, sense corregir-los, agrupats per obra i amb cercador.
+url: https://jtpadilla.github.io/franciscaineditos/
+repositori: https://github.com/jtpadilla/franciscaineditos
+portada: ../imatges/portada-franciscaineditos.jpg
+portadaAlt:
+  es: Una boda en Cinctorres hacia 1940, delante de la casa Santjoans, con sus padres de luto a la izquierda
+  ca: Una boda a Cinctorres cap a 1940, davant de la casa Santjoans, amb sos pares de dol a l'esquerra

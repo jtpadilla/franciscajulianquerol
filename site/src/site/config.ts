@@ -16,12 +16,12 @@ export const LLOC = {
     ca: 'Francisca Julián Querol',
   } as T,
   lema: {
-    es: 'Un libro, un estudio, una guía de campo y dieciséis años de blog, de Cinctorres a Castelló',
-    ca: 'Un llibre, un estudi, una guia de camp i setze anys de blog, de Cinctorres a Castelló',
+    es: 'Un libro, un estudio, una guía de campo, dieciséis años de blog y los escritos que quedaban en el ordenador, de Cinctorres a Castelló',
+    ca: "Un llibre, un estudi, una guia de camp, setze anys de blog i els escrits que quedaven a l'ordinador, de Cinctorres a Castelló",
   } as T,
   descripcio: {
-    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans, la guía de biodiversidad de la rambla de Celumbres y el blog «Les meues coses». Cuatro ediciones digitales familiares, sin publicidad y sin cookies.',
-    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans, la guia de biodiversitat de la rambla de Celumbres i el blog «Les meues coses». Quatre edicions digitals familiars, sense publicitat i sense galetes.",
+    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans, la guía de biodiversidad de la rambla de Celumbres, el blog «Les meues coses» y los escritos inéditos que quedaban en su ordenador. Cinco ediciones digitales familiares, sin publicidad y sin cookies.',
+    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans, la guia de biodiversitat de la rambla de Celumbres, el blog «Les meues coses» i els escrits inèdits que quedaven al seu ordinador. Cinc edicions digitals familiars, sense publicitat i sense galetes.",
   } as T,
   locale: { es: 'es-ES', ca: 'ca-ES' } as T,
   repositori: 'https://github.com/jtpadilla/franciscajulianquerol',
@@ -35,8 +35,10 @@ export const LLOC = {
 /** Cifras de un proyecto, tal como las cuenta tools/metriques.py. */
 export interface MetriquesProjecte {
   textos: number;
-  unitat: 'capitols' | 'guies' | 'entrades' | 'peces';
+  unitat: 'capitols' | 'guies' | 'entrades' | 'peces' | 'escrits';
   paraules: number;
+  /** Escritos ineditos: en cuantas obras se agrupan los textos. */
+  obres?: number;
   fotografies?: number;
   illustracions?: number;
   traduccions?: number;
@@ -61,6 +63,7 @@ export interface Metriques {
     peces: number;
     traduccions: number;
     comentaris: number;
+    obres: number;
   };
 }
 

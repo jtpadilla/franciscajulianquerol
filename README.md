@@ -11,7 +11,7 @@ escrito y dónde leerlo.
 > — presentación de su blog, de la autora
 
 Esta página no añade obra nueva: presenta a la autora, cuenta lo que hay y lleva a cada proyecto. Es
-la puerta de entrada a las cuatro ediciones digitales que ha preparado la familia, y está en
+la puerta de entrada a las cinco ediciones digitales que ha preparado la familia, y está en
 **castellano y valenciano**.
 
 ## Los proyectos
@@ -22,9 +22,10 @@ la puerta de entrada a las cuatro ediciones digitales que ha preparado la famili
 | **Santjoans** (2010–2012) | El estudio del pavimento cerámico zoomórfico del Palau Santjoans | Autora del estudio | [santjoans.es](https://santjoans.es/) |
 | **Rambla Celumbres** (2014–2016) | Guía de biodiversidad de la rambla, con las fotografías de su hermano Tadeo | Autora de los textos | [ramblacelumbres.org](https://ramblacelumbres.org/) |
 | **Les meues coses** (2010–2026) | Dieciséis años de blog, en valenciano y en castellano | Autora | [jtpadilla.github.io/lesmeuescoses](https://jtpadilla.github.io/lesmeuescoses/) |
+| **Escrits inèdits** (2006–2026) | Los textos que quedaban en su ordenador, elegidos uno a uno: memorias, mundo rural, poemas, relatos, trabajos de curso | Autora | [jtpadilla.github.io/franciscaineditos](https://jtpadilla.github.io/franciscaineditos/) |
 
-Falta por incorporar un quinto proyecto, todavía pendiente. Añadirlo es escribir un fichero en
-`content/projectes/`; no hay que tocar ninguna plantilla.
+Añadir un proyecto es escribir un fichero en `content/projectes/` y una función de recuento en
+`tools/metriques.py`; no hay que tocar ninguna plantilla.
 
 ## Qué hay aquí
 
@@ -33,23 +34,25 @@ Falta por incorporar un quinto proyecto, todavía pendiente. Añadirlo es escrib
 | `content/projectes/` | **Una ficha por proyecto** (`*.yaml`): título, años, papel de la autora, descripción en los dos idiomas, portada y enlaces. |
 | `content/autora.*.md` | La biografía de la autora, en castellano y en valenciano. |
 | `content/edicio.*.md` | «Sobre esta página»: cómo se cuentan las cifras y con qué licencia se publica todo. |
-| `content/imatges/` | El retrato y las cuatro portadas, copiadas de los repositorios de origen. |
+| `content/imatges/` | El retrato y las cinco portadas, copiadas de los repositorios de origen. |
 | `content/metriques.json` | **Las cifras, generadas**, no escritas a mano. Sale de `tools/metriques.py`. |
 | `site/` | El sitio web (Astro 7). Se publica en GitHub Pages con cada push a `main`. |
-| `tools/metriques.py` | El recuento: lee los cuatro repositorios hermanos y escribe `content/metriques.json`. |
+| `tools/metriques.py` | El recuento: lee los cinco repositorios hermanos y escribe `content/metriques.json`. |
 | `CLAUDE.md` | Cómo está montado todo y las convenciones del proyecto. |
 | `NOTES.md` / `TODO.md` | Decisiones tomadas y tareas pendientes (`T-nn`). |
 
 ## Las cifras
 
 Las métricas de la portada **no se escriben a mano**: las cuenta un guion que lee los repositorios de
-los cuatro proyectos, clonados al lado de este.
+los cinco proyectos, clonados al lado de este (en la carpeta que contiene este repositorio, o la
+que se indique con `--arrel`).
 
 ```bash
-git clone git@github.com:jtpadilla/masosdemorella.git   ../masosdemorella
-git clone git@github.com:jtpadilla/santjoans.git        ../santjoans
-git clone git@github.com:jtpadilla/ramblacelumbres.git  ../ramblacelumbres
-git clone git@github.com:jtpadilla/lesmeuescoses.git    ../lesmeuescoses
+git clone git@github.com:jtpadilla/masosdemorella.git     ../masosdemorella
+git clone git@github.com:jtpadilla/santjoans.git          ../santjoans
+git clone git@github.com:jtpadilla/ramblacelumbres.git    ../ramblacelumbres
+git clone git@github.com:jtpadilla/lesmeuescoses.git      ../lesmeuescoses
+git clone git@github.com:jtpadilla/franciscaineditos.git  ../franciscaineditos
 
 python3 tools/metriques.py              # recuenta y escribe content/metriques.json
 python3 tools/metriques.py --comprova   # no escribe: falla si el fichero está desfasado

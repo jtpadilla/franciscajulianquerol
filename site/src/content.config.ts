@@ -16,7 +16,7 @@ export const collections = {
         slug: z.string(),
         ordre: z.number(),
         titol: z.string(),
-        tipus: z.enum(['llibre', 'estudi', 'guia', 'blog']),
+        tipus: z.enum(['llibre', 'estudi', 'guia', 'blog', 'inedits']),
         anys: z.string(),
         rol: bilingue,
         subtitol: bilingue,

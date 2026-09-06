@@ -39,3 +39,11 @@ presentar així:
 
 > Les meues coses quiere decir MIS COSAS. Escribo en castellano y en mi lengua materna el valenciano,
 > me gusta todo lo que despierta mi curiosidad. Este vicio los años no lo curan.
+
+## El que quedava a l'ordinador
+
+Al marge de tot això, al seu ordinador quedaven molts més textos que no n'havien eixit mai: les
+memòries, un llarg treball sobre l'agricultura i els costums del món rural, relats i poemes, els
+treballs dels cursos de la Universitat per a Majors, escrits sobre Cinctorres i sobre Castelló, i les
+entrades de Listo, el seu gos, tal com les va polir per a fer-ne un llibre. S'han llegit un a un i es
+publiquen tal com ella els va escriure, sense corregir-los, en el cinqué projecte d'esta pàgina.

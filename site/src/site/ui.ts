@@ -10,14 +10,14 @@ const es = {
 
   // ------------------------------------------------------------------ portada
   entradeta:
-    'Nació en Cinctorres en 1945, trabajó treinta y cinco años en el mercado de Sant Antoni de Castelló y, ya jubilada, se matriculó en la Universitat per a Majors. Desde entonces ha escrito un libro sobre la vida en los masos, ha estudiado el pavimento cerámico de una casa del pueblo, ha recorrido una rambla identificando lo que crece y lo que vuela, y ha llevado un blog durante dieciséis años.',
+    'Nació en Cinctorres en 1945, trabajó treinta y cinco años en el mercado de Sant Antoni de Castelló y, ya jubilada, se matriculó en la Universitat per a Majors. Desde entonces ha escrito un libro sobre la vida en los masos, ha estudiado el pavimento cerámico de una casa del pueblo, ha recorrido una rambla identificando lo que crece y lo que vuela, ha llevado un blog durante dieciséis años y ha dejado en el ordenador muchos más escritos que ahora salen a la luz.',
   saberMes: 'Conocer a la autora',
   veureObra: 'Ver la obra',
 
   // -------------------------------------------------------------------- cifras
   xifresTitol: 'Lo que hay, contado',
   xifresPeu: (data: string) =>
-    `Cifras contadas por «tools/metriques.py» sobre los repositorios de los cuatro proyectos, el ${data}. No están escritas a mano.`,
+    `Cifras contadas por «tools/metriques.py» sobre los repositorios de los cinco proyectos, el ${data}. No están escritas a mano.`,
   metriques: {
     projectes: ['proyecto', 'proyectos'],
     textos: ['texto', 'textos'],
@@ -29,7 +29,7 @@ const es = {
   // --------------------------------------------------------------------- indice
   indexTitol: 'La obra',
   indexIntro:
-    'Cuatro proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
+    'Cinco proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
   anarAlLloc: 'Ir al sitio',
   codiFont: 'Repositorio',
   rol: 'Su papel',
@@ -39,6 +39,7 @@ const es = {
     estudi: 'Estudio',
     guia: 'Guía de campo',
     blog: 'Blog',
+    inedits: 'Inéditos',
   } as Record<string, string>,
 
   unitats: {
@@ -46,10 +47,12 @@ const es = {
     guies: ['guía', 'guías'],
     entrades: ['entrada', 'entradas'],
     peces: ['pieza', 'piezas'],
+    escrits: ['escrito', 'escritos'],
   } as Record<string, [string, string]>,
 
   posicions: (n: string) => `${n} posiciones en el pavimento`,
   idiomes: (n: string) => `${n} idiomas`,
+  obres: ['obra', 'obras'] as [string, string],
 
   // ------------------------------------------------------------------------ pie
   peuNota:
@@ -74,13 +77,13 @@ const ca: typeof es = {
   inici: 'Portada',
 
   entradeta:
-    "Va nàixer a Cinctorres el 1945, va treballar trenta-cinc anys al mercat de Sant Antoni de Castelló i, ja jubilada, es va matricular a la Universitat per a Majors. Des d'aleshores ha escrit un llibre sobre la vida als masos, ha estudiat el paviment ceràmic d'una casa del poble, ha recorregut una rambla identificant el que hi creix i el que hi vola, i ha portat un blog durant setze anys.",
+    "Va nàixer a Cinctorres el 1945, va treballar trenta-cinc anys al mercat de Sant Antoni de Castelló i, ja jubilada, es va matricular a la Universitat per a Majors. Des d'aleshores ha escrit un llibre sobre la vida als masos, ha estudiat el paviment ceràmic d'una casa del poble, ha recorregut una rambla identificant el que hi creix i el que hi vola, ha portat un blog durant setze anys i ha deixat a l'ordinador molts més escrits que ara ixen a la llum.",
   saberMes: "Conéixer l'autora",
   veureObra: "Veure l'obra",
 
   xifresTitol: 'El que hi ha, comptat',
   xifresPeu: (data: string) =>
-    `Xifres comptades per «tools/metriques.py» sobre els repositoris dels quatre projectes, el ${data}. No estan escrites a mà.`,
+    `Xifres comptades per «tools/metriques.py» sobre els repositoris dels cinc projectes, el ${data}. No estan escrites a mà.`,
   metriques: {
     projectes: ['projecte', 'projectes'],
     textos: ['text', 'textos'],
@@ -91,7 +94,7 @@ const ca: typeof es = {
 
   indexTitol: "L'obra",
   indexIntro:
-    "Quatre projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
+    "Cinc projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
   anarAlLloc: 'Anar al lloc',
   codiFont: 'Repositori',
   rol: 'El seu paper',
@@ -101,6 +104,7 @@ const ca: typeof es = {
     estudi: 'Estudi',
     guia: 'Guia de camp',
     blog: 'Blog',
+    inedits: 'Inèdits',
   },
 
   unitats: {
@@ -108,10 +112,12 @@ const ca: typeof es = {
     guies: ['guia', 'guies'],
     entrades: ['entrada', 'entrades'],
     peces: ['peça', 'peces'],
+    escrits: ['escrit', 'escrits'],
   },
 
   posicions: (n: string) => `${n} posicions al paviment`,
   idiomes: (n: string) => `${n} idiomes`,
+  obres: ['obra', 'obres'] as [string, string],
 
   peuNota:
     'Iniciativa familiar sense ànim de lucre, sense publicitat i sense galetes, perquè el treball de la Paquita continue a la vista de qui vulga mirar-lo.',
@@ -140,6 +146,7 @@ export function xifresProjecte(m: MetriquesProjecte, lang: Lang): string[] {
   const t = ui(lang);
   const linies: string[] = [];
   if (m.textos > 0) linies.push(compta(m.textos, t.unitats[m.unitat]!, lang));
+  if (m.obres) linies.push(compta(m.obres, t.obres, lang));
   if (m.paraules > 0) linies.push(compta(m.paraules, t.metriques.paraules!, lang));
   if (m.peces) linies.push(compta(m.peces, t.metriques.peces!, lang));
   if (m.posicions) linies.push(t.posicions(xifra(m.posicions, lang)));

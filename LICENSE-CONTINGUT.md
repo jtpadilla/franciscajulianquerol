@@ -33,7 +33,7 @@ El guió de recompte (`tools/`) i el lloc web (`site/`) tenen llicència MIT: ve
 
 ---
 
-*Versión en castellano:* las fotografías proceden de los repositorios de los cuatro proyectos y
+*Versión en castellano:* las fotografías proceden de los repositorios de los cinco proyectos y
 conservan su licencia —CC BY-NC-ND 4.0, salvo la del pavimento de Santjoans, que es CC BY-NC 3.0—.
 Los textos escritos para esta portada se publican bajo CC BY-NC-ND 4.0. El código del repositorio es
 MIT.

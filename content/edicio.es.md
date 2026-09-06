@@ -8,7 +8,7 @@ resum: "Qué es esta portada, cómo se cuentan las cifras y con qué licencia se
 Esta página es la puerta de entrada a los proyectos de recuperación de la obra de **Francisca Julián
 Querol**. No añade obra nueva: solo presenta a la autora, cuenta lo que hay y lleva a cada sitio.
 
-Los cuatro proyectos son una iniciativa **familiar y sin ánimo de lucro**, sin publicidad y sin
+Los cinco proyectos son una iniciativa **familiar y sin ánimo de lucro**, sin publicidad y sin
 cookies. Los ha preparado **Juan Tadeo Padilla Julián**, hijo de la autora, que es también el
 contacto para cualquier corrección a través del repositorio de cada proyecto.
 
@@ -20,16 +20,17 @@ servidor y sin nada que mantener en marcha.
 ## De dónde salen las cifras
 
 Las cifras de esta página **no están escritas a mano**: las cuenta el guion `tools/metriques.py` de
-este repositorio, que lee los cuatro repositorios de los proyectos y deja el resultado en
+este repositorio, que lee los cinco repositorios de los proyectos y deja el resultado en
 `content/metriques.json`. Las definiciones son estas:
 
-- **Textos**: los ficheros de contenido de la autora —capítulos del libro, capítulos de la guía y
-  entradas del blog—. No cuentan las traducciones.
+- **Textos**: los ficheros de contenido de la autora —capítulos del libro, capítulos de la guía,
+  entradas del blog y escritos inéditos—. No cuentan las traducciones.
 - **Palabras**: las del cuerpo de esos textos, sin el frontmatter, sin los pies de foto y sin las
   etiquetas HTML. De la guía de la rambla se cuenta solo el castellano, la lengua en que la escribió;
   contar también el valenciano, el inglés y el chino cuadruplicaría la misma obra.
-- **Fotografías**: las imágenes originales de los tres proyectos de texto, a tamaño completo. No se
-  cuentan las variantes que generan los sitios al construirse.
+- **Fotografías**: las imágenes originales de los cuatro proyectos de texto, a tamaño completo. No se
+  cuentan las variantes que generan los sitios al construirse, ni los iconos que los documentos de
+  los inéditos arrastraban de la web.
 - **Piezas cerámicas**: las piezas distintas del pavimento de Santjoans que se digitalizaron. Cada
   una se guarda en tres tamaños; se cuenta la pieza, no el fichero.
 
