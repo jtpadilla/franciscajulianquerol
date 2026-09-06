@@ -9,7 +9,7 @@ export const CODI_IDIOMA: Record<Lang, string> = { es: 'es', ca: 'ca' };
 export type T = Record<Lang, string>;
 
 export const LLOC = {
-  url: 'https://jtpadilla.github.io/franciscajulianquerol/',
+  url: 'https://franciscajulianquerol.es/',
   nom: 'Francisca Julián Querol',
   titol: {
     es: 'Francisca Julián Querol',

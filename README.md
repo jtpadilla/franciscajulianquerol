@@ -3,7 +3,7 @@
 Portada de la obra de **Francisca Julián Querol** («Paquita»), de Cinctorres: quién es, cuánto ha
 escrito y dónde leerlo.
 
-**https://jtpadilla.github.io/franciscajulianquerol/**
+**https://franciscajulianquerol.es/**
 
 > «Les meues coses quiere decir MIS COSAS. Escribo en castellano y en mi lengua materna el valenciano,
 > me gusta todo lo que despierta mi curiosidad. Este vicio los años no lo curan.»

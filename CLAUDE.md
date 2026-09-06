@@ -13,8 +13,9 @@ que la presenta, cuenta cuánto ha producido y lleva a cada uno de los proyectos
 Es el **sexto repositorio** de la familia y el único que no recupera obra: no añade texto ni
 fotografías de la autora más allá de su biografía. Su trabajo es indexar y dar contexto.
 
-Publicado en **https://jtpadilla.github.io/franciscajulianquerol/** (repositorio público
-`jtpadilla/franciscajulianquerol`, Pages con origen GitHub Actions).
+Publicado en **https://franciscajulianquerol.es/** (repositorio público
+`jtpadilla/franciscajulianquerol`, Pages con origen GitHub Actions y dominio propio; la dirección
+antigua, `jtpadilla.github.io/franciscajulianquerol/`, la redirige GitHub).
 
 ### Proyectos hermanos (misma familia, mismo modelo)
 
@@ -62,10 +63,14 @@ cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta por
 
 ## Decisiones tomadas (no volver a plantearlas)
 
-- **Sin dominio propio.** Se queda en la subruta `/franciscajulianquerol/` de GitHub Pages, como
-  lesmeuescoses y masosdemorella (y a diferencia de ramblacelumbres.org y santjoans.es). Decidido con
-  el usuario el 2026-09-04. Consecuencia: **todos los enlaces internos pasan por `BASE`**
-  (`src/site/config.ts`); un `href="/algo/"` a pelo rompe el sitio.
+- **Dominio propio `franciscajulianquerol.es`**, sin `www`, en la raíz, como ramblacelumbres.org y
+  santjoans.es. El usuario lo compró el 2026-09-06; hasta entonces el sitio vivía en la subruta
+  `/franciscajulianquerol/` de GitHub Pages. El dominio aparece en cuatro sitios que tienen que
+  coincidir: `site/public/CNAME`, el dominio declarado en Pages (`gh api repos/jtpadilla/franciscajulianquerol/pages`),
+  `site` de `astro.config.mjs` y `LLOC.url` de `config.ts`. DNS: el ápice con las cuatro A de GitHub
+  Pages (185.199.108–111.153) y `www` con un `CNAME` a `jtpadilla.github.io`.
+  Aun así, **todos los enlaces internos siguen pasando por `BASE`** (`src/site/config.ts`): con
+  `base: '/'` vale la cadena vacía, y así se podría volver a una subruta cambiando solo `base`.
 - **Bilingüe castellano + valenciano**, castellano por defecto en la raíz y valenciano bajo `/ca/`.
   No hay inglés ni chino: eso es de ramblacelumbres, que sí tiene contenido que lo justifique.
 - **Las cifras se cuentan, no se escriben.** `tools/metriques.py` → `content/metriques.json`,
@@ -103,6 +108,7 @@ site/                       proyecto Astro 7 (npm run dev | build | preview)
   src/vistes/               Inici.astro (portada) y Pagina.astro (prosa: autora y edició).
   src/components/           Capcalera, Peu, Marca, Xifres (la banda de números), Fitxa (la tarjeta).
   src/styles/global.css     todo el CSS, con tokens claro/oscuro. No hay CSS por componente.
+  public/CNAME              franciscajulianquerol.es (el dominio, ver «Decisiones»).
 .github/workflows/deploy.yml  build + publicación en Pages con cada push a main.
 ```
 

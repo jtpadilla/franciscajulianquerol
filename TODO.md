@@ -6,6 +6,17 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 
 ## Abiertas
 
+### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
+El usuario compró el dominio el 2026-09-06. Hecho en el repositorio: `base: '/'`, `site` y
+`LLOC.url` al dominio, `site/public/CNAME`, documentación. Fuera del repositorio, en este orden:
+1. DNS en el registrador: `@` con las cuatro A `185.199.108.153`, `185.199.109.153`,
+   `185.199.110.153`, `185.199.111.153`; `www` con `CNAME jtpadilla.github.io`.
+2. Declarar el dominio en Pages: `gh api -X PUT repos/jtpadilla/franciscajulianquerol/pages -f cname=franciscajulianquerol.es`.
+3. Empujar `main` (hasta entonces el sitio en github.io se quedaría sin enlaces válidos, porque ya
+   compila con `base: '/'`).
+4. Cuando GitHub emita el certificado, `-F https_enforced=true`.
+5. Cambiar el enlace de vuelta de los cinco hermanos (T-05) al dominio; mientras tanto GitHub redirige.
+
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
 lea. Lo mismo con la licencia CC BY-NC-ND 4.0 del contenido, que en los proyectos hermanos también

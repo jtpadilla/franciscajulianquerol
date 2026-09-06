@@ -3,9 +3,10 @@ import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // Subruta del repositorio en GitHub Pages: no hay dominio propio (ver CLAUDE.md).
-  site: 'https://jtpadilla.github.io',
-  base: '/franciscajulianquerol/',
+  // Dominio propio en la raiz (ver CLAUDE.md). Tiene que coincidir con public/CNAME, con el dominio
+  // declarado en Pages y con LLOC.url de src/site/config.ts.
+  site: 'https://franciscajulianquerol.es',
+  base: '/',
   trailingSlash: 'always',
   i18n: {
     defaultLocale: 'es',

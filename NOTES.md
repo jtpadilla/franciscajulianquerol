@@ -154,3 +154,19 @@ anotado en `TODO.md` por si algún día se quiere una regla de desempate.
 - **La ruta de los clones** deja de estar fijada a `~/IdeaProjects/`: el guion usa por defecto la
   carpeta que contiene este repositorio (hoy `~/IdeaProjects/francisca/`), que es donde están los
   cinco hermanos. `--arrel` sigue valiendo.
+
+---
+
+## 2026-09-06 · Dominio propio: franciscajulianquerol.es
+
+Se revierte la decisión del 2026-09-04 de quedarse en la subruta de GitHub Pages: el usuario compró
+`franciscajulianquerol.es` y el sitio pasa a la raíz de ese dominio, con el mismo montaje que
+ramblacelumbres.org (cuatro A en el ápice, `www` como `CNAME` a `jtpadilla.github.io`, dominio
+declarado en Pages, `public/CNAME` en el sitio). La subruta sigue funcionando porque GitHub redirige
+`jtpadilla.github.io/franciscajulianquerol/` al dominio.
+
+Cambios en el repositorio: `base: '/'` y `site` en `astro.config.mjs`, `LLOC.url` en `config.ts`,
+`site/public/CNAME`, `README.md` y `CLAUDE.md`. Como todos los enlaces salían de `BASE`, ninguna
+plantilla cambia: con `base: '/'`, `BASE` vale la cadena vacía y los `href` quedan como `/ca/`. Las
+canónicas y los `hreflang` ya salen con el dominio. Los pasos que se hacen fuera del repositorio
+están en T-09.
