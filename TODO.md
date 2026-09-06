@@ -7,15 +7,17 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 ## Abiertas
 
 ### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
-El usuario compró el dominio el 2026-09-06. Hecho en el repositorio: `base: '/'`, `site` y
-`LLOC.url` al dominio, `site/public/CNAME`, documentación. Fuera del repositorio, en este orden:
-1. DNS en el registrador: `@` con las cuatro A `185.199.108.153`, `185.199.109.153`,
-   `185.199.110.153`, `185.199.111.153`; `www` con `CNAME jtpadilla.github.io`.
-2. Declarar el dominio en Pages: `gh api -X PUT repos/jtpadilla/franciscajulianquerol/pages -f cname=franciscajulianquerol.es`.
-3. Empujar `main` (hasta entonces el sitio en github.io se quedaría sin enlaces válidos, porque ya
-   compila con `base: '/'`).
-4. Cuando GitHub emita el certificado, `-F https_enforced=true`.
-5. Cambiar el enlace de vuelta de los cinco hermanos (T-05) al dominio; mientras tanto GitHub redirige.
+El usuario compró el dominio el 2026-09-06 en DonDominio. **Hecho** la misma noche: `base: '/'`,
+`site` y `LLOC.url` al dominio, `site/public/CNAME`, documentación; zona DNS en DonDominio (`@` con
+las cuatro A `185.199.108–111.153`, `www` con `CNAME jtpadilla.github.io`, aparcado desactivado);
+dominio declarado en Pages; `main` empujado y desplegado.
+**Pendiente**, cuando el registro .es publique la delegación (a las 21:30 del 06/09 aún no) y
+GitHub emita el certificado (`gh api repos/jtpadilla/franciscajulianquerol/pages --jq .https_certificate.state`
+tiene que decir `approved`):
+1. `gh api -X PUT repos/jtpadilla/franciscajulianquerol/pages -F https_enforced=true`
+2. Comprobar `https://franciscajulianquerol.es/`, `/ca/` y que `www` y la dirección antigua de
+   github.io redirigen.
+3. Cambiar el enlace de vuelta de los cinco hermanos (T-05) al dominio; mientras tanto GitHub redirige.
 
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
