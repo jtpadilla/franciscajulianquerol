@@ -40,6 +40,15 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 
 ## Resueltas
 
+### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
+Publicado en **https://franciscajulianquerol.es/** la noche del 06/09: `base: '/'`, `site` y
+`LLOC.url` al dominio, `site/public/CNAME`; zona DNS en DonDominio (`@` con las cuatro A de Pages,
+`www` con `CNAME jtpadilla.github.io`, aparcado desactivado); dominio declarado en Pages. Red.es
+publicó la delegación a las 22:13, una hora después del registro; el certificado de GitHub no
+arrancó hasta quitar y volver a poner el dominio en Pages (22:20), y a las 22:21 estaba aprobado y
+el HTTPS forzado. Las seis páginas responden 200; `http`, `www` y la dirección antigua de github.io
+redirigen al dominio. Queda T-10.
+
 ### T-06 · Imagen de Open Graph · 2026-09-06
 Todas las páginas llevan `og:image`: el retrato recortado a 1200×630 con `getImage` en `Base.astro`,
 anclado arriba para que la cara quede dentro, más `og:image:width`, `og:image:height`, `og:image:alt`
@@ -63,13 +72,3 @@ decían «cuatro proyectos» pasados a cinco. Detalle en `NOTES.md`.
 Repositorio público `jtpadilla/franciscajulianquerol` con `main` empujado, Pages con origen **GitHub
 Actions** (`build_type=workflow`) y HTTPS forzado. Las siete páginas responden 200 y `/no-existe/`
 da 404. **https://jtpadilla.github.io/franciscajulianquerol/**
-
-### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
-Publicado en **https://franciscajulianquerol.es/** la noche del 06/09: `base: '/'`, `site` y
-`LLOC.url` al dominio, `site/public/CNAME`; zona DNS en DonDominio (`@` con las cuatro A de Pages,
-`www` con `CNAME jtpadilla.github.io`, aparcado desactivado); dominio declarado en Pages. Red.es
-publicó la delegación a las 22:13, una hora después del registro; el certificado de GitHub no
-arrancó hasta quitar y volver a poner el dominio en Pages (22:20), y a las 22:21 estaba aprobado y
-el HTTPS forzado. Las seis páginas responden 200; `http`, `www` y la dirección antigua de github.io
-redirigen al dominio. Queda T-10.
-
