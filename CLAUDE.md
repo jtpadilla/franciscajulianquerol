@@ -53,6 +53,7 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 7. Los cinco sitios enlazan a esta portada (T-05, 2026-09-06). La portada, la descripción para
    buscadores y la biografía dicen que la autora **sigue escribiendo, a un ritmo más pausado**: la
    obra no está cerrada, y por eso las cifras se recalculan cuando un hermano crece.
+8. Imagen de Open Graph (T-06): el retrato recortado a 1200×630 en el build, en `Base.astro`.
 
 **Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
 cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada (T-05).

@@ -19,10 +19,6 @@ salta ningún aviso. Opciones si algún día molesta:
 - una acción programada que clone los cinco repositorios y abra una incidencia si el JSON desfasa.
 De momento se deja como está: recalcular a mano cuando se toque un proyecto hermano.
 
-### T-06 · Imagen de Open Graph
-Las páginas no llevan `og:image`: al compartirlas no sale ninguna imagen. Falta decidir cuál (el
-retrato es lo obvio para la portada) y generarla con el recorte y el tamaño que piden las redes.
-
 ### T-07 · Cifras que se cuentan pero no se enseñan
 `metriques.json` trae `illustracions` (7), `comentaris` (38) y `traduccions` (69), que no aparecen
 en ninguna parte del sitio. Las traducciones salieron de la banda a propósito (ver `NOTES.md`); de
@@ -38,6 +34,12 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ---
 
 ## Resueltas
+
+### T-06 · Imagen de Open Graph · 2026-09-06
+Todas las páginas llevan `og:image`: el retrato recortado a 1200×630 con `getImage` en `Base.astro`,
+anclado arriba para que la cara quede dentro, más `og:image:width`, `og:image:height`, `og:image:alt`
+y `twitter:card` de imagen grande. Se genera en el build; no hay ningún fichero derivado en el repo.
+Una página puede pasar otra imagen con la prop `imatge`, como hasta ahora.
 
 ### T-05 · Enlace de vuelta desde los proyectos hermanos · 2026-09-06
 Los cinco sitios enlazan ya a esta portada: `franciscaineditos` en su lista de otros sitios y en

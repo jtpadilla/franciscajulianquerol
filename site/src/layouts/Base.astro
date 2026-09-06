@@ -1,5 +1,6 @@
 ---
-import { Font } from 'astro:assets';
+import { Font, getImage } from 'astro:assets';
+import retrat from '../../../content/imatges/retrat-paquita.jpg';
 import Capcalera from '../components/Capcalera.astro';
 import Peu from '../components/Peu.astro';
 import { LLOC, LANGS, LANG_PER_DEFECTE, CODI_IDIOMA, urlPublic, type Lang, type Alternatives } from '../site/config';
@@ -10,7 +11,7 @@ interface Props {
   lang: Lang;
   titol?: string;
   descripcio?: string;
-  /** ruta de la imagen para redes, relativa al sitio */
+  /** ruta de la imagen para redes, relativa al sitio; si no se da, el retrato de la autora (T-06) */
   imatge?: string;
   alternatives?: Alternatives;
   actiu?: 'inici' | 'autora' | 'edicio';
@@ -20,7 +21,11 @@ const { lang, titol, descripcio = LLOC.descripcio[lang], imatge, alternatives, a
 const t = ui(lang);
 const titolComplet = titol ? `${titol} · ${LLOC.titol[lang]}` : LLOC.titol[lang];
 const canonica = new URL(Astro.url.pathname, Astro.site);
-const imatgeAbs = imatge ? new URL(imatge, Astro.site).href : undefined;
+// Imagen para redes (T-06): el retrato recortado a 1200×630, anclado arriba para que la cara quede
+// dentro del recorte. `getImage` lo genera en el build como cualquier otra variante.
+const og = await getImage({ src: retrat, width: 1200, height: 630, fit: 'cover', position: 'top', format: 'jpg' });
+const imatgeAbs = new URL(imatge ?? og.src, Astro.site).href;
+const imatgeAlt = `${LLOC.nom}, ${lang === 'ca' ? 'retrat' : 'retrato'}`;
 ---
 
 <!doctype html>
@@ -50,8 +55,11 @@ const imatgeAbs = imatge ? new URL(imatge, Astro.site).href : undefined;
     <meta property="og:description" content={descripcio} />
     <meta property="og:url" content={canonica.href} />
     <meta property="og:locale" content={LLOC.locale[lang].replace('-', '_')} />
-    {imatgeAbs && <meta property="og:image" content={imatgeAbs} />}
-    <meta name="twitter:card" content={imatgeAbs ? 'summary_large_image' : 'summary'} />
+    <meta property="og:image" content={imatgeAbs} />
+    {!imatge && <meta property="og:image:width" content="1200" />}
+    {!imatge && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={imatgeAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <Font cssVariable="--fuente-titulos" preload />
     <Font cssVariable="--fuente-texto" preload />
