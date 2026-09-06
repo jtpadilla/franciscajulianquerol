@@ -6,18 +6,10 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 
 ## Abiertas
 
-### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
-El usuario compró el dominio el 2026-09-06 en DonDominio. **Hecho** la misma noche: `base: '/'`,
-`site` y `LLOC.url` al dominio, `site/public/CNAME`, documentación; zona DNS en DonDominio (`@` con
-las cuatro A `185.199.108–111.153`, `www` con `CNAME jtpadilla.github.io`, aparcado desactivado);
-dominio declarado en Pages; `main` empujado y desplegado.
-**Pendiente**, cuando el registro .es publique la delegación (a las 21:30 del 06/09 aún no) y
-GitHub emita el certificado (`gh api repos/jtpadilla/franciscajulianquerol/pages --jq .https_certificate.state`
-tiene que decir `approved`):
-1. `gh api -X PUT repos/jtpadilla/franciscajulianquerol/pages -F https_enforced=true`
-2. Comprobar `https://franciscajulianquerol.es/`, `/ca/` y que `www` y la dirección antigua de
-   github.io redirigen.
-3. Cambiar el enlace de vuelta de los cinco hermanos (T-05) al dominio; mientras tanto GitHub redirige.
+### T-10 · Enlace de vuelta de los hermanos al dominio nuevo
+Los cinco sitios (T-05) enlazan a `jtpadilla.github.io/franciscajulianquerol/`, que GitHub redirige
+al dominio. Cambiarlo a `https://franciscajulianquerol.es/` en cada repositorio (en franciscaineditos
+está en `GERMANS`, `site/src/site/config.ts`).
 
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
@@ -71,3 +63,13 @@ decían «cuatro proyectos» pasados a cinco. Detalle en `NOTES.md`.
 Repositorio público `jtpadilla/franciscajulianquerol` con `main` empujado, Pages con origen **GitHub
 Actions** (`build_type=workflow`) y HTTPS forzado. Las siete páginas responden 200 y `/no-existe/`
 da 404. **https://jtpadilla.github.io/franciscajulianquerol/**
+
+### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
+Publicado en **https://franciscajulianquerol.es/** la noche del 06/09: `base: '/'`, `site` y
+`LLOC.url` al dominio, `site/public/CNAME`; zona DNS en DonDominio (`@` con las cuatro A de Pages,
+`www` con `CNAME jtpadilla.github.io`, aparcado desactivado); dominio declarado en Pages. Red.es
+publicó la delegación a las 22:13, una hora después del registro; el certificado de GitHub no
+arrancó hasta quitar y volver a poner el dominio en Pages (22:20), y a las 22:21 estaba aprobado y
+el HTTPS forzado. Las seis páginas responden 200; `http`, `www` y la dirección antigua de github.io
+redirigen al dominio. Queda T-10.
+

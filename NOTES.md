@@ -170,3 +170,10 @@ Cambios en el repositorio: `base: '/'` y `site` en `astro.config.mjs`, `LLOC.url
 plantilla cambia: con `base: '/'`, `BASE` vale la cadena vacía y los `href` quedan como `/ca/`. Las
 canónicas y los `hreflang` ya salen con el dominio. Los pasos que se hacen fuera del repositorio
 están en T-09.
+
+Cronología de la publicación (06/09): DNS en DonDominio a las 21:10 (había que desactivar el
+aparcado y borrar el ANAME de la raíz y el comodín, que apuntaban a él); dominio en Pages y push a
+las 21:23; Red.es publicó la delegación a las 22:13; el certificado no se emitió hasta quitar y
+volver a declarar el dominio en Pages (22:20), aprobado a las 22:21 con HTTPS forzado. El resolver
+del sistema y los DNS externos no responden desde el sandbox: se comprobó con DNS sobre HTTPS de
+Cloudflare y Google, y con `gh api repos/jtpadilla/franciscajulianquerol/pages/health`.
