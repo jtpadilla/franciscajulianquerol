@@ -6,11 +6,6 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 
 ## Abiertas
 
-### T-10 · Enlace de vuelta de los hermanos al dominio nuevo
-Los cinco sitios (T-05) enlazan a `jtpadilla.github.io/franciscajulianquerol/`, que GitHub redirige
-al dominio. Cambiarlo a `https://franciscajulianquerol.es/` en cada repositorio (en franciscaineditos
-está en `GERMANS`, `site/src/site/config.ts`).
-
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
 lea. Lo mismo con la licencia CC BY-NC-ND 4.0 del contenido, que en los proyectos hermanos también
@@ -39,6 +34,10 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ---
 
 ## Resueltas
+
+### T-10 · Enlace de vuelta de los hermanos al dominio nuevo · 2026-09-06
+Los cinco sitios enlazan ya a `https://franciscajulianquerol.es/` (con `/ca/` donde el sitio está en
+valenciano): un commit en cada repositorio la misma noche del cambio de dominio.
 
 ### T-09 · Dominio propio franciscajulianquerol.es · 2026-09-06
 Publicado en **https://franciscajulianquerol.es/** la noche del 06/09: `base: '/'`, `site` y

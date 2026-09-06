@@ -57,7 +57,7 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 8. Imagen de Open Graph (T-06): el retrato recortado a 1200×630 en el build, en `Base.astro`.
 
 **Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
-cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada (T-05).
+cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada por su dominio (T-05, T-10).
 
 ---
 
