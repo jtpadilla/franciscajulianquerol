@@ -51,8 +51,8 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 6. El quinto proyecto, **franciscaineditos** («Escrits inèdits»), incorporado el 2026-09-06 (T-01):
    recuento, ficha, portada, prosa y textos del sitio en los dos idiomas. Sigue siendo 7 páginas.
 
-**Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y los enlaces de
-vuelta desde los proyectos hermanos (T-05).
+**Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
+cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada (T-05).
 
 ---
 

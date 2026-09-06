@@ -19,11 +19,6 @@ salta ningún aviso. Opciones si algún día molesta:
 - una acción programada que clone los cinco repositorios y abra una incidencia si el JSON desfasa.
 De momento se deja como está: recalcular a mano cuando se toque un proyecto hermano.
 
-### T-05 · Enlace de vuelta desde los proyectos hermanos
-Los sitios se enlazan entre ellos, pero solo `franciscaineditos` enlaza ya a esta portada (en su lista
-«Els altres llocs de l'autora» y en su página «L'autora»). Falta añadir el enlace en el pie de los
-otros cuatro (`ramblacelumbres`, `santjoans`, `masosdemorella`, `lesmeuescoses`).
-
 ### T-06 · Imagen de Open Graph
 Las páginas no llevan `og:image`: al compartirlas no sale ninguna imagen. Falta decidir cuál (el
 retrato es lo obvio para la portada) y generarla con el recorte y el tamaño que piden las redes.
@@ -43,6 +38,13 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ---
 
 ## Resueltas
+
+### T-05 · Enlace de vuelta desde los proyectos hermanos · 2026-09-06
+Los cinco sitios enlazan ya a esta portada: `franciscaineditos` en su lista de otros sitios y en
+«L'autora»; `masosdemorella` y `lesmeuescoses` en una línea del pie; `ramblacelumbres` en la columna
+«Sobre el sitio» del pie, en los cuatro idiomas; `santjoans` con un botón junto a «Información del
+proyecto», en los cuatro idiomas. Los sitios bilingües o multilingües llevan al valenciano en `/ca/`
+y al castellano en la raíz.
 
 ### T-01 · El quinto proyecto · 2026-09-06
 `franciscaineditos` («Escrits inèdits»), clonado al lado de este. Función `franciscaineditos()` en
