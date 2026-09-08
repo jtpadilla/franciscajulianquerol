@@ -1,0 +1,34 @@
+slug: santjoanslibro
+ordre: 3
+titol: Paviment ceràmic de la casa Santjoans
+tipus: llibre
+anys: 2010 – 2012
+rol:
+  es: Autora del libro
+  ca: Autora del llibre
+subtitol:
+  es: El texto del estudio, capítulo a capítulo y con su catálogo
+  ca: El text de l'estudi, capítol a capítol i amb el seu catàleg
+descripcio:
+  es: >-
+    El estudio que está detrás del visor, leído como el libro que es: quién levantó la casa
+    Santjoans, de dónde salieron los azulejos y un catálogo de veintinueve fichas, una por cada
+    figura del pavimento. Es el trabajo que defendió en mayo de 2010 en la Universitat per a Majors,
+    tutelado por la profesora Pilar Escuder Mollón, y que la Diputació de Castelló publicó en 2012
+    en su colección Biblioteca Popular, presentado en la Sala de Premsa el 23 de noviembre de ese
+    año. Esta edición reconstruye el texto desde el PDF de julio de 2010; el libro impreso está
+    agotado y todavía no se ha podido cotejar con él.
+  ca: >-
+    L'estudi que hi ha darrere del visor, llegit com el llibre que és: qui va alçar la casa
+    Santjoans, d'on van eixir les rajoles i un catàleg de vint-i-nou fitxes, una per cada figura del
+    paviment. És el treball que va defensar el maig de 2010 a la Universitat per a Majors, tutelat
+    per la professora Pilar Escuder Mollón, i que la Diputació de Castelló va publicar el 2012 en la
+    seua col·lecció Biblioteca Popular, presentat a la Sala de Premsa el 23 de novembre d'aquell
+    any. Esta edició reconstruïx el text des del PDF de juliol de 2010; el llibre imprés està
+    esgotat i encara no s'ha pogut confrontar amb ell.
+url: https://jtpadilla.github.io/santjoanslibro/
+repositori: https://github.com/jtpadilla/santjoanslibro
+portada: ../imatges/portada-santjoanslibro.jpg
+portadaAlt:
+  es: La fachada de piedra de la casa Santjoans, en Cinctorres, con el escudo sobre la puerta
+  ca: La façana de pedra de la casa Santjoans, a Cinctorres, amb l'escut damunt de la porta

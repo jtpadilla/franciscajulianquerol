@@ -6,11 +6,15 @@
  * Las direcciones se construyen en src/site/config.ts; aqui solo se enumeran.
  */
 import type { GetStaticPaths } from 'astro';
-import { BASE, LANGS, PAGINA_KEYS, urlInici, urlPagina, type Lang, type PaginaKey } from '../site/config';
+import { BASE, LANGS, PAGINA_KEYS, urlInici, urlPagina, type Lang, type PaginaProsaKey } from '../site/config';
 import Inici from '../vistes/Inici.astro';
 import Pagina from '../vistes/Pagina.astro';
+import Novetats from '../vistes/Novetats.astro';
 
-type Props = { tipus: 'inici'; lang: Lang } | { tipus: 'pagina'; lang: Lang; pagina: PaginaKey };
+type Props =
+  | { tipus: 'inici'; lang: Lang }
+  | { tipus: 'novetats'; lang: Lang }
+  | { tipus: 'pagina'; lang: Lang; pagina: PaginaProsaKey };
 
 export const getStaticPaths = (() => {
   // Astro espera el parametro sin la base del sitio ni barras; la raiz es `undefined`.
@@ -20,7 +24,9 @@ export const getStaticPaths = (() => {
   for (const lang of LANGS) {
     rutes.push({ params: { ruta: param(urlInici(lang)) }, props: { tipus: 'inici', lang } });
     for (const pagina of PAGINA_KEYS) {
-      rutes.push({ params: { ruta: param(urlPagina(lang, pagina)) }, props: { tipus: 'pagina', lang, pagina } });
+      // Las novedades no salen de un .md: tienen su propia vista.
+      const props: Props = pagina === 'novetats' ? { tipus: 'novetats', lang } : { tipus: 'pagina', lang, pagina };
+      rutes.push({ params: { ruta: param(urlPagina(lang, pagina)) }, props });
     }
   }
   return rutes;
@@ -30,4 +36,5 @@ const p = Astro.props as Props;
 ---
 
 {p.tipus === 'inici' && <Inici lang={p.lang} />}
+{p.tipus === 'novetats' && <Novetats lang={p.lang} />}
 {p.tipus === 'pagina' && <Pagina lang={p.lang} pagina={p.pagina} />}

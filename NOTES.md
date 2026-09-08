@@ -177,3 +177,52 @@ las 21:23; Red.es publicó la delegación a las 22:13; el certificado no se emit
 volver a declarar el dominio en Pages (22:20), aprobado a las 22:21 con HTTPS forzado. El resolver
 del sistema y los DNS externos no responden desde el sandbox: se comprobó con DNS sobre HTTPS de
 Cloudflare y Google, y con `gh api repos/jtpadilla/franciscajulianquerol/pages/health`.
+
+---
+
+## 2026-09-08 · El sexto proyecto (santjoanslibro) y las novedades (T-11)
+
+### santjoanslibro
+
+El texto del estudio de Santjoans, reconstruido desde el PDF de julio de 2010 como masosdemorella.
+Va **en tercer lugar, detrás de santjoans**: son el mismo trabajo, el visor y el texto, y el índice va
+por antigüedad de la obra. Tipo `llibre`, años 2010 – 2012, título el del libro digital («Paviment
+ceràmic de la casa Santjoans», que es el de la edición de la Diputació). Portada: la fachada de la
+casa (`assets/images/05-facana-casa-santjoans.jpg`), para no repetir un azulejo como en santjoans.
+
+Qué se cuenta: **5 capítulos** (pròleg, tres capítulos y bibliografía), **4.001 palabras** (la prosa;
+el catálogo es `cataleg.yaml`, datos, y no entra), **13 fotografías** (las del texto) y **29 fichas**
+del catálogo como cifra propia `fitxes`, que la ficha enseña como «29 fichas del catálogo». No se
+suman a `peces` (las 434 rajoles digitalizadas ya las cuenta santjoans) ni a `textos`. Las once fotos
+del acto de presentación de 2012 (`assets/presentacio/`) retratan a la autora, no son obra suya, y
+quedan fuera, como las de perfil del blog.
+
+Totales: **6 proyectos · 256 textos · 275.503 palabras · 877 fotografías · 434 piezas**.
+
+### Las novedades
+
+Petición: que la portada acumule las novedades (proyectos nuevos, contenido nuevo en los hermanos)
+sin perder su papel de portada. Decisión: **las escribe el recuento**, igual que las cifras.
+`metriques.py` lee el `metriques.json` anterior antes de sobrescribirlo, compara proyecto a proyecto
+y anota en `content/novetats.json`:
+- `nou`: un proyecto que no estaba.
+- `creix`: subida en alguna de `COMPTABLES` (textos, obres, paraules, fotografies, illustracions,
+  peces, fitxes, comentaris), con la diferencia. Si solo suben las palabras y no llegan a 100, no es
+  novedad (erratas). Las bajadas se ignoran.
+- Si el mismo día ya hay una entrada del mismo proyecto, se funden: ejecutar el guion dos veces no
+  duplica nada.
+- `nota`: a mano, con `nota: {es, ca}` y `url` opcional. Se usó para sembrar el historial: el
+  estreno de la portada con cuatro proyectos (04/09) y el dominio propio (06/09). El estreno se puso
+  como una sola nota y no como cuatro `nou` para que las cuatro fichas no salieran todas con «Nuevo».
+
+En el sitio: `src/site/novetats.ts` carga el JSON (de la más reciente a la más antigua); la banda
+`Novetats.astro` enseña las tres últimas en una línea bajo las cifras; `/novedades/` y
+`/ca/novetats/` (vista `Novetats.astro`, clave `novetats` en `PAGINES`, con tipo `PaginaProsaKey`
+para las dos páginas que sí salen de un `.md`) las enseñan todas; y `Fitxa.astro` pone «Nuevo» o
+«Ampliado» si la última novedad del proyecto tiene menos de 60 días (`novetatRecent`, contados
+respecto a la fecha del build). Una novedad de un proyecto que ya no esté en el índice no se pinta.
+Los textos («+2 entradas · +1.200 palabras») salen de `textCanvis()` en `ui.ts`, con la unidad de
+cada proyecto. 9 páginas.
+
+Descartado: un RSS (nadie se suscribiría a esto y obligaría a fechas con hora) y un fichero de
+novedades escrito a mano (envejece como las cifras escritas a mano).

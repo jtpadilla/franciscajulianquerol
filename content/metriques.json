@@ -1,5 +1,5 @@
 {
-  "generat": "2026-09-06",
+  "generat": "2026-09-08",
   "arrel": "~/IdeaProjects/francisca",
   "projectes": {
     "masosdemorella": {
@@ -17,6 +17,13 @@
       "posicions": 754,
       "resolucions": 3,
       "fitxers_imatge": 1302
+    },
+    "santjoanslibro": {
+      "textos": 5,
+      "unitat": "capitols",
+      "paraules": 4001,
+      "fitxes": 29,
+      "fotografies": 13
     },
     "ramblacelumbres": {
       "textos": 23,
@@ -43,10 +50,10 @@
     }
   },
   "totals": {
-    "projectes": 5,
-    "textos": 251,
-    "paraules": 271502,
-    "fotografies": 864,
+    "projectes": 6,
+    "textos": 256,
+    "paraules": 275503,
+    "fotografies": 877,
     "illustracions": 7,
     "peces": 434,
     "traduccions": 69,

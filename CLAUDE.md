@@ -10,7 +10,7 @@ Leer este fichero completo antes de tocar nada.
 **La portada** de la obra de **Francisca Julián Querol** («Paquita», Cinctorres, 1945): una página
 que la presenta, cuenta cuánto ha producido y lleva a cada uno de los proyectos donde se puede leer.
 
-Es el **sexto repositorio** de la familia y el único que no recupera obra: no añade texto ni
+Es el **séptimo repositorio** de la familia y el único que no recupera obra: no añade texto ni
 fotografías de la autora más allá de su biografía. Su trabajo es indexar y dar contexto.
 
 Publicado en **https://franciscajulianquerol.es/** (repositorio público
@@ -23,11 +23,12 @@ antigua, `jtpadilla.github.io/franciscajulianquerol/`, la redirige GitHub).
 |---|---|---|---|
 | [jtpadilla/masosdemorella](https://github.com/jtpadilla/masosdemorella) | El libro «Masos de Morella» reconstruido desde el PDF de 2016 | Autora | jtpadilla.github.io/masosdemorella |
 | [jtpadilla/santjoans](https://github.com/jtpadilla/santjoans) | Visor del pavimento del Palau Santjoans (React 19, reescrito desde GWT) | Autora del estudio | santjoans.es |
+| [jtpadilla/santjoanslibro](https://github.com/jtpadilla/santjoanslibro) | El texto del estudio de Santjoans reconstruido desde el PDF de 2010, con el catálogo de 29 fichas como datos; la Diputació lo publicó en 2012 | Autora | jtpadilla.github.io/santjoanslibro |
 | [jtpadilla/ramblacelumbres](https://github.com/jtpadilla/ramblacelumbres) | Guía de biodiversidad migrada desde WordPress; es/ca/en/zh | Autora de los textos | ramblacelumbres.org |
 | [jtpadilla/lesmeuescoses](https://github.com/jtpadilla/lesmeuescoses) | El blog «Les meues coses» recuperado del canal de Blogger | Autora | jtpadilla.github.io/lesmeuescoses |
 | [jtpadilla/franciscaineditos](https://github.com/jtpadilla/franciscaineditos) | «Escrits inèdits»: los textos que quedaban en su ordenador, seleccionados a mano por tandas en `md/<obra>/<documento>/` | Autora | jtpadilla.github.io/franciscaineditos |
 
-Los cinco están clonados **al lado de este** (hoy en `~/IdeaProjects/francisca/`; el guion usa por
+Los seis están clonados **al lado de este** (hoy en `~/IdeaProjects/francisca/`; el guion usa por
 defecto la carpeta que contiene este repositorio, o `--arrel DIR`), y **`tools/metriques.py` los
 necesita**.
 Consultar sus `CLAUDE.md` antes de reinventar decisiones: el patrón de i18n y el catch-all de rutas
@@ -37,7 +38,7 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 
 ---
 
-## Estado actual (2026-09-06)
+## Estado actual (2026-09-08)
 
 **Hecho, en la primera sesión:**
 1. Repositorio, `README.md`, licencias, `.github/` y este fichero.
@@ -55,9 +56,15 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
    buscadores y la biografía dicen que la autora **sigue escribiendo, a un ritmo más pausado**: la
    obra no está cerrada, y por eso las cifras se recalculan cuando un hermano crece.
 8. Imagen de Open Graph (T-06): el retrato recortado a 1200×630 en el build, en `Base.astro`.
+9. El sexto proyecto (2026-09-08, T-11): `santjoanslibro`, en tercer lugar, detrás de `santjoans`; y el **mecanismo de
+   novedades**: `metriques.py` compara cada recuento con el anterior y acumula en
+   `content/novetats.json` los proyectos nuevos y los crecimientos; el sitio lo enseña en una banda
+   bajo las cifras, en `/novedades/` y como etiqueta «Nuevo»/«Ampliado» en la ficha. 9 páginas.
 
-**Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
-cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta portada por su dominio (T-05, T-10).
+**Por dónde seguir** (detalle en `TODO.md`): los enlaces de vuelta desde `santjoanslibro`, `santjoans` y
+`masosdemorella` (T-12), la validación de la autora (T-03) y las cifras
+que se cuentan pero no se enseñan (T-07, T-08). Los cinco sitios anteriores ya enlazan a esta portada
+por su dominio (T-05, T-10).
 
 ---
 
@@ -79,7 +86,13 @@ cuentan pero no se enseñan (T-07, T-08). Los cinco sitios ya enlazan a esta por
 - **Astro 7**, la misma versión que los tres sitios de contenido. Sin Pagefind: con cinco fichas no
   hay nada que buscar. Sin JavaScript de cliente.
 - **Sin barra de navegación por proyecto:** el índice es la portada. Las únicas páginas aparte son la
-  biografía y «Sobre esta página».
+  biografía, las novedades y «Sobre esta página».
+- **Las novedades tampoco se escriben:** las anota `metriques.py` al comparar el recuento con el
+  anterior (proyecto nuevo → `nou`; más textos, fotos, piezas... o ≥100 palabras → `creix` con la
+  diferencia). `content/novetats.json` solo crece; a mano solo se borran entradas o se añade una
+  `nota` bilingüe (como el estreno del dominio). En la portada ocupan una línea bajo las cifras, para
+  no quitarle protagonismo al índice; la lista entera está en `/novedades/`. Se descartó un feed RSS
+  y un fichero de novedades escrito a mano.
 
 ---
 
@@ -90,23 +103,29 @@ tools/metriques.py          el recuento. Lee ../<hermano> (al lado de este repo)
                             `python3 tools/metriques.py` | `--comprova` (no escribe, falla si desfasa)
                             | `--arrel DIR`. Solo biblioteca estándar.
 content/metriques.json      SALIDA DEL RECUENTO. Se versiona: el build no necesita los clones ni red.
+content/novetats.json       LAS NOVEDADES, acumuladas por el mismo guion (ver «Decisiones»). Se versiona.
 content/projectes/*.yaml    UNA FICHA POR PROYECTO. `<ordre>-<slug>.yaml`. Campos: slug (= clave en
                             metriques.json), ordre, titol, tipus (enum en content.config.ts + etiqueta
                             en ui.ts), anys, rol{es,ca}, subtitol{es,ca},
                             descripcio{es,ca}, url, repositori, portada, portadaAlt{es,ca}.
+                            El orden hoy: masosdemorella, santjoans, santjoanslibro, ramblacelumbres,
+                            lesmeuescoses, franciscaineditos.
 content/autora.{es,ca}.md   biografía de la autora. Frontmatter: key, lang, title, resum, retrat.
 content/edicio.{es,ca}.md   «Sobre esta página»: definiciones de las cifras y licencias.
-content/imatges/            retrato + 5 portadas, copiadas de los repositorios de origen. Optimizadas
+content/imatges/            retrato + 6 portadas, copiadas de los repositorios de origen. Optimizadas
                             por astro:assets en el build; los originales no se tocan.
 site/                       proyecto Astro 7 (npm run dev | build | preview)
   src/site/config.ts        idiomas, LLOC (textos del sitio), tipos y carga de metriques.json, BASE y
                             TODAS las URL. Aquí se añaden páginas nuevas.
   src/site/ui.ts            los textos de interfaz en los dos idiomas + `xifresProjecte()`, que decide
-                            qué cifras enseña la ficha de cada proyecto según lo que traiga el JSON.
+                            qué cifras enseña la ficha de cada proyecto según lo que traiga el JSON, y
+                            `textCanvis()`, que redacta «+2 entradas · +1.200 palabras».
+  src/site/novetats.ts      carga de novetats.json, `novetatRecent()` (etiqueta de la ficha, 60 días).
   src/content.config.ts     colecciones `projectes` (yaml) y `pagines` (md), ambas fuera de site/.
   src/pages/[...ruta].astro TODAS las páginas de los dos idiomas salen de aquí. 404.astro aparte.
-  src/vistes/               Inici.astro (portada) y Pagina.astro (prosa: autora y edició).
-  src/components/           Capcalera, Peu, Marca, Xifres (la banda de números), Fitxa (la tarjeta).
+  src/vistes/               Inici.astro (portada), Pagina.astro (prosa: autora y edició) y Novetats.astro.
+  src/components/           Capcalera, Peu, Marca, Xifres (la banda de números), Fitxa (la tarjeta),
+                            Novetats (la banda de la portada) y Novetat (una línea de novedad).
   src/styles/global.css     todo el CSS, con tokens claro/oscuro. No hay CSS por componente.
   public/CNAME              franciscajulianquerol.es (el dominio, ver «Decisiones»).
 .github/workflows/deploy.yml  build + publicación en Pages con cada push a main.
@@ -119,14 +138,17 @@ site/                       proyecto Astro 7 (npm run dev | build | preview)
 1. Clonar su repositorio al lado de este (hoy, `~/IdeaProjects/francisca/`).
 2. Añadir una función de recuento en `tools/metriques.py` y registrarla en `PROJECTES`.
    Ojo con lo que **no** se debe sumar: ver el comentario de `santjoans()`.
-3. `python3 tools/metriques.py` y commitear `content/metriques.json`.
+3. `python3 tools/metriques.py` y commitear `content/metriques.json` **y** `content/novetats.json`
+   (el guion anota solo la novedad del proyecto nuevo).
 4. Copiar una portada a `content/imatges/` y escribir `content/projectes/<n>-<slug>.yaml`.
    El `slug` tiene que coincidir con la clave del JSON.
 5. Si el proyecto trae una unidad de contenido nueva (algo que no sea capítulos, guías, entradas,
    piezas o escritos), añadirla a `unitats` en `src/site/ui.ts` y al tipo `MetriquesProjecte`. Si
-   trae un `tipus` nuevo, añadirlo al enum de `src/content.config.ts` y a `tipus` en `ui.ts`.
-6. Revisar los textos que cuentan los proyectos («cinco proyectos» en `ui.ts`, `LLOC.lema` y
-   `LLOC.descripcio` en `config.ts`, `content/edicio.*.md`, `README.md`, `CONTRIBUTING.md`).
+   trae un `tipus` nuevo, añadirlo al enum de `src/content.config.ts` y a `tipus` en `ui.ts`. Si
+   trae una cifra propia que puede crecer (como `fitxes`), añadirla a `COMPTABLES` en el guion y a
+   `canvis` en `ui.ts` para que las novedades sepan nombrarla.
+6. Revisar los textos que cuentan los proyectos («seis proyectos» en `ui.ts`, `LLOC.lema` y
+   `LLOC.descripcio` en `config.ts`, `content/edicio.*.md`, `README.md`).
 7. `cd site && npm run build`. No hay que tocar ninguna plantilla.
 
 ---
@@ -139,7 +161,7 @@ site/                       proyecto Astro 7 (npm run dev | build | preview)
 - Nada derivado (`dist/`, `node_modules/`, webp) al repositorio. `content/metriques.json` **sí** se
   versiona aunque sea generado: es la única manera de que el build no dependa de los clones.
 - **El CI no puede recalcular las cifras**: los repositorios hermanos no están en el runner. Si se
-  cambia el recuento, hay que ejecutar el guion **en local** y commitear el JSON, o las cifras
-  publicadas se quedarán atrás sin que nadie avise.
+  cambia el recuento, hay que ejecutar el guion **en local** y commitear los dos JSON (cifras y
+  novedades), o las cifras publicadas se quedarán atrás sin que nadie avise.
 - Los textos de la biografía se apoyan en lo que la autora escribió en su blog y enlazan a las
   entradas concretas. No inventar datos biográficos: si falta uno, se pregunta.

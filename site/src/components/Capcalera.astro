@@ -2,11 +2,11 @@
 import Marca from './Marca.astro';
 import {
   LLOC, LANGS, CODI_IDIOMA, PAGINA_KEYS, PAGINES, urlInici, urlPagina,
-  type Lang, type Alternatives,
+  type Lang, type Alternatives, type PaginaKey,
 } from '../site/config';
 import { ui } from '../site/ui';
 
-interface Props { lang: Lang; alternatives?: Alternatives; actiu?: 'inici' | 'autora' | 'edicio' }
+interface Props { lang: Lang; alternatives?: Alternatives; actiu?: 'inici' | PaginaKey }
 const { lang, alternatives, actiu } = Astro.props;
 const t = ui(lang);
 ---

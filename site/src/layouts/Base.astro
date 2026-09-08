@@ -3,7 +3,7 @@ import { Font, getImage } from 'astro:assets';
 import retrat from '../../../content/imatges/retrat-paquita.jpg';
 import Capcalera from '../components/Capcalera.astro';
 import Peu from '../components/Peu.astro';
-import { LLOC, LANGS, LANG_PER_DEFECTE, CODI_IDIOMA, urlPublic, type Lang, type Alternatives } from '../site/config';
+import { LLOC, LANGS, LANG_PER_DEFECTE, CODI_IDIOMA, urlPublic, type Lang, type Alternatives, type PaginaKey } from '../site/config';
 import { ui } from '../site/ui';
 import '../styles/global.css';
 
@@ -14,7 +14,7 @@ interface Props {
   /** ruta de la imagen para redes, relativa al sitio; si no se da, el retrato de la autora (T-06) */
   imatge?: string;
   alternatives?: Alternatives;
-  actiu?: 'inici' | 'autora' | 'edicio';
+  actiu?: 'inici' | PaginaKey;
 }
 
 const { lang, titol, descripcio = LLOC.descripcio[lang], imatge, alternatives, actiu } = Astro.props;

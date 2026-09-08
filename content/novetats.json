@@ -1,0 +1,30 @@
+{
+  "novetats": [
+    {
+      "data": "2026-09-04",
+      "tipus": "nota",
+      "nota": {
+        "es": "Se publica esta portada, con cuatro proyectos: Masos de Morella, Santjoans, Rambla Celumbres y Les meues coses",
+        "ca": "Es publica esta portada, amb quatre projectes: Masos de Morella, Santjoans, Rambla Celumbres i Les meues coses"
+      }
+    },
+    {
+      "data": "2026-09-06",
+      "tipus": "nou",
+      "projecte": "franciscaineditos"
+    },
+    {
+      "data": "2026-09-06",
+      "tipus": "nota",
+      "nota": {
+        "es": "La portada estrena dominio propio: franciscajulianquerol.es",
+        "ca": "La portada estrena domini propi: franciscajulianquerol.es"
+      }
+    },
+    {
+      "data": "2026-09-08",
+      "tipus": "nou",
+      "projecte": "santjoanslibro"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+---
+/**
+ * La banda de novedades de la portada: las ultimas NOVETATS_PORTADA en una linea discreta, entre
+ * las cifras y el indice, con el enlace a la pagina completa. No hay nada que hacer a mano: sale
+ * de content/novetats.json.
+ */
+import { getCollection } from 'astro:content';
+import Novetat from './Novetat.astro';
+import { urlPagina, type Lang } from '../site/config';
+import { NOVETATS, NOVETATS_PORTADA } from '../site/novetats';
+import { ui } from '../site/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui(lang);
+const projectes = new Map((await getCollection('projectes')).map((p) => [p.data.slug, p]));
+const ultimes = NOVETATS.slice(0, NOVETATS_PORTADA);
+---
+
+{ultimes.length > 0 && (
+  <section class="novetats" aria-labelledby="novetats-titol">
+    <div class="contenidor novetats-fila">
+      <h2 id="novetats-titol" class="antetitol">{t.novetatsTitol}</h2>
+      <ol class="novetats-llista">
+        {ultimes.map((n) => <Novetat novetat={n} projectes={projectes} lang={lang} />)}
+      </ol>
+      <a class="novetats-totes" href={urlPagina(lang, 'novetats')}>{t.novetatsTotes} →</a>
+    </div>
+  </section>
+)}
