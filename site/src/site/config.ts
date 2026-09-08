@@ -16,12 +16,12 @@ export const LLOC = {
     ca: 'Francisca Julián Querol',
   } as T,
   lema: {
-    es: 'Un libro, un estudio, una guía de campo, dieciséis años de blog y los escritos que quedaban en el ordenador, de Cinctorres a Castelló',
-    ca: "Un llibre, un estudi, una guia de camp, setze anys de blog i els escrits que quedaven a l'ordinador, de Cinctorres a Castelló",
+    es: 'Dos libros, un estudio, una guía de campo, dieciséis años de blog y los escritos que quedaban en el ordenador, de Cinctorres a Castelló',
+    ca: "Dos llibres, un estudi, una guia de camp, setze anys de blog i els escrits que quedaven a l'ordinador, de Cinctorres a Castelló",
   } as T,
   descripcio: {
-    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans, la guía de biodiversidad de la rambla de Celumbres, el blog «Les meues coses» y los escritos inéditos que quedaban en su ordenador. Sigue escribiendo, a un ritmo más pausado. Cinco ediciones digitales familiares, sin publicidad y sin cookies.',
-    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans, la guia de biodiversitat de la rambla de Celumbres, el blog «Les meues coses» i els escrits inèdits que quedaven al seu ordinador. Continua escrivint, a un ritme més pausat. Cinc edicions digitals familiars, sense publicitat i sense galetes.",
+    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans con su visor y su libro, la guía de biodiversidad de la rambla de Celumbres, el blog «Les meues coses» y los escritos inéditos que quedaban en su ordenador. Sigue escribiendo, a un ritmo más pausado. Seis ediciones digitales familiares, sin publicidad y sin cookies.',
+    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans amb el seu visor i el seu llibre, la guia de biodiversitat de la rambla de Celumbres, el blog «Les meues coses» i els escrits inèdits que quedaven al seu ordinador. Continua escrivint, a un ritme més pausat. Sis edicions digitals familiars, sense publicitat i sense galetes.",
   } as T,
   locale: { es: 'es-ES', ca: 'ca-ES' } as T,
   repositori: 'https://github.com/jtpadilla/franciscajulianquerol',
@@ -39,6 +39,8 @@ export interface MetriquesProjecte {
   paraules: number;
   /** Escritos ineditos: en cuantas obras se agrupan los textos. */
   obres?: number;
+  /** Libro de Santjoans: las fichas del catalogo (datos, no prosa; tampoco son `peces`). */
+  fitxes?: number;
   fotografies?: number;
   illustracions?: number;
   traduccions?: number;
@@ -78,12 +80,18 @@ export const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
 /** El castellano va en la raiz; el valenciano, bajo /ca/. */
 export const prefix = (lang: Lang) => `${BASE}${lang === LANG_PER_DEFECTE ? '' : `/${lang}`}`;
 
-export type PaginaKey = 'autora' | 'edicio';
+export type PaginaKey = 'autora' | 'novetats' | 'edicio';
+/** Las paginas que salen de un .md de content/; `novetats` tiene su propia vista. */
+export type PaginaProsaKey = Exclude<PaginaKey, 'novetats'>;
 
 export const PAGINES: Record<PaginaKey, { slug: T; nom: T }> = {
   autora: {
     slug: { es: 'la-autora', ca: 'l-autora' },
     nom: { es: 'La autora', ca: "L'autora" },
+  },
+  novetats: {
+    slug: { es: 'novedades', ca: 'novetats' },
+    nom: { es: 'Novedades', ca: 'Novetats' },
   },
   edicio: {
     slug: { es: 'esta-pagina', ca: 'esta-pagina' },

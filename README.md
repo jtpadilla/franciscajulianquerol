@@ -11,16 +11,18 @@ escrito y dónde leerlo.
 > — presentación de su blog, de la autora
 
 Esta página no añade obra nueva: presenta a la autora, cuenta lo que hay y lleva a cada proyecto. Es
-la puerta de entrada a las cinco ediciones digitales que ha preparado la familia, y está en
+la puerta de entrada a las seis ediciones digitales que ha preparado la familia, y está en
 **castellano y valenciano**. La autora sigue escribiendo, a un ritmo más pausado: lo nuevo llega al
-blog y a los escritos inéditos, y las cifras se recalculan cuando llega.
+blog y a los escritos inéditos, y las cifras se recalculan cuando llega. Cada proyecto nuevo y cada
+crecimiento queda anotado en la lista de [novedades](https://franciscajulianquerol.es/novedades/).
 
 ## Los proyectos
 
 | | Qué es | Papel de la autora | Sitio |
 |---|---|---|---|
 | **Masos de Morella** (2006–2016) | Su libro sobre la vida en la Dena dels Llivis, publicado por la UJI y revisado por ella | Autora | [jtpadilla.github.io/masosdemorella](https://jtpadilla.github.io/masosdemorella/) |
-| **Santjoans** (2010–2012) | El estudio del pavimento cerámico zoomórfico del Palau Santjoans | Autora del estudio | [santjoans.es](https://santjoans.es/) |
+| **Santjoans** (2010–2012) | El visor del pavimento cerámico zoomórfico del Palau Santjoans, pieza a pieza | Autora del estudio | [santjoans.es](https://santjoans.es/) |
+| **Paviment ceràmic de la casa Santjoans** (2010–2012) | El texto de ese estudio, capítulo a capítulo, con su catálogo de 29 fichas; la Diputació lo publicó en libro en 2012 | Autora del libro | [jtpadilla.github.io/santjoanslibro](https://jtpadilla.github.io/santjoanslibro/) |
 | **Rambla Celumbres** (2014–2016) | Guía de biodiversidad de la rambla, con las fotografías de su hermano Tadeo | Autora de los textos | [ramblacelumbres.org](https://ramblacelumbres.org/) |
 | **Les meues coses** (2010–2026) | Dieciséis años de blog, en valenciano y en castellano | Autora | [jtpadilla.github.io/lesmeuescoses](https://jtpadilla.github.io/lesmeuescoses/) |
 | **Escrits inèdits** (2006–2026) | Los textos que quedaban en su ordenador, elegidos uno a uno: memorias, mundo rural, poemas, relatos, trabajos de curso | Autora | [jtpadilla.github.io/franciscaineditos](https://jtpadilla.github.io/franciscaineditos/) |
@@ -35,17 +37,18 @@ Añadir un proyecto es escribir un fichero en `content/projectes/` y una funció
 | `content/projectes/` | **Una ficha por proyecto** (`*.yaml`): título, años, papel de la autora, descripción en los dos idiomas, portada y enlaces. |
 | `content/autora.*.md` | La biografía de la autora, en castellano y en valenciano. |
 | `content/edicio.*.md` | «Sobre esta página»: cómo se cuentan las cifras y con qué licencia se publica todo. |
-| `content/imatges/` | El retrato y las cinco portadas, copiadas de los repositorios de origen. |
+| `content/imatges/` | El retrato y las seis portadas, copiadas de los repositorios de origen. |
 | `content/metriques.json` | **Las cifras, generadas**, no escritas a mano. Sale de `tools/metriques.py`. |
+| `content/novetats.json` | **Las novedades**: lo que el guion anota cada vez que un proyecto se incorpora o crece. |
 | `site/` | El sitio web (Astro 7). Se publica en GitHub Pages con cada push a `main`. |
-| `tools/metriques.py` | El recuento: lee los cinco repositorios hermanos y escribe `content/metriques.json`. |
+| `tools/metriques.py` | El recuento: lee los seis repositorios hermanos, escribe `content/metriques.json` y anota las novedades. |
 | `CLAUDE.md` | Cómo está montado todo y las convenciones del proyecto. |
 | `NOTES.md` / `TODO.md` | Decisiones tomadas y tareas pendientes (`T-nn`). |
 
 ## Las cifras
 
 Las métricas de la portada **no se escriben a mano**: las cuenta un guion que lee los repositorios de
-los cinco proyectos, clonados al lado de este (en la carpeta que contiene este repositorio, o la
+los seis proyectos, clonados al lado de este (en la carpeta que contiene este repositorio, o la
 que se indique con `--arrel`).
 
 ```bash

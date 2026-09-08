@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
-"""Recuento de la produccion de Francisca Julian Querol repartida por los cinco proyectos.
+"""Recuento de la produccion de Francisca Julian Querol repartida por los seis proyectos.
 
 Lee los repositorios hermanos clonados al lado de este (por defecto, la carpeta que contiene este
 repositorio) y escribe
 content/metriques.json, que SI se versiona: construir el sitio no necesita los clones ni la red.
+
+Ademas, compara el recuento nuevo con el anterior y ANOTA LAS NOVEDADES en content/novetats.json:
+un proyecto que no estaba es una entrada «nou»; un proyecto cuyas cifras han crecido (textos,
+fotografias, piezas... o al menos LLINDAR_PARAULES palabras), una entrada «creix» con la diferencia.
+El fichero solo crece; se puede editar a mano (borrar una entrada, anadir una «nota» con texto en
+los dos idiomas). El sitio lo lee para la banda de novedades de la portada y la pagina /novedades/.
 
     python3 tools/metriques.py              # recuenta y escribe content/metriques.json
     python3 tools/metriques.py --comprova   # no escribe: falla si el fichero no coincide (CI)
@@ -25,6 +31,7 @@ from pathlib import Path
 AQUEST = Path(__file__).resolve().parent.parent
 ARREL_PER_DEFECTE = AQUEST.parent  # los hermanos, clonados al lado de este repositorio
 DESTI = AQUEST / "content" / "metriques.json"
+NOVETATS = AQUEST / "content" / "novetats.json"
 
 FOTOS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
 IL_LUSTRACIONS = {".svg"}
@@ -142,6 +149,25 @@ def santjoans(repo: Path) -> dict:
     }
 
 
+def santjoanslibro(repo: Path) -> dict:
+    """El texto del estudio de Santjoans, reconstruido desde el PDF como masosdemorella."""
+    capitols = md(repo / "content")
+    fitxes = len(re.findall(r"^- id:", (repo / "content" / "cataleg.yaml").read_text(encoding="utf-8"), flags=re.M))
+    return {
+        "textos": len(capitols),
+        "unitat": "capitols",
+        "paraules": paraules(capitols),
+        # `fitxes` es su cifra propia: las fichas del catalogo del libro. NO se suman a `peces`, que
+        # ya cuenta las rajoles digitalizadas del visor (santjoans), ni a `textos`: el catalogo es
+        # datos (cataleg.yaml), no prosa.
+        "fitxes": fitxes,
+        # Solo las imagenes del texto (assets/images). Las fotos del acto de presentacion de 2012
+        # (assets/presentacio) retratan a la autora, no son obra suya: se quedan fuera, como las de perfil
+        # del blog.
+        "fotografies": len(imatges(repo / "assets" / "images", FOTOS)),
+    }
+
+
 def lesmeuescoses(repo: Path) -> dict:
     entrades = md(repo / "content" / "entrades")
     fotos = imatges(repo / "blogger-export" / "images", FOTOS, exclou={"perfil"})
@@ -180,6 +206,7 @@ def franciscaineditos(repo: Path) -> dict:
 PROJECTES = [
     ("masosdemorella", masosdemorella),
     ("santjoans", santjoans),
+    ("santjoanslibro", santjoanslibro),
     ("ramblacelumbres", ramblacelumbres),
     ("lesmeuescoses", lesmeuescoses),
     ("franciscaineditos", franciscaineditos),
@@ -218,6 +245,53 @@ def recompta(arrel: Path) -> dict:
     }
 
 
+# ------------------------------------------------------------------------------ novedades
+
+# Cifras cuyo crecimiento cuenta como novedad, en el orden en que se enseñan.
+COMPTABLES = ("textos", "obres", "paraules", "fotografies", "illustracions", "peces", "fitxes", "comentaris")
+# Las palabras solas (correcciones, erratas) no son novedad si no llegan a esta cifra.
+LLINDAR_PARAULES = 100
+
+
+def novetats(vell: dict | None, nou: dict, avui: str) -> list[dict]:
+    """Las entradas de novedades que salen de comparar el recuento anterior con el nuevo."""
+    entrades: list[dict] = []
+    abans = (vell or {}).get("projectes", {})
+    for slug, m in nou["projectes"].items():
+        if slug not in abans:
+            entrades.append({"data": avui, "tipus": "nou", "projecte": slug})
+            continue
+        canvis = {c: m.get(c, 0) - abans[slug].get(c, 0) for c in COMPTABLES}
+        canvis = {c: d for c, d in canvis.items() if d > 0}
+        if not canvis or set(canvis) == {"paraules"} and canvis["paraules"] < LLINDAR_PARAULES:
+            continue
+        entrades.append({"data": avui, "tipus": "creix", "projecte": slug, "canvis": canvis})
+    return entrades
+
+
+def anota_novetats(noves: list[dict]) -> list[dict]:
+    """Anade las entradas a content/novetats.json. Si el mismo dia ya hay una del mismo proyecto,
+    se funden (el guion se puede ejecutar varias veces en una sesion). Devuelve lo anadido."""
+    fitxer = json.loads(NOVETATS.read_text(encoding="utf-8")) if NOVETATS.exists() else {"novetats": []}
+    llista: list[dict] = fitxer["novetats"]
+    afegides = []
+    for e in noves:
+        mateixa = next(
+            (x for x in llista if x["data"] == e["data"] and x.get("projecte") == e["projecte"]), None
+        )
+        if mateixa is None:
+            llista.append(e)
+            afegides.append(e)
+        elif mateixa["tipus"] == "creix" and e["tipus"] == "creix":
+            for c, d in e["canvis"].items():
+                mateixa["canvis"][c] = mateixa["canvis"].get(c, 0) + d
+            afegides.append(e)
+        # una entrada «nou» del mismo dia ya lo dice todo: no se anade nada
+    llista.sort(key=lambda x: x["data"])
+    NOVETATS.write_text(json.dumps(fitxer, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return afegides
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--arrel", type=Path, default=ARREL_PER_DEFECTE, help="carpeta con los clones hermanos")
@@ -239,6 +313,7 @@ def main() -> None:
         print("metriques.json al dia")
         return
 
+    vell = json.loads(DESTI.read_text(encoding="utf-8")) if DESTI.exists() else None
     DESTI.write_text(text, encoding="utf-8")
     t = nou["totals"]
     print(f"Escrito {DESTI}")
@@ -246,6 +321,15 @@ def main() -> None:
         f"  {t['projectes']} proyectos · {t['textos']} textos · {t['paraules']:,} palabras · "
         f"{t['fotografies']} fotografías · {t['peces']} piezas".replace(",", ".")
     )
+
+    # Novedades: solo si habia un recuento anterior con el que comparar.
+    if vell is not None:
+        afegides = anota_novetats(novetats(vell, nou, nou["generat"]))
+        for e in afegides:
+            que = "nuevo" if e["tipus"] == "nou" else " ".join(f"+{d} {c}" for c, d in e["canvis"].items())
+            print(f"  novedad: {e['projecte']} · {que}")
+        if afegides:
+            print(f"Anotado en {NOVETATS}: commitear los dos ficheros.")
 
 
 if __name__ == "__main__":

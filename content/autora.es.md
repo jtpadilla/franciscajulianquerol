@@ -22,11 +22,12 @@ cincuenta años y ella decidió irse a los archivos a escribir su historia.
 ## Estudiante a los sesenta
 
 A los sesenta decidió aprender a manejar el ordenador, y se matriculó en la **Universitat per a
-Majors de la Universitat Jaume I**. De allí salieron sus dos trabajos de investigación, que son los
-dos primeros proyectos de esta página: el del primer ciclo, sobre la vida en los **masos de
+Majors de la Universitat Jaume I**. De allí salieron sus dos trabajos de investigación, que abren
+el índice de esta página: el del primer ciclo, sobre la vida en los **masos de
 Morella**, publicado por la Universitat en 2006 y revisado por ella en 2016; y el del segundo ciclo,
 el estudio del **pavimento cerámico de la casa Santjoans** de Cinctorres, defendido en mayo de 2010 y
-publicado por la Diputació de Castelló en 2012.
+publicado por la Diputació de Castelló en 2012. De ese segundo trabajo salen dos proyectos: el
+visor del pavimento, pieza a pieza, y el texto del estudio, leído como el libro que es.
 
 ## El campo y el blog
 

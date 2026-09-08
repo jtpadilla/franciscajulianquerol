@@ -1,0 +1,41 @@
+---
+/** La pagina de novedades: todas, de la mas reciente a la mas antigua. */
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Novetat from '../components/Novetat.astro';
+import { LLOC, PAGINES, alternativesPagina, type Lang } from '../site/config';
+import { NOVETATS } from '../site/novetats';
+import { ui } from '../site/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui(lang);
+const projectes = new Map((await getCollection('projectes')).map((p) => [p.data.slug, p]));
+---
+
+<Base
+  lang={lang}
+  titol={PAGINES.novetats.nom[lang]}
+  descripcio={t.novetatsResum}
+  alternatives={alternativesPagina('novetats')}
+  actiu="novetats"
+>
+  <article class="pagina">
+    <div class="lectura">
+      <p class="antetitol">{LLOC.nom}</p>
+      <h1>{PAGINES.novetats.nom[lang]}</h1>
+      <p class="resum">{t.novetatsResum}</p>
+
+      <div class="prosa">
+        <p>{t.novetatsExplicacio}</p>
+        {NOVETATS.length > 0 ? (
+          <ol class="novetats-llista novetats-pagina">
+            {NOVETATS.map((n) => <Novetat novetat={n} projectes={projectes} lang={lang} />)}
+          </ol>
+        ) : (
+          <p>{t.novetatsCap}</p>
+        )}
+      </div>
+    </div>
+  </article>
+</Base>

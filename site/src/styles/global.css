@@ -182,6 +182,38 @@ p { margin: 0 0 1.2em; }
 .xifres-peu { margin: 1.75rem 0 0; font-size: .82rem; color: var(--tinta-3); text-align: center; }
 .xifres-peu code { font-size: .95em; }
 
+/* ----------------------------------------------------------------- novetats */
+/* Una linea discreta entre las cifras y el indice: no compite con la portada. */
+.novetats { border-bottom: 1px solid var(--linea); padding: 1rem 0 1.1rem; }
+.novetats-fila {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.75rem;
+}
+.novetats-fila .antetitol { margin: 0; flex: none; }
+.novetats-llista { list-style: none; margin: 0; padding: 0; }
+.novetats-fila .novetats-llista {
+  flex: 1 1 24rem; display: flex; flex-wrap: wrap; gap: .3rem 1.75rem; font-size: .92rem;
+}
+.novetat { display: flex; flex-wrap: wrap; gap: .1rem .6rem; align-items: baseline; }
+.novetat time {
+  font-size: .78rem; color: var(--tinta-3); font-variant-numeric: lining-nums tabular-nums;
+  white-space: nowrap;
+}
+.novetat span { color: var(--tinta-2); }
+.novetat a { color: var(--tinta); font-weight: 600; text-decoration-color: var(--linea); }
+.novetat a:hover { color: var(--accent); }
+.novetats-totes { font-size: .88rem; white-space: nowrap; margin-inline-start: auto; text-decoration: none; }
+.novetats-totes:hover { text-decoration: underline; }
+.etiqueta-nova { color: var(--or); background: color-mix(in srgb, var(--or) 14%, transparent); }
+
+/* La pagina de novedades: una por linea, con la fecha en su columna. */
+.novetats-pagina { margin-top: 1.5rem; border-top: 1px solid var(--linea); }
+.novetats-pagina .novetat {
+  display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: .25rem 1rem;
+  padding: .8rem 0; border-bottom: 1px solid var(--linea); font-size: 1rem;
+}
+.novetats-pagina .novetat time { font-size: .88rem; padding-top: .1rem; }
+@media (max-width: 34rem) { .novetats-pagina .novetat { grid-template-columns: minmax(0, 1fr); } }
+
 /* -------------------------------------------------------------------- index */
 .index { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
 .index-cap { max-width: 42rem; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }

@@ -21,11 +21,12 @@ complir cinquanta anys i ella va decidir anar als arxius a escriure'n la històr
 ## Estudiant als seixanta
 
 Als seixanta va decidir aprendre a fer servir l'ordinador, i es va matricular a la **Universitat per
-a Majors de la Universitat Jaume I**. D'allí van eixir els seus dos treballs d'investigació, que són
-els dos primers projectes d'esta pàgina: el del primer cicle, sobre la vida als **masos de Morella**,
+a Majors de la Universitat Jaume I**. D'allí van eixir els seus dos treballs d'investigació, que obrin
+l'índex d'esta pàgina: el del primer cicle, sobre la vida als **masos de Morella**,
 publicat per la Universitat el 2006 i revisat per ella el 2016; i el del segon cicle, l'estudi del
 **paviment ceràmic de la casa Santjoans** de Cinctorres, defensat el maig de 2010 i publicat per la
-Diputació de Castelló el 2012.
+Diputació de Castelló el 2012. D'eixe segon treball n'ixen dos projectes: el visor del paviment,
+peça a peça, i el text de l'estudi, llegit com el llibre que és.
 
 ## El camp i el blog
 

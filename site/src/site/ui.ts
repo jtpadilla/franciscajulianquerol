@@ -17,7 +17,7 @@ const es = {
   // -------------------------------------------------------------------- cifras
   xifresTitol: 'Lo que hay, contado',
   xifresPeu: (data: string) =>
-    `Cifras contadas por «tools/metriques.py» sobre los repositorios de los cinco proyectos, el ${data}. No están escritas a mano.`,
+    `Cifras contadas por «tools/metriques.py» sobre los repositorios de los seis proyectos, el ${data}. No están escritas a mano.`,
   metriques: {
     projectes: ['proyecto', 'proyectos'],
     textos: ['texto', 'textos'],
@@ -29,7 +29,7 @@ const es = {
   // --------------------------------------------------------------------- indice
   indexTitol: 'La obra',
   indexIntro:
-    'Cinco proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
+    'Seis proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
   anarAlLloc: 'Ir al sitio',
   codiFont: 'Repositorio',
   rol: 'Su papel',
@@ -53,6 +53,28 @@ const es = {
   posicions: (n: string) => `${n} posiciones en el pavimento`,
   idiomes: (n: string) => `${n} idiomas`,
   obres: ['obra', 'obras'] as [string, string],
+  fitxes: (n: string) => `${n} fichas del catálogo`,
+
+  // ---------------------------------------------------------------- novedades
+  novetatsTitol: 'Novedades',
+  novetatsResum:
+    'Cada proyecto que se incorpora y cada vez que uno crece, con su fecha. La lista la escribe el recuento, no una persona.',
+  novetatsExplicacio:
+    'La autora sigue escribiendo, y los proyectos crecen cuando llega algo nuevo. Cada vez que se recalculan las cifras, el guion compara el recuento con el anterior y anota aquí lo que ha cambiado: un proyecto nuevo, o textos, fotografías o piezas de más en uno que ya estaba. Las correcciones pequeñas no cuentan.',
+  novetatsTotes: 'Todas las novedades',
+  novetatsCap: 'Todavía no hay novedades.',
+  /** «Masos de Morella se incorpora a la portada» */
+  novetatNou: (titol: string) => `${titol} se incorpora a la portada`,
+  /** «Les meues coses crece: +2 entradas · +1.200 palabras» */
+  novetatCreix: (titol: string, canvis: string) => `${titol} crece: ${canvis}`,
+  /** La etiqueta de la ficha mientras la novedad es reciente. */
+  novetatEtiqueta: { nou: 'Nuevo', creix: 'Ampliado' } as Record<string, string>,
+  /** Nombres de las cifras que pueden crecer y que no tienen ya su plural mas arriba. */
+  canvis: {
+    illustracions: ['ilustración', 'ilustraciones'],
+    fitxes: ['ficha del catálogo', 'fichas del catálogo'],
+    comentaris: ['comentario', 'comentarios'],
+  } as Record<string, [string, string]>,
 
   // ------------------------------------------------------------------------ pie
   peuNota:
@@ -83,7 +105,7 @@ const ca: typeof es = {
 
   xifresTitol: 'El que hi ha, comptat',
   xifresPeu: (data: string) =>
-    `Xifres comptades per «tools/metriques.py» sobre els repositoris dels cinc projectes, el ${data}. No estan escrites a mà.`,
+    `Xifres comptades per «tools/metriques.py» sobre els repositoris dels sis projectes, el ${data}. No estan escrites a mà.`,
   metriques: {
     projectes: ['projecte', 'projectes'],
     textos: ['text', 'textos'],
@@ -94,7 +116,7 @@ const ca: typeof es = {
 
   indexTitol: "L'obra",
   indexIntro:
-    "Cinc projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
+    "Sis projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
   anarAlLloc: 'Anar al lloc',
   codiFont: 'Repositori',
   rol: 'El seu paper',
@@ -118,6 +140,23 @@ const ca: typeof es = {
   posicions: (n: string) => `${n} posicions al paviment`,
   idiomes: (n: string) => `${n} idiomes`,
   obres: ['obra', 'obres'] as [string, string],
+  fitxes: (n: string) => `${n} fitxes del catàleg`,
+
+  novetatsTitol: 'Novetats',
+  novetatsResum:
+    'Cada projecte que s\'incorpora i cada vegada que un creix, amb la seua data. La llista l\'escriu el recompte, no una persona.',
+  novetatsExplicacio:
+    "L'autora continua escrivint, i els projectes creixen quan arriba alguna cosa nova. Cada vegada que es recalculen les xifres, el guió compara el recompte amb l'anterior i anota ací el que ha canviat: un projecte nou, o textos, fotografies o peces de més en un que ja hi era. Les correccions xicotetes no compten.",
+  novetatsTotes: 'Totes les novetats',
+  novetatsCap: 'Encara no hi ha novetats.',
+  novetatNou: (titol: string) => `${titol} s'incorpora a la portada`,
+  novetatCreix: (titol: string, canvis: string) => `${titol} creix: ${canvis}`,
+  novetatEtiqueta: { nou: 'Nou', creix: 'Ampliat' },
+  canvis: {
+    illustracions: ['il·lustració', 'il·lustracions'],
+    fitxes: ['fitxa del catàleg', 'fitxes del catàleg'],
+    comentaris: ['comentari', 'comentaris'],
+  },
 
   peuNota:
     'Iniciativa familiar sense ànim de lucre, sense publicitat i sense galetes, perquè el treball de la Paquita continue a la vista de qui vulga mirar-lo.',
@@ -151,6 +190,21 @@ export function xifresProjecte(m: MetriquesProjecte, lang: Lang): string[] {
   if (m.peces) linies.push(compta(m.peces, t.metriques.peces!, lang));
   if (m.posicions) linies.push(t.posicions(xifra(m.posicions, lang)));
   if (m.fotografies) linies.push(compta(m.fotografies, t.metriques.fotografies!, lang));
+  if (m.fitxes) linies.push(t.fitxes(xifra(m.fitxes, lang)));
   if (m.idiomes) linies.push(t.idiomes(xifra(m.idiomes, lang)));
   return linies;
+}
+
+/**
+ * «+2 entradas · +1.200 palabras»: los cambios de una novedad «creix», en el orden del JSON.
+ * El nombre de `textos` es la unidad del proyecto (entradas, escritos...), como en la ficha.
+ */
+export function textCanvis(canvis: Record<string, number>, m: MetriquesProjecte, lang: Lang): string {
+  const t = ui(lang);
+  const nom = (camp: string): [string, string] | undefined =>
+    camp === 'textos' ? t.unitats[m.unitat] : camp === 'obres' ? t.obres : t.metriques[camp] ?? t.canvis[camp];
+  return Object.entries(canvis)
+    .filter(([camp, n]) => n > 0 && nom(camp))
+    .map(([camp, n]) => `+${compta(n, nom(camp)!, lang)}`)
+    .join(' · ');
 }

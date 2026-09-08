@@ -2,9 +2,9 @@
 import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { LLOC, alternativesPagina, type Lang, type PaginaKey } from '../site/config';
+import { LLOC, alternativesPagina, type Lang, type PaginaProsaKey } from '../site/config';
 
-interface Props { lang: Lang; pagina: PaginaKey }
+interface Props { lang: Lang; pagina: PaginaProsaKey }
 const { lang, pagina } = Astro.props;
 
 const entrada = (await getCollection('pagines')).find(

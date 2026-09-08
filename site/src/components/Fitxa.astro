@@ -3,15 +3,18 @@ import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { METRIQUES, type Lang } from '../site/config';
 import { ui, xifresProjecte } from '../site/ui';
+import { novetatRecent } from '../site/novetats';
 
 interface Props { projecte: CollectionEntry<'projectes'>; lang: Lang }
 const { projecte, lang } = Astro.props;
 const p = projecte.data;
 const t = ui(lang);
 const xifres = xifresProjecte(METRIQUES.projectes[p.slug]!, lang);
+// «Nuevo» o «Ampliado» mientras la ultima novedad del proyecto sea reciente (DIES_RECENT).
+const novetat = novetatRecent(p.slug);
 ---
 
-<article class="fitxa">
+<article class="fitxa" id={p.slug}>
   <div class="fitxa-foto">
     <Image src={p.portada} alt={p.portadaAlt[lang]} widths={[480, 900]} sizes="(min-width: 46rem) 17rem, 100vw" loading="lazy" />
   </div>
@@ -19,6 +22,7 @@ const xifres = xifresProjecte(METRIQUES.projectes[p.slug]!, lang);
   <div class="fitxa-cos">
     <p class="fitxa-dalt">
       <span class="etiqueta">{t.tipus[p.tipus]}</span>
+      {novetat && <span class="etiqueta etiqueta-nova">{t.novetatEtiqueta[novetat.tipus]}</span>}
       <span class="anys">{p.anys}</span>
     </p>
 

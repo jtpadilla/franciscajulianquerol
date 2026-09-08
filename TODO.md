@@ -6,6 +6,10 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 
 ## Abiertas
 
+### T-12 · Enlaces de vuelta del libro nuevo
+En `santjoanslibro`, el enlace a esta portada (su T-03); y que `santjoans` y `masosdemorella`
+enlacen al libro nuevo, como ya enlazan a la portada.
+
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
 lea. Lo mismo con la licencia CC BY-NC-ND 4.0 del contenido, que en los proyectos hermanos también
@@ -34,6 +38,13 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ---
 
 ## Resueltas
+
+### T-11 · El sexto proyecto, santjoanslibro, y las novedades · 2026-09-08
+`santjoanslibro()` en el recuento (5 capítulos, 4.001 palabras, 13 fotografías y la cifra propia
+`fitxes`, 29, que no se suma a las piezas), ficha `3-santjoanslibro.yaml` con la fachada de la casa
+como portada, las tres fichas siguientes renumeradas, los textos de «cinco» a «seis», y el mecanismo
+de novedades (`content/novetats.json`, banda en la portada, `/novedades/`, etiqueta en la ficha).
+Fusionado en `main` y publicado. Queda en los hermanos, como T-12.
 
 ### T-10 · Enlace de vuelta de los hermanos al dominio nuevo · 2026-09-06
 Los cinco sitios enlazan ya a `https://franciscajulianquerol.es/` (con `/ca/` donde el sitio está en
