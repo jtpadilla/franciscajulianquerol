@@ -155,6 +155,20 @@ p { margin: 0 0 1.2em; }
 }
 .hero .entradeta { color: var(--tinta-2); max-width: 38rem; }
 .hero .accions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+
+/* La ultima novedad de obra, con su fecha: lo primero que busca quien vuelve de tarde en tarde. */
+.hero-novetat {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .4rem .9rem;
+  max-width: 38rem; margin-top: 1.5rem; padding: .85rem 1.1rem;
+  border: 1px solid color-mix(in srgb, var(--or) 45%, var(--linea));
+  border-inline-start: 4px solid var(--or);
+  border-radius: var(--radi-s); background: color-mix(in srgb, var(--or) 7%, var(--superficie));
+}
+.hero-novetat .etiqueta { flex: none; }
+.hero-novetat .novetat { margin: 0; flex: 1 1 16rem; font-size: 1.02rem; }
+.hero-novetat .novetat time { font-size: .85rem; font-weight: 600; color: var(--tinta-2); }
+.hero-novetat-totes { font-size: .85rem; white-space: nowrap; text-decoration: none; margin-inline-start: auto; }
+.hero-novetat-totes:hover { text-decoration: underline; }
 .retrat {
   border-radius: var(--radi); overflow: hidden; box-shadow: var(--ombra-alta);
   border: 1px solid var(--linea); background: var(--superficie);
@@ -163,46 +177,35 @@ p { margin: 0 0 1.2em; }
 .retrat img { aspect-ratio: 4 / 3; object-fit: cover; object-position: 34% 30%; }
 
 /* ------------------------------------------------------------------- xifres */
-.xifres { padding: clamp(2rem, 5vw, 3rem) 0; border-block: 1px solid var(--linea); background: var(--papel-2); }
+/* Una linea de cifras, no una banda: el resumen para quien llega, sin robar sitio al resto. */
+.xifres { padding: .9rem 0 1rem; border-block: 1px solid var(--linea); background: var(--papel-2); }
+.xifres-fila { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1.5rem; }
 .xifres-graella {
-  display: grid; gap: 1.25rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1.5rem;
   margin: 0; padding: 0;
 }
-.xifra { display: flex; flex-direction: column-reverse; align-items: center; text-align: center; }
+.xifra { display: flex; flex-direction: row-reverse; align-items: baseline; gap: .4rem; }
 .xifra dd {
   margin: 0; font-family: var(--titols); font-weight: 500;
-  font-size: clamp(2rem, 4.5vw, 2.9rem); line-height: 1; color: var(--accent);
+  font-size: 1.45rem; line-height: 1; color: var(--accent);
   font-variant-numeric: lining-nums tabular-nums;
 }
-.xifra dt {
-  margin-top: .4rem; font-size: .82rem; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--tinta-3);
-}
-.xifres-peu { margin: 1.75rem 0 0; font-size: .82rem; color: var(--tinta-3); text-align: center; }
-.xifres-peu code { font-size: .95em; }
+.xifra dt { margin: 0; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--tinta-3); }
+.xifres-peu { margin: 0; font-size: .8rem; color: var(--tinta-3); margin-inline-start: auto; white-space: nowrap; }
+.xifres-peu a { color: inherit; text-decoration-color: var(--linea); }
+.xifres-peu a:hover { color: var(--accent); }
 
 /* ----------------------------------------------------------------- novetats */
-/* Una linea discreta entre las cifras y el indice: no compite con la portada. */
-.novetats { border-bottom: 1px solid var(--linea); padding: 1rem 0 1.1rem; }
-.novetats-fila {
-  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1.75rem;
-}
-.novetats-fila .antetitol { margin: 0; flex: none; }
+/* Una novedad en una linea: la usan la cabecera de la portada y la pagina de novedades. */
 .novetats-llista { list-style: none; margin: 0; padding: 0; }
-.novetats-fila .novetats-llista {
-  flex: 1 1 24rem; display: flex; flex-wrap: wrap; gap: .3rem 1.75rem; font-size: .92rem;
-}
-.novetat { display: flex; flex-wrap: wrap; gap: .1rem .6rem; align-items: baseline; }
+.novetat { display: flex; flex-wrap: wrap; gap: .1rem .7rem; align-items: baseline; }
 .novetat time {
-  font-size: .78rem; color: var(--tinta-3); font-variant-numeric: lining-nums tabular-nums;
+  font-size: .82rem; color: var(--tinta-3); font-variant-numeric: lining-nums tabular-nums;
   white-space: nowrap;
 }
 .novetat span { color: var(--tinta-2); }
 .novetat a { color: var(--tinta); font-weight: 600; text-decoration-color: var(--linea); }
 .novetat a:hover { color: var(--accent); }
-.novetats-totes { font-size: .88rem; white-space: nowrap; margin-inline-start: auto; text-decoration: none; }
-.novetats-totes:hover { text-decoration: underline; }
 .etiqueta-nova { color: var(--or); background: color-mix(in srgb, var(--or) 14%, transparent); }
 
 /* La pagina de novedades: una por linea, con la fecha en su columna. */

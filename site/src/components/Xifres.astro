@@ -1,5 +1,5 @@
 ---
-import { METRIQUES, LLOC, xifra, type Lang } from '../site/config';
+import { METRIQUES, LLOC, xifra, urlPagina, type Lang } from '../site/config';
 import { ui } from '../site/ui';
 
 interface Props { lang: Lang }
@@ -20,7 +20,8 @@ const data = new Date(METRIQUES.generat).toLocaleDateString(LLOC.locale[lang], {
 ---
 
 <section class="xifres" aria-labelledby="xifres-titol">
-  <div class="contenidor">
+  {/* Una sola linea: el resumen para quien llega, sin quitarle sitio a las novedades ni al indice. */}
+  <div class="contenidor xifres-fila">
     <h2 id="xifres-titol" class="ocult-visual">{t.xifresTitol}</h2>
 
     <dl class="xifres-graella">
@@ -37,6 +38,6 @@ const data = new Date(METRIQUES.generat).toLocaleDateString(LLOC.locale[lang], {
       })}
     </dl>
 
-    <p class="xifres-peu">{t.xifresPeu(data)}</p>
+    <p class="xifres-peu"><a href={urlPagina(lang, 'edicio')}>{t.xifresPeu(data)}</a></p>
   </div>
 </section>
