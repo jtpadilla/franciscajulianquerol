@@ -6,10 +6,6 @@ Numeradas `T-nn`. Se citan en los commits al resolverlas y el resultado se anota
 
 ## Abiertas
 
-### T-12 · Enlaces de vuelta del libro nuevo
-En `santjoanslibro`, el enlace a esta portada (su T-03); y que `santjoans` y `masosdemorella`
-enlacen al libro nuevo, como ya enlazan a la portada.
-
 ### T-03 · Que la autora valide su biografía y las licencias
 `content/autora.*.md` se ha escrito a partir de lo que ella contó en el blog, pero conviene que lo
 lea. Lo mismo con la licencia CC BY-NC-ND 4.0 del contenido, que en los proyectos hermanos también
@@ -38,6 +34,13 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ---
 
 ## Resueltas
+
+### T-12 · Enlaces de vuelta del libro nuevo · 2026-09-09
+`santjoanslibro` enlaza a esta portada en el pie de todas sus páginas (la misma línea que
+`masosdemorella`); `santjoans` tiene un tercer botón en su presentación, «Leer el estudio», en los
+cuatro idiomas; `masosdemorella` enlaza al libro en el pie («L'altre llibre de l'autora») y en
+«L'autora». Los tres apuntan a `jtpadilla.github.io/santjoanslibro/`: si el libro estrena dominio,
+hay que cambiarlos y la ficha `3-santjoanslibro.yaml`.
 
 ### T-13 · La portada para quien vuelve · 2026-09-09
 La última novedad de obra, con su fecha, en la cabecera; las cifras en una sola línea; fuera la

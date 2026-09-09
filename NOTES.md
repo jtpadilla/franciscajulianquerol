@@ -255,3 +255,15 @@ Lo que se hizo, todo en `site/` y sin tocar el recuento ni los JSON:
   ocasional tarda más en volver.
 
 Orden final de la portada: presentación con la última novedad → línea de cifras → índice. Sigue sin JavaScript y siguen siendo 9 páginas.
+
+---
+
+## 2026-09-09 · Enlaces de vuelta del libro de Santjoans (T-12)
+
+Cerrado el triángulo del sexto proyecto. `santjoanslibro` copia en su `Base.astro` la línea del pie de
+`masosdemorella` hacia `franciscajulianquerol.es/ca/` (su T-03 queda cerrada). `santjoans` añade a la
+presentación un tercer botón, «Leer el estudio» (`readStudy` en `messages.ts`, cuatro idiomas, una sola
+dirección porque el libro solo está en valenciano). `masosdemorella` enlaza al libro en el pie y en
+«L'autora», en la frase que ya hablaba de santjoans.es. Los tres builds pasan (10, 17 páginas y el
+visor con sus 21 tests). Todos apuntan a la dirección de GitHub Pages del libro, que es la misma de la
+ficha; el día que el libro tenga dominio (su T-02) habrá que cambiar los cuatro sitios.

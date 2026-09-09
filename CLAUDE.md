@@ -64,10 +64,9 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
     de obra, con su fecha, en la cabecera; las cifras en una sola línea; fuera la banda de novedades
     que había bajo las cifras; la etiqueta de la ficha dura 90 días.
 
-**Por dónde seguir** (detalle en `TODO.md`): los enlaces de vuelta desde `santjoanslibro`, `santjoans` y
-`masosdemorella` (T-12), la validación de la autora (T-03) y las cifras
-que se cuentan pero no se enseñan (T-07, T-08). Los cinco sitios anteriores ya enlazan a esta portada
-por su dominio (T-05, T-10).
+**Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
+cuentan pero no se enseñan (T-07, T-08). Los seis sitios enlazan a esta portada por su dominio (T-05,
+T-10, T-12), y `santjoans` y `masosdemorella` enlazan además al libro de Santjoans.
 
 ---
 
