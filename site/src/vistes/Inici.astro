@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Xifres from '../components/Xifres.astro';
-import Novetats from '../components/Novetats.astro';
 import Fitxa from '../components/Fitxa.astro';
 import Novetat from '../components/Novetat.astro';
 import { LLOC, alternativesInici, urlPagina, type Lang } from '../site/config';
@@ -53,7 +52,6 @@ const retrat = autora.data.retrat;
   </section>
 
   <Xifres lang={lang} />
-  <Novetats lang={lang} />
 
   <section class="index" id="obra">
     <div class="contenidor">

@@ -196,18 +196,8 @@ p { margin: 0 0 1.2em; }
 .xifres-peu a:hover { color: var(--accent); }
 
 /* ----------------------------------------------------------------- novetats */
-/* Las novedades anteriores a la de la cabecera, una por linea, antes del indice. */
-.novetats { border-bottom: 1px solid var(--linea); padding: clamp(1.5rem, 3.5vw, 2.25rem) 0; }
-.novetats-fila {
-  display: grid; gap: .6rem 2.5rem; align-items: baseline;
-  grid-template-columns: minmax(0, 1fr);
-}
-@media (min-width: 46rem) {
-  .novetats-fila { grid-template-columns: 11rem minmax(0, 1fr) auto; }
-}
-.novetats-fila h2 { margin: 0; font-size: 1.25rem; }
+/* Una novedad en una linea: la usan la cabecera de la portada y la pagina de novedades. */
 .novetats-llista { list-style: none; margin: 0; padding: 0; }
-.novetats-fila .novetats-llista { display: grid; gap: .55rem; font-size: 1rem; }
 .novetat { display: flex; flex-wrap: wrap; gap: .1rem .7rem; align-items: baseline; }
 .novetat time {
   font-size: .82rem; color: var(--tinta-3); font-variant-numeric: lining-nums tabular-nums;
@@ -216,8 +206,6 @@ p { margin: 0 0 1.2em; }
 .novetat span { color: var(--tinta-2); }
 .novetat a { color: var(--tinta); font-weight: 600; text-decoration-color: var(--linea); }
 .novetat a:hover { color: var(--accent); }
-.novetats-totes { font-size: .9rem; white-space: nowrap; text-decoration: none; }
-.novetats-totes:hover { text-decoration: underline; }
 .etiqueta-nova { color: var(--or); background: color-mix(in srgb, var(--or) 14%, transparent); }
 
 /* La pagina de novedades: una por linea, con la fecha en su columna. */

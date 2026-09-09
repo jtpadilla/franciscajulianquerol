@@ -61,8 +61,8 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
    `content/novetats.json` los proyectos nuevos y los crecimientos; el sitio lo enseña en una banda
    bajo las cifras, en `/novedades/` y como etiqueta «Nuevo»/«Ampliado» en la ficha. 9 páginas.
 10. La portada reordenada para quien vuelve de tarde en tarde (2026-09-09, T-13): la última novedad
-    de obra, con su fecha, en la cabecera; las cifras en una sola línea; la banda «Novedades
-    anteriores» con una por línea; la etiqueta de la ficha dura 90 días.
+    de obra, con su fecha, en la cabecera; las cifras en una sola línea; fuera la banda de novedades
+    que había bajo las cifras; la etiqueta de la ficha dura 90 días.
 
 **Por dónde seguir** (detalle en `TODO.md`): los enlaces de vuelta desde `santjoanslibro`, `santjoans` y
 `masosdemorella` (T-12), la validación de la autora (T-03) y las cifras
@@ -98,8 +98,9 @@ por su dominio (T-05, T-10).
 - **La portada está pensada para quien vuelve, no solo para quien llega.** La última novedad de obra
   (`NOVETAT_ULTIMA` en `novetats.ts`: un `nou` o un `creix`, nunca una `nota`) va en la cabecera con
   su fecha, porque una fecha responde sola a «¿hay algo desde que vine?». Las cifras se quedan en una
-  línea: impresionan al que llega pero no le dicen nada al que vuelve. La banda de debajo enseña las
-  tres novedades siguientes a la de la cabecera, sin repetirla.
+  línea: impresionan al que llega pero no le dicen nada al que vuelve. No hay banda de novedades bajo
+  las cifras: se probó y solo repetía noticias viejas de la edición; la lista entera está en
+  `/novedades/` y las fichas llevan la etiqueta «Nuevo»/«Ampliado».
 
 ---
 
@@ -132,9 +133,8 @@ site/                       proyecto Astro 7 (npm run dev | build | preview)
   src/content.config.ts     colecciones `projectes` (yaml) y `pagines` (md), ambas fuera de site/.
   src/pages/[...ruta].astro TODAS las páginas de los dos idiomas salen de aquí. 404.astro aparte.
   src/vistes/               Inici.astro (portada), Pagina.astro (prosa: autora y edició) y Novetats.astro.
-  src/components/           Capcalera, Peu, Marca, Xifres (la línea de números), Fitxa (la tarjeta),
-                            Novetats (la banda de la portada) y Novetat (una línea de novedad; la
-                            cabecera la usa con `element="p"`).
+  src/components/           Capcalera, Peu, Marca, Xifres (la línea de números), Fitxa (la tarjeta)
+                            y Novetat (una línea de novedad; la cabecera la usa con `element="p"`).
   src/styles/global.css     todo el CSS, con tokens claro/oscuro. No hay CSS por componente.
   public/CNAME              franciscajulianquerol.es (el dominio, ver «Decisiones»).
 .github/workflows/deploy.yml  build + publicación en Pages con cada push a main.

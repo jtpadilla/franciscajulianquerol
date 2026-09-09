@@ -59,8 +59,6 @@ const es = {
   novetatsTitol: 'Novedades',
   /** La cabecera de la portada, junto a la novedad de obra más reciente. */
   ultimaNovetat: 'Última novedad',
-  /** La banda de la portada, cuando la última ya va en la cabecera. */
-  novetatsAnteriors: 'Novedades anteriores',
   novetatsResum:
     'Cada proyecto que se incorpora y cada vez que uno crece, con su fecha. La lista la escribe el recuento, no una persona.',
   novetatsExplicacio:
@@ -147,7 +145,6 @@ const ca: typeof es = {
 
   novetatsTitol: 'Novetats',
   ultimaNovetat: 'Última novetat',
-  novetatsAnteriors: 'Novetats anteriors',
   novetatsResum:
     'Cada projecte que s\'incorpora i cada vegada que un creix, amb la seua data. La llista l\'escriu el recompte, no una persona.',
   novetatsExplicacio:

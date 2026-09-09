@@ -24,12 +24,9 @@ export const NOVETATS: Novetat[] = [...(dades as { novetats: Novetat[] }).noveta
 /**
  * La ultima novedad de obra (un proyecto nuevo o uno que crece), que la cabecera de la portada
  * ensena con su fecha: quien vuelve de tarde en tarde sabe de un vistazo si hay algo desde la
- * ultima visita. Las notas (dominio, estreno...) no cuentan aqui: van a la banda y a /novedades/.
+ * ultima visita. Las notas (dominio, estreno...) no cuentan aqui: solo salen en /novedades/.
  */
 export const NOVETAT_ULTIMA: Novetat | undefined = NOVETATS.find((n) => n.tipus !== 'nota');
-
-/** Cuantas ensena la banda de la portada, sin contar la que ya va en la cabecera. */
-export const NOVETATS_PORTADA = 3;
 
 /** Dias durante los que la ficha de un proyecto lleva la etiqueta «Nuevo» o «Ampliado». */
 export const DIES_RECENT = 90;

@@ -246,10 +246,12 @@ Lo que se hizo, todo en `site/` y sin tocar el recuento ni los JSON:
 - **Las cifras en una sola línea** (`.xifres-fila`), con la fecha del recuento enlazada a «Sobre esta
   página», que ya explica que las cuenta el guion; la frase larga sobre `metriques.py` desaparece de
   la portada.
-- **La banda «Novedades anteriores»**: las tres siguientes a la de la cabecera, sin repetirla, una por
-  línea y con letra normal. Si no hay última de obra, se titula «Novedades» y enseña las tres últimas.
+- **Fuera la banda de novedades de debajo de las cifras.** Primero se dejó como «Novedades
+  anteriores» (las tres siguientes a la de la cabecera), pero al verla en local solo enseñaba
+  noticias viejas de la edición (estreno, dominio) y repetía lo que ya cubren la cabecera, la etiqueta
+  de la ficha y `/novedades/`. `Novetats.astro` (el componente) se borró; la vista de la página
+  completa se llama igual y sigue.
 - La etiqueta «Nuevo»/«Ampliado» de la ficha pasa de 60 a 90 días (`DIES_RECENT`): el lector
   ocasional tarda más en volver.
 
-Orden final de la portada: presentación con la última novedad → línea de cifras → novedades
-anteriores → índice. Sigue sin JavaScript y siguen siendo 9 páginas.
+Orden final de la portada: presentación con la última novedad → línea de cifras → índice. Sigue sin JavaScript y siguen siendo 9 páginas.

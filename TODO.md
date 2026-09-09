@@ -40,8 +40,8 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 ## Resueltas
 
 ### T-13 · La portada para quien vuelve · 2026-09-09
-La última novedad de obra, con su fecha, en la cabecera; las cifras en una sola línea; la banda
-«Novedades anteriores» con más peso y sin repetir la de arriba; la etiqueta de la ficha a 90 días.
+La última novedad de obra, con su fecha, en la cabecera; las cifras en una sola línea; fuera la
+banda de novedades que había bajo las cifras; la etiqueta de la ficha a 90 días.
 Detalle en `NOTES.md`.
 
 ### T-11 · El sexto proyecto, santjoanslibro, y las novedades · 2026-09-08
