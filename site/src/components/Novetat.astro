@@ -8,15 +8,22 @@ import { METRIQUES, type Lang } from '../site/config';
 import { dataLlarga, type Novetat } from '../site/novetats';
 import { ui, textCanvis } from '../site/ui';
 
-interface Props { novetat: Novetat; projectes: Map<string, CollectionEntry<'projectes'>>; lang: Lang }
-const { novetat: n, projectes, lang } = Astro.props;
+interface Props {
+  novetat: Novetat;
+  projectes: Map<string, CollectionEntry<'projectes'>>;
+  lang: Lang;
+  /** «li» en las listas (por defecto); la cabecera de la portada pide un «p». */
+  element?: 'li' | 'p';
+}
+const { novetat: n, projectes, lang, element = 'li' } = Astro.props;
+const Element = element;
 const t = ui(lang);
 const p = n.projecte ? projectes.get(n.projecte)?.data : undefined;
 ---
 
 {/* Una novedad de un proyecto que ya no esta en el indice no se ensena. */}
 {(n.tipus === 'nota' || p) && (
-  <li class="novetat">
+  <Element class="novetat">
     <time datetime={n.data}>{dataLlarga(n.data, lang)}</time>
     <span>
       {n.tipus === 'nota' && (n.url ? <a href={n.url}>{n.nota![lang]}</a> : n.nota![lang])}
@@ -32,5 +39,5 @@ const p = n.projecte ? projectes.get(n.projecte)?.data : undefined;
         />
       )}
     </span>
-  </li>
+  </Element>
 )}

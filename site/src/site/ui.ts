@@ -16,8 +16,8 @@ const es = {
 
   // -------------------------------------------------------------------- cifras
   xifresTitol: 'Lo que hay, contado',
-  xifresPeu: (data: string) =>
-    `Cifras contadas por «tools/metriques.py» sobre los repositorios de los seis proyectos, el ${data}. No están escritas a mano.`,
+  /** Enlaza a «Sobre esta página», que explica que las cifras las cuenta un guion. */
+  xifresPeu: (data: string) => `contadas el ${data}`,
   metriques: {
     projectes: ['proyecto', 'proyectos'],
     textos: ['texto', 'textos'],
@@ -57,6 +57,10 @@ const es = {
 
   // ---------------------------------------------------------------- novedades
   novetatsTitol: 'Novedades',
+  /** La cabecera de la portada, junto a la novedad de obra más reciente. */
+  ultimaNovetat: 'Última novedad',
+  /** La banda de la portada, cuando la última ya va en la cabecera. */
+  novetatsAnteriors: 'Novedades anteriores',
   novetatsResum:
     'Cada proyecto que se incorpora y cada vez que uno crece, con su fecha. La lista la escribe el recuento, no una persona.',
   novetatsExplicacio:
@@ -104,8 +108,7 @@ const ca: typeof es = {
   veureObra: "Veure l'obra",
 
   xifresTitol: 'El que hi ha, comptat',
-  xifresPeu: (data: string) =>
-    `Xifres comptades per «tools/metriques.py» sobre els repositoris dels sis projectes, el ${data}. No estan escrites a mà.`,
+  xifresPeu: (data: string) => `comptades el ${data}`,
   metriques: {
     projectes: ['projecte', 'projectes'],
     textos: ['text', 'textos'],
@@ -143,6 +146,8 @@ const ca: typeof es = {
   fitxes: (n: string) => `${n} fitxes del catàleg`,
 
   novetatsTitol: 'Novetats',
+  ultimaNovetat: 'Última novetat',
+  novetatsAnteriors: 'Novetats anteriors',
   novetatsResum:
     'Cada projecte que s\'incorpora i cada vegada que un creix, amb la seua data. La llista l\'escriu el recompte, no una persona.',
   novetatsExplicacio:

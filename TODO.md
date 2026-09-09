@@ -39,6 +39,11 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 
 ## Resueltas
 
+### T-13 · La portada para quien vuelve · 2026-09-09
+La última novedad de obra, con su fecha, en la cabecera; las cifras en una sola línea; la banda
+«Novedades anteriores» con más peso y sin repetir la de arriba; la etiqueta de la ficha a 90 días.
+Detalle en `NOTES.md`.
+
 ### T-11 · El sexto proyecto, santjoanslibro, y las novedades · 2026-09-08
 `santjoanslibro()` en el recuento (5 capítulos, 4.001 palabras, 13 fotografías y la cifra propia
 `fitxes`, 29, que no se suma a las piezas), ficha `3-santjoanslibro.yaml` con la fachada de la casa

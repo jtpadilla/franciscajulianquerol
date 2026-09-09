@@ -5,7 +5,9 @@ import Base from '../layouts/Base.astro';
 import Xifres from '../components/Xifres.astro';
 import Novetats from '../components/Novetats.astro';
 import Fitxa from '../components/Fitxa.astro';
+import Novetat from '../components/Novetat.astro';
 import { LLOC, alternativesInici, urlPagina, type Lang } from '../site/config';
+import { NOVETAT_ULTIMA } from '../site/novetats';
 import { ui } from '../site/ui';
 
 interface Props { lang: Lang }
@@ -13,6 +15,7 @@ const { lang } = Astro.props;
 const t = ui(lang);
 
 const projectes = (await getCollection('projectes')).sort((a, b) => a.data.ordre - b.data.ordre);
+const perSlug = new Map(projectes.map((p) => [p.data.slug, p]));
 const autora = (await getCollection('pagines')).find((p) => p.data.key === 'autora' && p.data.lang === lang)!;
 const retrat = autora.data.retrat;
 ---
@@ -25,6 +28,16 @@ const retrat = autora.data.retrat;
         <h1>{LLOC.nom}</h1>
         <p class="lema">{LLOC.lema[lang]}</p>
         <p class="entradeta">{t.entradeta}</p>
+
+        {/* Lo primero que busca quien vuelve: que ha pasado, y cuando. Ver NOVETAT_ULTIMA. */}
+        {NOVETAT_ULTIMA && (
+          <div class="hero-novetat">
+            <span class="etiqueta etiqueta-nova">{t.ultimaNovetat}</span>
+            <Novetat novetat={NOVETAT_ULTIMA} projectes={perSlug} lang={lang} element="p" />
+            <a class="hero-novetat-totes" href={urlPagina(lang, 'novetats')}>{t.novetatsTotes} →</a>
+          </div>
+        )}
+
         <p class="accions">
           <a class="boto" href="#obra">{t.veureObra} ↓</a>
           <a class="boto boto-secundari" href={urlPagina(lang, 'autora')}>{t.saberMes}</a>

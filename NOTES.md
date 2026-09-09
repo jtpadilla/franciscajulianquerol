@@ -216,7 +216,8 @@ y anota en `content/novetats.json`:
   como una sola nota y no como cuatro `nou` para que las cuatro fichas no salieran todas con «Nuevo».
 
 En el sitio: `src/site/novetats.ts` carga el JSON (de la más reciente a la más antigua); la banda
-`Novetats.astro` enseña las tres últimas en una línea bajo las cifras; `/novedades/` y
+`Novetats.astro` enseña las tres últimas en una línea bajo las cifras (cambiado el 09/09, ver
+abajo); `/novedades/` y
 `/ca/novetats/` (vista `Novetats.astro`, clave `novetats` en `PAGINES`, con tipo `PaginaProsaKey`
 para las dos páginas que sí salen de un `.md`) las enseñan todas; y `Fitxa.astro` pone «Nuevo» o
 «Ampliado» si la última novedad del proyecto tiene menos de 60 días (`novetatRecent`, contados
@@ -226,3 +227,29 @@ cada proyecto. 9 páginas.
 
 Descartado: un RSS (nadie se suscribiría a esto y obligaría a fechas con hora) y un fichero de
 novedades escrito a mano (envejece como las cifras escritas a mano).
+
+---
+
+## 2026-09-09 · La portada para quien vuelve (T-13)
+
+Observación del usuario: la banda de cifras ocupaba demasiado y la línea de novedades que venía
+debajo se veía poco; quien entra de tarde en tarde no tenía manera clara de ver a la primera qué hay
+de nuevo. El diagnóstico fue de jerarquía: las cifras están pensadas para el que llega, y al que
+vuelve lo que le sirve es una **fecha**, no un recuento.
+
+Lo que se hizo, todo en `site/` y sin tocar el recuento ni los JSON:
+- **La última novedad de obra en la cabecera**, bajo la presentación y antes de los botones: etiqueta
+  «Última novedad», fecha, texto con el proyecto enlazado y el enlace a todas. Es `NOVETAT_ULTIMA` en
+  `novetats.ts`: el primer `nou` o `creix`; las `nota` (dominio, estreno) se quedan fuera porque a
+  quien vuelve le interesa la obra, no la infraestructura. `Novetat.astro` admite `element="p"` para
+  poder reutilizarlo ahí.
+- **Las cifras en una sola línea** (`.xifres-fila`), con la fecha del recuento enlazada a «Sobre esta
+  página», que ya explica que las cuenta el guion; la frase larga sobre `metriques.py` desaparece de
+  la portada.
+- **La banda «Novedades anteriores»**: las tres siguientes a la de la cabecera, sin repetirla, una por
+  línea y con letra normal. Si no hay última de obra, se titula «Novedades» y enseña las tres últimas.
+- La etiqueta «Nuevo»/«Ampliado» de la ficha pasa de 60 a 90 días (`DIES_RECENT`): el lector
+  ocasional tarda más en volver.
+
+Orden final de la portada: presentación con la última novedad → línea de cifras → novedades
+anteriores → índice. Sigue sin JavaScript y siguen siendo 9 páginas.
