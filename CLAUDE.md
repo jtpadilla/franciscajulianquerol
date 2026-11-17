@@ -10,7 +10,7 @@ Leer este fichero completo antes de tocar nada.
 **La portada** de la obra de **Francisca Julián Querol** («Paquita», Cinctorres, 1945): una página
 que la presenta, cuenta cuánto ha producido y lleva a cada uno de los proyectos donde se puede leer.
 
-Es el **séptimo repositorio** de la familia y el único que no recupera obra: no añade texto ni
+Es el **séptimo repositorio** de la familia (hoy son ocho, con `charcuteriapadilla`) y el único que no recupera obra: no añade texto ni
 fotografías de la autora más allá de su biografía. Su trabajo es indexar y dar contexto.
 
 Publicado en **https://franciscajulianquerol.es/** (repositorio público
@@ -27,8 +27,9 @@ antigua, `jtpadilla.github.io/franciscajulianquerol/`, la redirige GitHub).
 | [jtpadilla/ramblacelumbres](https://github.com/jtpadilla/ramblacelumbres) | Guía de biodiversidad migrada desde WordPress; es/ca/en/zh | Autora de los textos | ramblacelumbres.org |
 | [jtpadilla/lesmeuescoses](https://github.com/jtpadilla/lesmeuescoses) | El blog «Les meues coses» recuperado del canal de Blogger | Autora | jtpadilla.github.io/lesmeuescoses |
 | [jtpadilla/franciscaineditos](https://github.com/jtpadilla/franciscaineditos) | «Escrits inèdits»: los textos que quedaban en su ordenador, seleccionados a mano por tandas en `md/<obra>/<documento>/` | Autora | jtpadilla.github.io/franciscaineditos |
+| [jtpadilla/charcuteriapadilla](https://github.com/jtpadilla/charcuteriapadilla) | «Charcutería Padilla»: las recetas de embutidos de su marido, Juan Padilla Agut (de casa, del proveedor y etiquetas de especias), escaneadas. Hoy una maqueta estática | Reunió y aportó el material | jtpadilla.github.io/charcuteriapadilla |
 
-Los seis están clonados **al lado de este** (hoy en `~/IdeaProjects/francisca/`; el guion usa por
+Los siete están clonados **al lado de este** (hoy en `~/IdeaProjects/francisca/`; el guion usa por
 defecto la carpeta que contiene este repositorio, o `--arrel DIR`), y **`tools/metriques.py` los
 necesita**.
 Consultar sus `CLAUDE.md` antes de reinventar decisiones: el patrón de i18n y el catch-all de rutas
@@ -38,7 +39,7 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 
 ---
 
-## Estado actual (2026-09-08)
+## Estado actual (2026-11-17)
 
 **Hecho, en la primera sesión:**
 1. Repositorio, `README.md`, licencias, `.github/` y este fichero.
@@ -63,9 +64,13 @@ Idioma de trabajo con el usuario: **castellano**. Idiomas del sitio: **castellan
 10. La portada reordenada para quien vuelve de tarde en tarde (2026-09-09, T-13): la última novedad
     de obra, con su fecha, en la cabecera; las cifras en una sola línea; fuera la banda de novedades
     que había bajo las cifras; la etiqueta de la ficha dura 90 días.
+11. El séptimo proyecto (2026-11-17, T-14): `charcuteriapadilla`, en último lugar. No suma textos ni
+    palabras (las recetas no son prosa de la autora): lleva cifras propias, `receptes`, `fulls` y
+    `etiquetes`. Es la primera ficha sin `anys`, que pasa a ser opcional. Sigue siendo 9 páginas.
 
 **Por dónde seguir** (detalle en `TODO.md`): la validación de la autora (T-03) y las cifras que se
-cuentan pero no se enseñan (T-07, T-08). Los seis sitios enlazan a esta portada por su dominio (T-05,
+cuentan pero no se enseñan (T-07, T-08), y lo que le falta a la ficha de la charcutería (T-15). Los seis
+primeros sitios enlazan a esta portada por su dominio (T-05,
 T-10, T-12), y `santjoans` y `masosdemorella` enlazan además al libro de Santjoans.
 
 ---
@@ -113,13 +118,13 @@ content/metriques.json      SALIDA DEL RECUENTO. Se versiona: el build no necesi
 content/novetats.json       LAS NOVEDADES, acumuladas por el mismo guion (ver «Decisiones»). Se versiona.
 content/projectes/*.yaml    UNA FICHA POR PROYECTO. `<ordre>-<slug>.yaml`. Campos: slug (= clave en
                             metriques.json), ordre, titol, tipus (enum en content.config.ts + etiqueta
-                            en ui.ts), anys, rol{es,ca}, subtitol{es,ca},
+                            en ui.ts), anys (opcional), rol{es,ca}, subtitol{es,ca},
                             descripcio{es,ca}, url, repositori, portada, portadaAlt{es,ca}.
                             El orden hoy: masosdemorella, santjoans, santjoanslibro, ramblacelumbres,
-                            lesmeuescoses, franciscaineditos.
+                            lesmeuescoses, franciscaineditos, charcuteriapadilla.
 content/autora.{es,ca}.md   biografía de la autora. Frontmatter: key, lang, title, resum, retrat.
 content/edicio.{es,ca}.md   «Sobre esta página»: definiciones de las cifras y licencias.
-content/imatges/            retrato + 6 portadas, copiadas de los repositorios de origen. Optimizadas
+content/imatges/            retrato + 7 portadas, copiadas de los repositorios de origen. Optimizadas
                             por astro:assets en el build; los originales no se tocan.
 site/                       proyecto Astro 7 (npm run dev | build | preview)
   src/site/config.ts        idiomas, LLOC (textos del sitio), tipos y carga de metriques.json, BASE y
@@ -153,9 +158,10 @@ site/                       proyecto Astro 7 (npm run dev | build | preview)
 5. Si el proyecto trae una unidad de contenido nueva (algo que no sea capítulos, guías, entradas,
    piezas o escritos), añadirla a `unitats` en `src/site/ui.ts` y al tipo `MetriquesProjecte`. Si
    trae un `tipus` nuevo, añadirlo al enum de `src/content.config.ts` y a `tipus` en `ui.ts`. Si
-   trae una cifra propia que puede crecer (como `fitxes`), añadirla a `COMPTABLES` en el guion y a
-   `canvis` en `ui.ts` para que las novedades sepan nombrarla.
-6. Revisar los textos que cuentan los proyectos («seis proyectos» en `ui.ts`, `LLOC.lema` y
+   trae una cifra propia que puede crecer (como `fitxes` o `receptes`), añadirla a `COMPTABLES` en el
+   guion, a `canvis` en `ui.ts` para que las novedades sepan nombrarla y a `xifresProjecte()` para
+   que la ficha la enseñe.
+6. Revisar los textos que cuentan los proyectos («siete proyectos» en `ui.ts`, `LLOC.lema` y
    `LLOC.descripcio` en `config.ts`, `content/edicio.*.md`, `README.md`).
 7. `cd site && npm run build`. No hay que tocar ninguna plantilla.
 

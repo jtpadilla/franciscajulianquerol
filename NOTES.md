@@ -280,3 +280,27 @@ aquí. Nombre elegido: `charcuteriapadilla` (frente a `recetaspadilla`, que deja
 y `juanpadillaagut`, que suena a portada). Repositorio solo en local por ahora,
 `~/IdeaProjects/francisca/charcuteriapadilla`. La incorporación a esta portada espera a que se
 publique.
+
+---
+
+## 2026-11-17 · El séptimo proyecto, incorporado (T-14)
+
+Publicada la primera maqueta en `jtpadilla.github.io/charcuteriapadilla/`, entra en la portada.
+
+- **No suma textos ni palabras.** Las recetas son de Juan Padilla Agut y de la casa de especias; la
+  autora consta porque reunió y aportó el material. Como las piezas de santjoans, van en cifras
+  propias: `receptes` (10, las manuscritas de casa), `fulls` (16 hojas del proveedor; la 16 es la de
+  un cursillo, pero el sitio las cuenta así) y `etiquetes` (9). Se leen de `maqueta/datos.js`, sin
+  las líneas de comentario (una dice `tipo: "casa"` y daba 11). Los totales de la portada solo
+  cambian en «proyectos».
+- **Las fotos de la parada no se cuentan**: salen de «El mercat de Sant Antoni», en
+  franciscaineditos, donde ya están contadas.
+- **Rol**: «Reunió y aportó el material», no «Autora». Que Juan Padilla era su marido y que llevaban
+  la parada del mercado de Sant Antoni ya lo dice la biografía.
+- **`anys` pasa a ser opcional** (`content.config.ts`, `Fitxa.astro`): no se saben los años de la
+  charcutería y no se inventan. La ficha va la última.
+- `tipus` nuevo, `receptari`. `xifresProjecte()` enseña las tres cifras con los nombres de `canvis`.
+- Portada: `maqueta/img/parada2.jpg`. El alt no dice quién es el charcutero: la foto no tiene pie.
+- Al recontar apareció un `creix` de santjoanslibro (+1 fotografía: un croquis redibujado por la
+  edición). Se borró de `novetats.json` y queda como T-16.
+- De paso: «Sobre esta página» decía que la etiqueta dura dos meses; son 90 días desde T-13.

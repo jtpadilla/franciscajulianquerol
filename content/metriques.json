@@ -1,5 +1,5 @@
 {
-  "generat": "2026-09-08",
+  "generat": "2026-11-17",
   "arrel": "~/IdeaProjects/francisca",
   "projectes": {
     "masosdemorella": {
@@ -23,7 +23,7 @@
       "unitat": "capitols",
       "paraules": 4001,
       "fitxes": 29,
-      "fotografies": 13
+      "fotografies": 14
     },
     "ramblacelumbres": {
       "textos": 23,
@@ -47,13 +47,21 @@
       "obres": 12,
       "paraules": 201163,
       "fotografies": 378
+    },
+    "charcuteriapadilla": {
+      "textos": 0,
+      "unitat": "receptes",
+      "paraules": 0,
+      "receptes": 10,
+      "fulls": 16,
+      "etiquetes": 9
     }
   },
   "totals": {
-    "projectes": 6,
+    "projectes": 7,
     "textos": 256,
     "paraules": 275503,
-    "fotografies": 877,
+    "fotografies": 878,
     "illustracions": 7,
     "peces": 434,
     "traduccions": 69,

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recuento de la produccion de Francisca Julian Querol repartida por los seis proyectos.
+"""Recuento de la produccion de Francisca Julian Querol repartida por los siete proyectos.
 
 Lee los repositorios hermanos clonados al lado de este (por defecto, la carpeta que contiene este
 repositorio) y escribe
@@ -203,6 +203,27 @@ def franciscaineditos(repo: Path) -> dict:
     }
 
 
+def charcuteriapadilla(repo: Path) -> dict:
+    """Las recetas de la charcuteria de Juan Padilla Agut: papeles escaneados, no prosa de la autora."""
+    # Hoy el sitio es una maqueta estatica y los datos estan en maqueta/datos.js; si se pasa a
+    # Astro (su T-14) habra que contar en otro sitio.
+    dades = (repo / "maqueta" / "datos.js").read_text(encoding="utf-8")
+    dades = re.sub(r"^\s*//.*$", "", dades, flags=re.M)  # los comentarios tambien dicen tipo: "casa"
+    return {
+        # Nada se suma a `textos` ni a `paraules`: las recetas son de Juan Padilla y de la casa de
+        # especias, y la autora consta porque reunio y aporto el material. Como las piezas de
+        # santjoans, van en cifras propias.
+        "textos": 0,
+        "unitat": "receptes",
+        "paraules": 0,
+        "receptes": len(re.findall(r'\btipo:\s*"casa"', dades)),            # manuscritas, de casa
+        "fulls": len(re.findall(r'^\s*\["\d+",', dades, flags=re.M)),       # hojas del proveedor
+        "etiquetes": len(re.findall(r'^\s*"\d+":\s*\{', dades, flags=re.M)),  # de los botes de especias
+        # Las fotos de la parada NO se cuentan: salen de «El mercat de Sant Antoni», en
+        # franciscaineditos, y alli ya estan contadas.
+    }
+
+
 PROJECTES = [
     ("masosdemorella", masosdemorella),
     ("santjoans", santjoans),
@@ -210,6 +231,7 @@ PROJECTES = [
     ("ramblacelumbres", ramblacelumbres),
     ("lesmeuescoses", lesmeuescoses),
     ("franciscaineditos", franciscaineditos),
+    ("charcuteriapadilla", charcuteriapadilla),
 ]
 
 
@@ -248,7 +270,8 @@ def recompta(arrel: Path) -> dict:
 # ------------------------------------------------------------------------------ novedades
 
 # Cifras cuyo crecimiento cuenta como novedad, en el orden en que se enseñan.
-COMPTABLES = ("textos", "obres", "paraules", "fotografies", "illustracions", "peces", "fitxes", "comentaris")
+COMPTABLES = ("textos", "obres", "paraules", "fotografies", "illustracions", "peces", "fitxes", "comentaris",
+              "receptes", "fulls", "etiquetes")
 # Las palabras solas (correcciones, erratas) no son novedad si no llegan a esta cifra.
 LLINDAR_PARAULES = 100
 
