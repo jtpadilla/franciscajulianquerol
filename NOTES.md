@@ -267,3 +267,16 @@ dirección porque el libro solo está en valenciano). `masosdemorella` enlaza al
 «L'autora», en la frase que ya hablaba de santjoans.es. Los tres builds pasan (10, 17 páginas y el
 visor con sus 21 tests). Todos apuntan a la dirección de GitHub Pages del libro, que es la misma de la
 ficha; el día que el libro tenga dominio (su T-02) habrá que cambiar los cuatro sitios.
+
+---
+
+## 2026-11-17 · Un séptimo proyecto en preparación: charcuteriapadilla (T-14)
+
+El usuario ha empezado un proyecto nuevo con las recetas de embutidos que su padre, **Juan Padilla
+Agut**, charcutero que aprendió el oficio de su padre, usaba en su negocio: las del proveedor, las
+propias y etiquetas de los fabricantes de especias, todo escaneado. El material lo proporcionó
+Francisca y el usuario quiere que conste como **autora**, así que entra en la familia y tendrá ficha
+aquí. Nombre elegido: `charcuteriapadilla` (frente a `recetaspadilla`, que deja fuera las etiquetas,
+y `juanpadillaagut`, que suena a portada). Repositorio solo en local por ahora,
+`~/IdeaProjects/francisca/charcuteriapadilla`. La incorporación a esta portada espera a que se
+publique.

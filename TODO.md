@@ -31,6 +31,19 @@ de «Natura» son la base de ramblacelumbres. Hoy se cuentan en los dos sitios, 
 distintos en repositorios distintos, y así está explicado en `NOTES.md`. Si algún día molesta, habría
 que decidir una regla de desempate y escribirla en «Sobre esta página».
 
+### T-14 · El séptimo proyecto, charcuteriapadilla
+«Charcutería Padilla. Las recetas de Juan Padilla Agut»: las recetas de embutidos de la charcutería
+de Juan Padilla Agut (proveedor, propias y etiquetas de especias, escaneadas). El material lo
+proporcionó Francisca y, por decisión del usuario, **consta como autora**. Repositorio creado en local
+el 2026-11-17 en `../charcuteriapadilla`; aún sin GitHub ni Pages, y el usuario está trabajando en él.
+Cuando esté publicado, añadirlo según «Cómo añadir un proyecto» de `CLAUDE.md`:
+- función de recuento en `metriques.py` (probablemente una unidad nueva, `receptes`, en `ui.ts` y
+  `MetriquesProjecte`) y quizá un `tipus` nuevo en `content.config.ts` y `ui.ts`;
+- ficha `7-charcuteriapadilla.yaml` y portada en `content/imatges/`; el `rol` no es el de autora de
+  los textos, sino de quien reunió y aportó el material: redactarlo con cuidado;
+- «seis proyectos» → «siete» en `ui.ts`, `LLOC`, `edicio.*.md` y `README.md`;
+- enlace de vuelta desde su sitio a franciscajulianquerol.es (como T-05, T-12).
+
 ---
 
 ## Resueltas
