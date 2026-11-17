@@ -29,7 +29,7 @@ const es = {
   // --------------------------------------------------------------------- indice
   indexTitol: 'La obra',
   indexIntro:
-    'Seis proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
+    'Siete proyectos, cada uno en su repositorio y con su propio sitio. Se recuperan y se publican por orden de antigüedad de la obra, no de la edición.',
   anarAlLloc: 'Ir al sitio',
   codiFont: 'Repositorio',
   rol: 'Su papel',
@@ -40,6 +40,7 @@ const es = {
     guia: 'Guía de campo',
     blog: 'Blog',
     inedits: 'Inéditos',
+    receptari: 'Recetario',
   } as Record<string, string>,
 
   unitats: {
@@ -48,6 +49,7 @@ const es = {
     entrades: ['entrada', 'entradas'],
     peces: ['pieza', 'piezas'],
     escrits: ['escrito', 'escritos'],
+    receptes: ['receta', 'recetas'],
   } as Record<string, [string, string]>,
 
   posicions: (n: string) => `${n} posiciones en el pavimento`,
@@ -76,6 +78,9 @@ const es = {
     illustracions: ['ilustración', 'ilustraciones'],
     fitxes: ['ficha del catálogo', 'fichas del catálogo'],
     comentaris: ['comentario', 'comentarios'],
+    receptes: ['receta de casa', 'recetas de casa'],
+    fulls: ['hoja del proveedor', 'hojas del proveedor'],
+    etiquetes: ['etiqueta', 'etiquetas'],
   } as Record<string, [string, string]>,
 
   // ------------------------------------------------------------------------ pie
@@ -117,7 +122,7 @@ const ca: typeof es = {
 
   indexTitol: "L'obra",
   indexIntro:
-    "Sis projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
+    "Set projectes, cadascú al seu repositori i amb el seu lloc. Es recuperen i es publiquen per ordre d'antiguitat de l'obra, no de l'edició.",
   anarAlLloc: 'Anar al lloc',
   codiFont: 'Repositori',
   rol: 'El seu paper',
@@ -128,6 +133,7 @@ const ca: typeof es = {
     guia: 'Guia de camp',
     blog: 'Blog',
     inedits: 'Inèdits',
+    receptari: 'Receptari',
   },
 
   unitats: {
@@ -136,6 +142,7 @@ const ca: typeof es = {
     entrades: ['entrada', 'entrades'],
     peces: ['peça', 'peces'],
     escrits: ['escrit', 'escrits'],
+    receptes: ['recepta', 'receptes'],
   },
 
   posicions: (n: string) => `${n} posicions al paviment`,
@@ -158,6 +165,9 @@ const ca: typeof es = {
     illustracions: ['il·lustració', 'il·lustracions'],
     fitxes: ['fitxa del catàleg', 'fitxes del catàleg'],
     comentaris: ['comentari', 'comentaris'],
+    receptes: ['recepta de casa', 'receptes de casa'],
+    fulls: ['full del proveïdor', 'fulls del proveïdor'],
+    etiquetes: ['etiqueta', 'etiquetes'],
   },
 
   peuNota:
@@ -194,6 +204,8 @@ export function xifresProjecte(m: MetriquesProjecte, lang: Lang): string[] {
   if (m.fotografies) linies.push(compta(m.fotografies, t.metriques.fotografies!, lang));
   if (m.fitxes) linies.push(t.fitxes(xifra(m.fitxes, lang)));
   if (m.idiomes) linies.push(t.idiomes(xifra(m.idiomes, lang)));
+  for (const camp of ['receptes', 'fulls', 'etiquetes'] as const)
+    if (m[camp]) linies.push(compta(m[camp]!, t.canvis[camp]!, lang));
   return linies;
 }
 

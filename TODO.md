@@ -31,9 +31,31 @@ de «Natura» son la base de ramblacelumbres. Hoy se cuentan en los dos sitios, 
 distintos en repositorios distintos, y así está explicado en `NOTES.md`. Si algún día molesta, habría
 que decidir una regla de desempate y escribirla en «Sobre esta página».
 
+### T-15 · Lo que le falta a la ficha de charcuteriapadilla
+- **Años**: la ficha no lleva `anys` porque no se saben los de la charcutería (su T-08). Cuando se
+  sepan, añadirlos a `7-charcuteriapadilla.yaml` y al README, y decidir si la ficha sigue la última o
+  sube según el orden de antigüedad.
+- **Enlace de vuelta** desde su sitio a franciscajulianquerol.es (como T-05, T-12); allí es su T-06.
+- **Quién sale en la portada**: la foto (`parada2`, sin pie en el original) se describe como «un
+  charcutero» hasta que la autora lo confirme (su T-09).
+- **Licencia**: las hojas y las etiquetas de Ceylan son de terceros y allí está por decidir (su
+  T-03); «Sobre esta página» todavía no dice nada de ese material.
+- Si la maqueta pasa a Astro (su T-14), `charcuteriapadilla()` deja de encontrar `maqueta/datos.js`.
+
+### T-16 · El croquis redibujado de santjoanslibro cuenta como fotografía
+Desde el 2026-09 `santjoanslibro/assets/images/` tiene `04-croquis-placa-vella-redibuixat.jpg`, un
+croquis redibujado por esta edición: el recuento lo suma a `fotografies` (13 → 14; total 878). No es
+obra de la autora; decidir si se excluye en `santjoanslibro()`. La novedad «+1 fotografía» que anotó
+el guion el 2026-11-17 se borró a mano de `novetats.json`.
+
 ---
 
 ## Resueltas
+
+### T-14 · El séptimo proyecto, charcuteriapadilla · 2026-11-17
+Recuento (`receptes` 10, `fulls` 16, `etiquetes` 9; nada a textos ni palabras), ficha
+`7-charcuteriapadilla.yaml` con el `tipus` nuevo `receptari`, portada, textos de «seis» a «siete» y
+la novedad `nou`, que ocupa la cabecera. Lo pendiente pasa a T-15. Detalle en `NOTES.md`.
 
 ### T-12 · Enlaces de vuelta del libro nuevo · 2026-09-09
 `santjoanslibro` enlaza a esta portada en el pie de todas sus páginas (la misma línea que

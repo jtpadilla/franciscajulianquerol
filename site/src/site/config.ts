@@ -16,12 +16,12 @@ export const LLOC = {
     ca: 'Francisca Julián Querol',
   } as T,
   lema: {
-    es: 'Dos libros, un estudio, una guía de campo, dieciséis años de blog y los escritos que quedaban en el ordenador, de Cinctorres a Castelló',
-    ca: "Dos llibres, un estudi, una guia de camp, setze anys de blog i els escrits que quedaven a l'ordinador, de Cinctorres a Castelló",
+    es: 'Dos libros, un estudio, una guía de campo, dieciséis años de blog, los escritos que quedaban en el ordenador y las recetas de una charcutería, de Cinctorres a Castelló',
+    ca: "Dos llibres, un estudi, una guia de camp, setze anys de blog, els escrits que quedaven a l'ordinador i les receptes d'una cansaladeria, de Cinctorres a Castelló",
   } as T,
   descripcio: {
-    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans con su visor y su libro, la guía de biodiversidad de la rambla de Celumbres, el blog «Les meues coses» y los escritos inéditos que quedaban en su ordenador. Sigue escribiendo, a un ritmo más pausado. Seis ediciones digitales familiares, sin publicidad y sin cookies.',
-    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans amb el seu visor i el seu llibre, la guia de biodiversitat de la rambla de Celumbres, el blog «Les meues coses» i els escrits inèdits que quedaven al seu ordinador. Continua escrivint, a un ritme més pausat. Sis edicions digitals familiars, sense publicitat i sense galetes.",
+    es: 'La obra de Francisca Julián Querol («Paquita»), de Cinctorres: el libro «Masos de Morella», el estudio del pavimento cerámico del Palau Santjoans con su visor y su libro, la guía de biodiversidad de la rambla de Celumbres, el blog «Les meues coses», los escritos inéditos que quedaban en su ordenador y las recetas de la charcutería de su marido, Juan Padilla Agut. Sigue escribiendo, a un ritmo más pausado. Siete ediciones digitales familiares, sin publicidad y sin cookies.',
+    ca: "L'obra de Francisca Julián Querol («Paquita»), de Cinctorres: el llibre «Masos de Morella», l'estudi del paviment ceràmic del Palau Santjoans amb el seu visor i el seu llibre, la guia de biodiversitat de la rambla de Celumbres, el blog «Les meues coses», els escrits inèdits que quedaven al seu ordinador i les receptes de la cansaladeria del seu marit, Juan Padilla Agut. Continua escrivint, a un ritme més pausat. Set edicions digitals familiars, sense publicitat i sense galetes.",
   } as T,
   locale: { es: 'es-ES', ca: 'ca-ES' } as T,
   repositori: 'https://github.com/jtpadilla/franciscajulianquerol',
@@ -35,12 +35,16 @@ export const LLOC = {
 /** Cifras de un proyecto, tal como las cuenta tools/metriques.py. */
 export interface MetriquesProjecte {
   textos: number;
-  unitat: 'capitols' | 'guies' | 'entrades' | 'peces' | 'escrits';
+  unitat: 'capitols' | 'guies' | 'entrades' | 'peces' | 'escrits' | 'receptes';
   paraules: number;
   /** Escritos ineditos: en cuantas obras se agrupan los textos. */
   obres?: number;
   /** Libro de Santjoans: las fichas del catalogo (datos, no prosa; tampoco son `peces`). */
   fitxes?: number;
+  /** Charcuteria Padilla: recetas de casa, hojas del proveedor y etiquetas (papeles, no prosa). */
+  receptes?: number;
+  fulls?: number;
+  etiquetes?: number;
   fotografies?: number;
   illustracions?: number;
   traduccions?: number;

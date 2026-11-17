@@ -23,7 +23,7 @@ const novetat = novetatRecent(p.slug);
     <p class="fitxa-dalt">
       <span class="etiqueta">{t.tipus[p.tipus]}</span>
       {novetat && <span class="etiqueta etiqueta-nova">{t.novetatEtiqueta[novetat.tipus]}</span>}
-      <span class="anys">{p.anys}</span>
+      {p.anys && <span class="anys">{p.anys}</span>}
     </p>
 
     <h3>{p.titol}</h3>

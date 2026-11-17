@@ -1,0 +1,33 @@
+slug: charcuteriapadilla
+ordre: 7
+titol: Charcutería Padilla
+tipus: receptari
+rol:
+  es: Reunió y aportó el material
+  ca: Va reunir i aportar el material
+subtitol:
+  es: Las recetas de Juan Padilla Agut, charcutero
+  ca: Les receptes de Juan Padilla Agut, cansalader
+descripcio:
+  es: >-
+    Los papeles con que su marido, Juan Padilla Agut, fabricaba los embutidos de la parada, un
+    oficio que aprendió de su padre. Diez recetas de casa manuscritas —la fórmula en tinta azul y
+    en castellano; debajo, en tinta roja y en valenciano, cómo se hacía—, las hojas de fabricación
+    que entregaba la casa de especias y las etiquetas de sus botes, todo escaneado y enseñado junto
+    a su transcripción, con fotografías del mostrador. Paquita guardó el material y lo ha aportado.
+    Es una primera maqueta: las transcripciones son provisionales y la mayoría de las hojas del
+    proveedor están todavía por transcribir.
+  ca: >-
+    Els papers amb què el seu marit, Juan Padilla Agut, fabricava els embotits de la parada, un
+    ofici que va aprendre de son pare. Deu receptes de casa manuscrites —la fórmula en tinta blava
+    i en castellà; davall, en tinta roja i en valencià, com es feia—, els fulls de fabricació que
+    entregava la casa d'espècies i les etiquetes dels seus pots, tot escanejat i mostrat al costat
+    de la seua transcripció, amb fotografies del taulell. La Paquita va guardar el material i l'ha
+    aportat. És una primera maqueta: les transcripcions són provisionals i la majoria dels fulls
+    del proveïdor estan encara per transcriure.
+url: https://jtpadilla.github.io/charcuteriapadilla/
+repositori: https://github.com/jtpadilla/charcuteriapadilla
+portada: ../imatges/portada-charcuteriapadilla.jpg
+portadaAlt:
+  es: Un charcutero con delantal blanco tras el mostrador de la parada, junto a la báscula y bajo los embutidos colgados
+  ca: Un cansalader amb davantal blanc darrere del taulell de la parada, al costat de la bàscula i davall dels embotits penjats
