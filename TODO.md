@@ -35,7 +35,6 @@ que decidir una regla de desempate y escribirla en «Sobre esta página».
 - **Años**: la ficha no lleva `anys` porque no se saben los de la charcutería (su T-08). Cuando se
   sepan, añadirlos a `7-charcuteriapadilla.yaml` y al README, y decidir si la ficha sigue la última o
   sube según el orden de antigüedad.
-- **Enlace de vuelta** desde su sitio a franciscajulianquerol.es (como T-05, T-12); allí es su T-06.
 - **Quién sale en la portada**: la foto (`parada2`, sin pie en el original) se describe como «un
   charcutero» hasta que la autora lo confirme (su T-09).
 - **Licencia**: las hojas y las etiquetas de Ceylan son de terceros y allí está por decidir (su
